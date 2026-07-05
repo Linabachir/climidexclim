@@ -76,6 +76,61 @@ export const en: Dictionary = {
     ctaTitle: "Comfort, without the superfluous.",
     ctaButton: "Discover the Climaire",
   },
+  home: {
+    heroEyebrow: "Bladeless fan",
+    heroTitle: "Keep a cool head.",
+    heroDescription:
+      "The Climaire delivers a steady, quiet stream of air, with no blades or sharp surfaces. Easy to clean, safe around children.",
+    heroAlt: "The Climaire in a bright, uncluttered interior",
+    discoverClimaire: "Discover the Climaire",
+    stats: [
+      { value: "35–39 dB", label: "Noise level" },
+      { value: "8 speeds", label: "Fine-grained control" },
+      { value: "20 m²", label: "Room coverage" },
+    ],
+    principlesTitle: "Three principles, one single piece.",
+    principles: [
+      {
+        title: "Bladeless",
+        body: "An enveloping airflow, without turbulence or sharp surfaces. Safe around children.",
+      },
+      {
+        title: "Quiet",
+        body: "35 to 39 dB, with a night mode. Discreet enough to sleep right next to it.",
+      },
+      {
+        title: "Efficient",
+        body: "Brushless DC motor and ABS shell: little noise, little upkeep.",
+      },
+    ],
+    lifestyleEyebrow: "Design",
+    lifestyleTitle: "It fits in anywhere.",
+    lifestyleBody:
+      "A compact, vertical format: on a console, a desk or the floor. It takes up little space and wipes clean in seconds.",
+    lifestyleAlt: "The Climaire in a bright, modern living room",
+    techEyebrow: "Technology",
+    techTitle: "How it works.",
+    techBody:
+      "A brushless DC motor draws air in through the base and releases it through the ring in a continuous, even flow. No blades: quiet, safe and easy to clean.",
+    techCta: "See the specifications",
+    techAlt: "The Climaire on a desk, airflow technology",
+    ctaTitle: "The Climaire, at your place.",
+    ctaShipping: "Delivered in 5 to 9 working days, anywhere in France.",
+    ctaAlt: "The Climaire in an upscale interior",
+    metaTitle: "CLIMIDEX · Climaire, the bladeless fan",
+    metaDescription:
+      "The Climaire: a bladeless fan, 35–39 dB, 8 speeds, for rooms up to 20 m². No exposed blades, easy to clean.",
+  },
+  newsletter: {
+    eyebrow: "Newsletter",
+    title: "Gear up against the heatwave",
+    body: "Our tips for keeping a cool head this summer, plus our latest news. Unsubscribe in one click.",
+    emailPlaceholder: "Your email address",
+    subscribe: "Subscribe",
+    thanks: "Thank you, you're subscribed!",
+    alreadySubscribed: "You're already subscribed, thank you!",
+    genericError: "Something went wrong.",
+  },
   footer: {
     tagline: "The Climaire: a bladeless fan, quiet, built to last.",
     productColumn: "The product",
@@ -235,6 +290,52 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     specsTitle: "Technical specifications",
     relatedEyebrow: "Also worth a look",
     relatedTitle: "Other products you might be interested in.",
+    inStock: "In stock",
+    shippedWithin: "Ships within 5 to 9 days",
+    storyEyebrow: "In short",
+    storyBody:
+      "The Climaire is a bladeless fan with a steady, even airflow, quiet and simple to control. Its vertical format frees up floor space: it fits on a console, a desk or the floor. The brushless DC motor stays discreet, cleans easily and has no exposed blades.",
+    storyPoints: [
+      {
+        title: "Bladeless airflow",
+        body: "Stable, even airflow with no exposed blades.",
+      },
+      {
+        title: "Controlled silence",
+        body: "35 – 39 dB, with a night mode for discreet use.",
+      },
+      {
+        title: "Instant control",
+        body: "8 speeds, touch + remote control, 1 – 8 h timer.",
+      },
+      {
+        title: "All-season use",
+        body: "Cool in summer; Heat and Purify depending on configuration.",
+      },
+    ],
+    storyNote: "* Heating and purification available depending on configuration.",
+    reassurance: [
+      { title: "Delivery", body: "5 to 9 working days" },
+      { title: "Bladeless", body: "Safe for children and pets" },
+      { title: "Customer service", body: "Reply within 48 h" },
+      { title: "Payment", body: "Card via Stripe" },
+    ],
+    reviewsTitle: "Customer reviews",
+    reviewsCountLabel: "reviews",
+    reviewsEmpty: "No reviews yet. Be the first to share yours.",
+    reviewsClose: "Close",
+    reviewsLeave: "Write a review",
+    reviewsThanks:
+      "Thank you! Your review has been sent. It will appear after moderation.",
+    reviewsNamePlaceholder: "Your name",
+    reviewsTitlePlaceholder: "Title (optional)",
+    reviewsContentPlaceholder: "Your review",
+    reviewsSubmit: "Publish my review",
+    reviewsSending: "Sending…",
+    reviewsRequired: "Your name and your comment are required.",
+    reviewsFailed: "Failed to send.",
+    galleryPrev: "Previous image",
+    galleryNext: "Next image",
   },
   cart: {
     title: "Your cart",

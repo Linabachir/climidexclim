@@ -1,20 +1,24 @@
 import { HttpTypes } from "@medusajs/types"
+
+import { getI18n } from "@lib/i18n/server"
 import { Heading } from "@modules/common/components/ui"
 
 type ProductInfoProps = {
   product: HttpTypes.StoreProduct
 }
 
-const ProductInfo = ({ product }: ProductInfoProps) => {
+const ProductInfo = async ({ product }: ProductInfoProps) => {
+  const { t } = await getI18n()
+
   return (
     <div id="product-info">
       <div className="flex flex-col gap-y-4 lg:max-w-[500px] mx-auto">
         <div className="flex flex-wrap gap-2">
           <span className="inline-flex items-center rounded-base px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-brand-positive border border-brand-positive/30">
-            En stock
+            {t.product.inStock}
           </span>
           <span className="inline-flex items-center rounded-base px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-brand-mute border border-brand-line">
-            Expédié sous 5 à 9 jours
+            {t.product.shippedWithin}
           </span>
         </div>
         <span className="text-[13px] font-medium text-brand-navy">

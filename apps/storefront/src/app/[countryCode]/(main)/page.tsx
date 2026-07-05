@@ -1,6 +1,7 @@
 import { Metadata } from "next"
 import { HttpTypes } from "@medusajs/types"
 
+import { getI18n } from "@lib/i18n/server"
 import Hero from "@modules/home/components/hero"
 import HomeStats from "@modules/home/components/home-stats"
 import HomePrinciples from "@modules/home/components/home-principles"
@@ -15,10 +16,12 @@ import { getProductPrice } from "@lib/util/get-product-price"
 // ce handle pointe vers le Climaire dans le backend Medusa.
 const CLIMAIRE_HANDLE = "climaire-ventilateur-sans-pales"
 
-export const metadata: Metadata = {
-  title: "CLIMIDEX · Climaire, le ventilateur sans pales",
-  description:
-    "Le Climaire : un ventilateur sans pales, 35–39 dB, 8 vitesses, pour une pièce jusqu'à 20 m². Sans pale apparente, facile à nettoyer.",
+export async function generateMetadata(): Promise<Metadata> {
+  const { t } = await getI18n()
+  return {
+    title: t.home.metaTitle,
+    description: t.home.metaDescription,
+  }
 }
 
 export default async function Home(props: {

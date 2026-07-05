@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { HttpTypes } from "@medusajs/types"
 
+import { getI18n } from "@lib/i18n/server"
 import { getProductPrice } from "@lib/util/get-product-price"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 
@@ -8,7 +9,8 @@ type HeroProps = {
   product: HttpTypes.StoreProduct | null
 }
 
-const Hero = ({ product }: HeroProps) => {
+const Hero = async ({ product }: HeroProps) => {
+  const { t } = await getI18n()
   const price = product ? getProductPrice({ product }).cheapestPrice : null
   const productHref = product ? `/products/${product.handle}` : "/store"
 
@@ -17,7 +19,7 @@ const Hero = ({ product }: HeroProps) => {
       {/* visuel plein cadre */}
       <Image
         src="/home/living.webp"
-        alt="Le Climaire dans un intérieur lumineux et épuré"
+        alt={t.home.heroAlt}
         fill
         priority
         sizes="100vw"
@@ -30,16 +32,15 @@ const Hero = ({ product }: HeroProps) => {
 
       <div className="relative z-10 content-container flex flex-col items-center text-center py-28">
         <span className="font-sans text-[14px] font-medium text-brand-navy">
-          Ventilateur sans pales
+          {t.home.heroEyebrow}
         </span>
 
         <h1 className="font-serif font-bold text-brand-ink leading-[0.98] tracking-[-0.02em] text-[clamp(46px,7vw,88px)] mt-6 max-w-[15ch]">
-          Gardez la tête froide.
+          {t.home.heroTitle}
         </h1>
 
         <p className="font-sans text-[18px] leading-relaxed text-brand-ink-secondary mt-7 max-w-[48ch]">
-          Le Climaire diffuse un air régulier et silencieux, sans pales ni
-          surface tranchante. Facile à nettoyer, sûr autour des enfants.
+          {t.home.heroDescription}
         </p>
 
         <div className="flex flex-col xsmall:flex-row items-stretch xsmall:items-center gap-4 mt-11 w-full max-w-[560px]">
@@ -49,15 +50,15 @@ const Hero = ({ product }: HeroProps) => {
             data-testid="hero-cart-link"
           >
             {price
-              ? `Ajouter au panier · ${price.calculated_price}`
-              : "Ajouter au panier"}
+              ? `${t.common.addToCart} · ${price.calculated_price}`
+              : t.common.addToCart}
           </LocalizedClientLink>
           <LocalizedClientLink
             href={productHref}
             className="flex-1 inline-flex items-center justify-center rounded-md border border-brand-ink/25 px-8 py-4 text-[15px] font-medium text-brand-ink transition-colors duration-200 hover:border-brand-ink hover:bg-brand-ink/5"
             data-testid="hero-discover-link"
           >
-            Découvrir le Climaire
+            {t.home.discoverClimaire}
           </LocalizedClientLink>
         </div>
       </div>

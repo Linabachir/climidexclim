@@ -75,6 +75,61 @@ export const fr = {
     ctaTitle: "Le confort, sans le superflu.",
     ctaButton: "Découvrir le Climaire",
   },
+  home: {
+    heroEyebrow: "Ventilateur sans pales",
+    heroTitle: "Gardez la tête froide.",
+    heroDescription:
+      "Le Climaire diffuse un air régulier et silencieux, sans pales ni surface tranchante. Facile à nettoyer, sûr autour des enfants.",
+    heroAlt: "Le Climaire dans un intérieur lumineux et épuré",
+    discoverClimaire: "Découvrir le Climaire",
+    stats: [
+      { value: "35–39 dB", label: "Niveau sonore" },
+      { value: "8 vitesses", label: "Réglage précis" },
+      { value: "20 m²", label: "Surface couverte" },
+    ],
+    principlesTitle: "Trois principes, une seule pièce.",
+    principles: [
+      {
+        title: "Sans pales",
+        body: "Un flux d'air enveloppant, sans turbulence ni surface tranchante. Sûr autour des enfants.",
+      },
+      {
+        title: "Silencieux",
+        body: "35 à 39 dB, avec un mode nuit. Assez discret pour dormir juste à côté.",
+      },
+      {
+        title: "Sobre",
+        body: "Moteur DC sans balais et coque ABS : peu de bruit, peu d'entretien.",
+      },
+    ],
+    lifestyleEyebrow: "Design",
+    lifestyleTitle: "Il s'intègre partout.",
+    lifestyleBody:
+      "Format vertical et compact : sur une console, un bureau ou posé au sol. Il prend peu de place et se nettoie en un geste.",
+    lifestyleAlt: "Le Climaire intégré dans un salon moderne et lumineux",
+    techEyebrow: "Technologie",
+    techTitle: "Comment ça marche.",
+    techBody:
+      "Un moteur DC sans balais aspire l'air par la base et le diffuse par l'anneau, en un flux continu et régulier. Sans pale : silencieux, sûr et facile à nettoyer.",
+    techCta: "Voir les caractéristiques",
+    techAlt: "Le Climaire sur un bureau, technologie de flux d'air",
+    ctaTitle: "Le Climaire, chez vous.",
+    ctaShipping: "Livraison en 5 à 9 jours ouvrés, partout en France.",
+    ctaAlt: "Le Climaire dans un intérieur de standing",
+    metaTitle: "CLIMIDEX · Climaire, le ventilateur sans pales",
+    metaDescription:
+      "Le Climaire : un ventilateur sans pales, 35–39 dB, 8 vitesses, pour une pièce jusqu'à 20 m². Sans pale apparente, facile à nettoyer.",
+  },
+  newsletter: {
+    eyebrow: "Newsletter",
+    title: "Armez-vous contre la canicule",
+    body: "Nos conseils pour garder la tête froide cet été, et nos nouveautés. Désinscription en un clic.",
+    emailPlaceholder: "Votre adresse email",
+    subscribe: "S'inscrire",
+    thanks: "Merci, vous êtes inscrit !",
+    alreadySubscribed: "Vous êtes déjà inscrit, merci !",
+    genericError: "Une erreur est survenue.",
+  },
   footer: {
     tagline: "Le Climaire : un ventilateur sans pales, silencieux et facile à nettoyer.",
     productColumn: "Le produit",
@@ -234,6 +289,52 @@ Le Site utilise uniquement des cookies strictement nécessaires à son fonctionn
     specsTitle: "Caractéristiques techniques",
     relatedEyebrow: "À découvrir aussi",
     relatedTitle: "D'autres produits qui pourraient vous intéresser.",
+    inStock: "En stock",
+    shippedWithin: "Expédié sous 5 à 9 jours",
+    storyEyebrow: "En bref",
+    storyBody:
+      "Le Climaire est un ventilateur sans pales à flux d'air régulier et homogène, silencieux et simple à piloter. Son format vertical libère l'espace au sol : il passe sur une console, un bureau ou au sol. Le moteur DC sans balais reste discret, se nettoie facilement et n'a pas de pale apparente.",
+    storyPoints: [
+      {
+        title: "Diffusion sans pales",
+        body: "Flux d'air stable et homogène, sans pale apparente.",
+      },
+      {
+        title: "Silence maîtrisé",
+        body: "35 – 39 dB, avec mode nuit pour un usage discret.",
+      },
+      {
+        title: "Contrôle immédiat",
+        body: "8 vitesses, tactile + télécommande, minuterie 1 – 8 h.",
+      },
+      {
+        title: "Usage toute saison",
+        body: "Cool en été ; Heat et Purify selon la configuration.",
+      },
+    ],
+    storyNote: "* Chauffage et purification disponibles selon la configuration.",
+    reassurance: [
+      { title: "Livraison", body: "5 à 9 jours ouvrés" },
+      { title: "Sans pales", body: "Sûr pour enfants et animaux" },
+      { title: "Service client", body: "Réponse sous 48 h" },
+      { title: "Paiement", body: "Carte via Stripe" },
+    ],
+    reviewsTitle: "Avis clients",
+    reviewsCountLabel: "avis",
+    reviewsEmpty: "Pas encore d'avis. Soyez le premier à donner le vôtre.",
+    reviewsClose: "Fermer",
+    reviewsLeave: "Laisser un avis",
+    reviewsThanks:
+      "Merci ! Votre avis a bien été envoyé. Il apparaîtra après validation.",
+    reviewsNamePlaceholder: "Votre nom",
+    reviewsTitlePlaceholder: "Titre (optionnel)",
+    reviewsContentPlaceholder: "Votre avis",
+    reviewsSubmit: "Publier mon avis",
+    reviewsSending: "Envoi…",
+    reviewsRequired: "Votre nom et votre commentaire sont requis.",
+    reviewsFailed: "Échec de l'envoi.",
+    galleryPrev: "Visuel précédent",
+    galleryNext: "Visuel suivant",
   },
   cart: {
     title: "Votre panier",

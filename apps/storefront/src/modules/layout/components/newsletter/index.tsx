@@ -2,10 +2,13 @@
 
 import { useState } from "react"
 
+import { useI18n } from "@lib/i18n/context"
+
 const BACKEND = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || ""
 const PUBKEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY || ""
 
 const Newsletter = () => {
+  const { t } = useI18n()
   const [email, setEmail] = useState("")
   const [state, setState] = useState<"idle" | "loading" | "done" | "error">(
     "idle"
@@ -27,13 +30,13 @@ const Newsletter = () => {
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok) {
-        throw new Error(data.message || "Une erreur est survenue.")
+        throw new Error(data.message || t.newsletter.genericError)
       }
       setState("done")
       setMessage(
         data.alreadySubscribed
-          ? "Vous êtes déjà inscrit, merci !"
-          : "Merci, vous êtes inscrit !"
+          ? t.newsletter.alreadySubscribed
+          : t.newsletter.thanks
       )
       setEmail("")
     } catch (err) {
@@ -47,14 +50,13 @@ const Newsletter = () => {
       <div className="content-container py-16 small:py-20">
         <div className="max-w-2xl mx-auto text-center flex flex-col items-center gap-y-5">
           <span className="text-[13px] font-medium text-white/60">
-            Newsletter
+            {t.newsletter.eyebrow}
           </span>
           <h2 className="font-serif text-3xl small:text-4xl leading-tight">
-            Armez-vous contre la canicule
+            {t.newsletter.title}
           </h2>
           <p className="text-[15px] text-white/70 max-w-md">
-            Nos conseils pour garder la tête froide cet été, et nos nouveautés.
-            Désinscription en un clic.
+            {t.newsletter.body}
           </p>
 
           {state === "done" ? (
@@ -67,7 +69,7 @@ const Newsletter = () => {
               <input
                 type="email"
                 required
-                placeholder="Votre adresse email"
+                placeholder={t.newsletter.emailPlaceholder}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 rounded-md bg-white/10 border border-white/20 px-5 py-3 text-sm text-white placeholder-white/50 outline-none focus:border-white/60"
@@ -77,7 +79,7 @@ const Newsletter = () => {
                 disabled={state === "loading"}
                 className="rounded-md bg-white px-7 py-3 text-xs uppercase tracking-widest text-brand-navy transition-opacity hover:opacity-90 disabled:opacity-50"
               >
-                {state === "loading" ? "…" : "S'inscrire"}
+                {state === "loading" ? "…" : t.newsletter.subscribe}
               </button>
             </form>
           )}

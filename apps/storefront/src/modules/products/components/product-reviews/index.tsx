@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react"
 
+import { useI18n } from "@lib/i18n/context"
+
 type Review = {
   id: string
   rating: number
@@ -30,6 +32,7 @@ const Stars = ({ value, className = "" }: { value: number; className?: string })
 )
 
 const ProductReviews = ({ productId }: { productId: string }) => {
+  const { t } = useI18n()
   const [reviews, setReviews] = useState<Review[]>([])
   const [count, setCount] = useState(0)
   const [average, setAverage] = useState(0)
@@ -69,7 +72,7 @@ const ProductReviews = ({ productId }: { productId: string }) => {
     e.preventDefault()
     setError(null)
     if (!name.trim() || !content.trim()) {
-      setError("Votre nom et votre commentaire sont requis.")
+      setError(t.product.reviewsRequired)
       return
     }
     setSubmitting(true)
@@ -87,7 +90,7 @@ const ProductReviews = ({ productId }: { productId: string }) => {
       })
       if (!res.ok) {
         const d = await res.json().catch(() => ({}))
-        throw new Error(d.message || "Échec de l'envoi.")
+        throw new Error(d.message || t.product.reviewsFailed)
       }
       setDone(true)
       setName("")
@@ -107,18 +110,18 @@ const ProductReviews = ({ productId }: { productId: string }) => {
         <div className="flex flex-col small:flex-row small:items-end justify-between gap-6 mb-10">
           <div>
             <h2 className="font-serif text-3xl small:text-4xl text-brand-ink">
-              Avis clients
+              {t.product.reviewsTitle}
             </h2>
             {count > 0 ? (
               <div className="mt-3 flex items-center gap-x-3">
                 <Stars value={average} className="text-lg" />
                 <span className="text-sm text-brand-mute">
-                  {average.toFixed(1)} / 5 · {count} avis
+                  {average.toFixed(1)} / 5 · {count} {t.product.reviewsCountLabel}
                 </span>
               </div>
             ) : (
               <p className="mt-3 text-sm text-brand-mute">
-                Pas encore d'avis. Soyez le premier à donner le vôtre.
+                {t.product.reviewsEmpty}
               </p>
             )}
           </div>
@@ -129,7 +132,7 @@ const ProductReviews = ({ productId }: { productId: string }) => {
             }}
             className="self-start rounded-md border border-brand-ink px-6 py-3 text-xs uppercase tracking-widest text-brand-ink transition-colors hover:bg-brand-ink hover:text-white"
           >
-            {open ? "Fermer" : "Laisser un avis"}
+            {open ? t.product.reviewsClose : t.product.reviewsLeave}
           </button>
         </div>
 
@@ -138,7 +141,7 @@ const ProductReviews = ({ productId }: { productId: string }) => {
           <div className="mb-12 rounded-large border border-brand-line bg-brand-paper p-6 small:p-8 max-w-2xl">
             {done ? (
               <p className="text-brand-ink">
-                Merci ! Votre avis a bien été envoyé. Il apparaîtra après validation.
+                {t.product.reviewsThanks}
               </p>
             ) : (
               <form onSubmit={submit} className="flex flex-col gap-y-5">
@@ -167,20 +170,20 @@ const ProductReviews = ({ productId }: { productId: string }) => {
                 </div>
                 <input
                   type="text"
-                  placeholder="Votre nom"
+                  placeholder={t.product.reviewsNamePlaceholder}
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="border border-brand-line bg-white px-4 py-3 text-sm text-brand-ink outline-none focus:border-brand-ink"
                 />
                 <input
                   type="text"
-                  placeholder="Titre (optionnel)"
+                  placeholder={t.product.reviewsTitlePlaceholder}
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   className="border border-brand-line bg-white px-4 py-3 text-sm text-brand-ink outline-none focus:border-brand-ink"
                 />
                 <textarea
-                  placeholder="Votre avis"
+                  placeholder={t.product.reviewsContentPlaceholder}
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
                   rows={4}
@@ -192,7 +195,7 @@ const ProductReviews = ({ productId }: { productId: string }) => {
                   disabled={submitting}
                   className="self-start rounded-md bg-brand-navy px-8 py-3 text-xs uppercase tracking-widest text-white transition-colors hover:bg-brand-ink disabled:opacity-50"
                 >
-                  {submitting ? "Envoi…" : "Publier mon avis"}
+                  {submitting ? t.product.reviewsSending : t.product.reviewsSubmit}
                 </button>
               </form>
             )}

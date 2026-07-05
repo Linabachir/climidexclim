@@ -4,6 +4,8 @@ import { HttpTypes } from "@medusajs/types"
 import Image from "next/image"
 import { useState } from "react"
 
+import { useI18n } from "@lib/i18n/context"
+
 type ImageGalleryProps = {
   images: HttpTypes.StoreProductImage[]
 }
@@ -25,6 +27,7 @@ const rank = (url?: string) => {
 }
 
 const ImageGallery = ({ images: rawImages }: ImageGalleryProps) => {
+  const { t } = useI18n()
   const images = [...rawImages].sort((a, b) => rank(a.url) - rank(b.url))
   const [active, setActive] = useState(0)
   const current = images[active] ?? images[0]
@@ -59,7 +62,7 @@ const ImageGallery = ({ images: rawImages }: ImageGalleryProps) => {
             <button
               type="button"
               onClick={() => go(-1)}
-              aria-label="Visuel précédent"
+              aria-label={t.product.galleryPrev}
               className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/85 text-brand-ink shadow-sm transition hover:bg-white"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
@@ -69,7 +72,7 @@ const ImageGallery = ({ images: rawImages }: ImageGalleryProps) => {
             <button
               type="button"
               onClick={() => go(1)}
-              aria-label="Visuel suivant"
+              aria-label={t.product.galleryNext}
               className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/85 text-brand-ink shadow-sm transition hover:bg-white"
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
