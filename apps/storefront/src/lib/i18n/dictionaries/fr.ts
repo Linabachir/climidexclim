@@ -152,8 +152,10 @@ export const fr = {
     privacyTitle: "Politique de confidentialité",
     contactTitle: "Contact",
     legalBody: `Éditeur du site
-Le site climidex.com (ci-après « le Site ») est édité par CLIMIDEX, entreprise en cours d'immatriculation au Registre national des entreprises. [Dénomination, forme juridique, SIREN, adresse du siège — à compléter dès réception de l'immatriculation.]
-Directeur de la publication : le représentant légal de CLIMIDEX.
+Le site climidex.com (ci-après « le Site ») est édité sous l'enseigne CLIMIDEX par Melvin Sokambi, entrepreneur individuel.
+SIREN : 889 863 361 — SIRET (siège) : 889 863 361 00024
+Siège : 62 rue d'Amsterdam, 75009 Paris, France
+Directeur de la publication : Melvin Sokambi.
 Contact : contact@climidex.com
 
 Hébergement
@@ -170,7 +172,7 @@ Pour signaler un contenu ou poser une question relative au Site : contact@climid
     termsBody: `Version en vigueur au 5 juillet 2026.
 
 1. Objet et champ d'application
-Les présentes conditions générales de vente (« CGV ») régissent les ventes de produits conclues sur le site climidex.com entre CLIMIDEX (« le Vendeur ») et tout consommateur (« le Client »). Toute commande implique l'acceptation sans réserve des présentes CGV.
+Les présentes conditions générales de vente (« CGV ») régissent les ventes de produits conclues sur le site climidex.com entre CLIMIDEX — enseigne de Melvin Sokambi, entrepreneur individuel, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris (« le Vendeur ») — et tout consommateur (« le Client »). Toute commande implique l'acceptation sans réserve des présentes CGV.
 
 2. Produits
 Les produits proposés (notamment le ventilateur sans pales Climaire) sont décrits avec la plus grande exactitude possible. Les photographies et visuels 3D n'ont pas de valeur contractuelle.

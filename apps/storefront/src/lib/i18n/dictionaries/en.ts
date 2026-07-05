@@ -153,8 +153,10 @@ export const en: Dictionary = {
     privacyTitle: "Privacy policy",
     contactTitle: "Contact",
     legalBody: `Site publisher
-The website climidex.com (the "Site") is published by CLIMIDEX, a business currently being registered with the French National Business Register. [Company name, legal form, SIREN and registered office — to be completed upon registration.]
-Publishing director: the legal representative of CLIMIDEX.
+The website climidex.com (the "Site") is published under the CLIMIDEX brand by Melvin Sokambi, sole trader (entrepreneur individuel).
+SIREN: 889 863 361 — SIRET (head office): 889 863 361 00024
+Registered office: 62 rue d'Amsterdam, 75009 Paris, France
+Publishing director: Melvin Sokambi.
 Contact: contact@climidex.com
 
 Hosting
@@ -171,7 +173,7 @@ To report content or ask a question about the Site: contact@climidex.com.`,
     termsBody: `Version in force as of 5 July 2026.
 
 1. Purpose and scope
-These terms of sale ("Terms") govern all sales of products concluded on climidex.com between CLIMIDEX (the "Seller") and any consumer (the "Customer"). Placing an order implies full acceptance of these Terms.
+These terms of sale ("Terms") govern all sales of products concluded on climidex.com between CLIMIDEX — the brand of Melvin Sokambi, sole trader, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris, France (the "Seller") — and any consumer (the "Customer"). Placing an order implies full acceptance of these Terms.
 
 2. Products
 The products offered (in particular the Climaire bladeless fan) are described as accurately as possible. Photographs and 3D visuals are not contractually binding.

@@ -1,6 +1,7 @@
 import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
 import { ContainerRegistrationKeys, Modules } from "@medusajs/framework/utils"
 import { CJ_MODULE, CjModuleService } from "../../../../modules/cj"
+import { sendOrderShippedEmail } from "../../../../lib/order-shipped-email"
 
 // EU member states require an IOSS option for VAT on imports.
 const EU_COUNTRIES = new Set([
@@ -29,6 +30,7 @@ const COUNTRY_NAMES: Record<string, string> = {
 const ORDER_FIELDS = [
   "id",
   "display_id",
+  "email",
   "currency_code",
   "metadata",
   "shipping_address.*",
@@ -222,11 +224,33 @@ export async function GET(req: MedusaRequest, res: MedusaResponse) {
     }
 
     const detail = await cj.getOrderDetail(cjOrderId)
+
+    // Premier numéro de suivi → email « commande expédiée » (une seule fois).
+    let shippedEmailSentAt = order.metadata?.shipping_email_sent_at as
+      | string
+      | undefined
+    if (detail.trackNumber && !shippedEmailSentAt) {
+      const logger = req.scope.resolve(ContainerRegistrationKeys.LOGGER)
+      const sent = await sendOrderShippedEmail(
+        {
+          order,
+          trackNumber: detail.trackNumber,
+          trackingUrl: detail.trackingUrl,
+          logistic: order.metadata?.cj_logistic as string | undefined,
+        },
+        logger
+      )
+      if (sent) shippedEmailSentAt = new Date().toISOString()
+    }
+
     await saveOrderMeta(req.scope, order.id, order.metadata, {
       cj_order_status: detail.orderStatus,
       cj_track_number: detail.trackNumber,
       cj_tracking_url: detail.trackingUrl,
       cj_synced_at: new Date().toISOString(),
+      ...(shippedEmailSentAt
+        ? { shipping_email_sent_at: shippedEmailSentAt }
+        : {}),
     })
 
     res.json({
