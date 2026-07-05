@@ -37,12 +37,12 @@ export default async function syncCjTrackingJob(container: MedusaContainer) {
     let sentCount = 0
     for (const order of pending) {
       try {
-        const detail = await cj.getOrderDetail(String(order.metadata.cj_order_id))
+        const detail = await cj.getOrderDetail(String(order.metadata!.cj_order_id))
         if (!detail.trackNumber) continue
 
         const sent = await sendOrderShippedEmail(
           {
-            order,
+            order: order as any,
             trackNumber: detail.trackNumber,
             trackingUrl: detail.trackingUrl,
             logistic: order.metadata?.cj_logistic as string | undefined,
