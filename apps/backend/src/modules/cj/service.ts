@@ -225,6 +225,15 @@ export default class CjModuleService {
     })
   }
 
+  /** Solde du portefeuille CJ (sert à payer les commandes fournisseur). */
+  async getBalance(): Promise<{ amount: number }> {
+    const data = await this.apiRequest<{ amount: number }>(
+      "/shopping/pay/getBalance",
+      { method: "GET" }
+    )
+    return { amount: Number(data?.amount) || 0 }
+  }
+
   /* ------------------------------- HTTP core ------------------------------- */
 
   /**
