@@ -77,7 +77,7 @@ export const fr = {
   },
   home: {
     heroEyebrow: "Ventilateur sans pales",
-    heroTitle: "Gardez la tête froide.",
+    heroTitle: "Respirez. Il s'occupe du reste.",
     heroDescription:
       "Le Climaire diffuse un air régulier et silencieux, sans pales ni surface tranchante. Facile à nettoyer, sûr autour des enfants.",
     heroAlt: "Le Climaire dans un intérieur lumineux et épuré",

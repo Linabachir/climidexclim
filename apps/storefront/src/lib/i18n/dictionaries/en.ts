@@ -78,7 +78,7 @@ export const en: Dictionary = {
   },
   home: {
     heroEyebrow: "Bladeless fan",
-    heroTitle: "Keep a cool head.",
+    heroTitle: "Breathe. It handles the rest.",
     heroDescription:
       "The Climaire delivers a steady, quiet stream of air, with no blades or sharp surfaces. Easy to clean, safe around children.",
     heroAlt: "The Climaire in a bright, uncluttered interior",
