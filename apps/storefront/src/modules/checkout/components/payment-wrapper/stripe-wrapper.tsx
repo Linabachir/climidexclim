@@ -22,6 +22,15 @@ const StripeWrapper: React.FC<StripeWrapperProps> = ({
 }) => {
   const options: StripeElementsOptions = {
     clientSecret: paymentSession!.data?.client_secret as string | undefined,
+    // Habillage du PaymentElement aux couleurs CLIMIDEX.
+    appearance: {
+      variables: {
+        colorPrimary: "#1a2238",
+        colorText: "#1c1c1c",
+        fontFamily: "Inter, sans-serif",
+        borderRadius: "6px",
+      },
+    },
   }
 
   if (!stripeKey) {

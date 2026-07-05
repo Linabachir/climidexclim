@@ -6,8 +6,7 @@ import Radio from "@modules/common/components/radio"
 
 import { isManual } from "@lib/constants"
 import SkeletonCardDetails from "@modules/skeletons/components/skeleton-card-details"
-import { CardElement } from "@stripe/react-stripe-js"
-import { StripeCardElementOptions } from "@stripe/stripe-js"
+import { PaymentElement } from "@stripe/react-stripe-js"
 import PaymentTest from "../payment-test"
 import { StripeContext } from "../payment-wrapper/stripe-wrapper"
 
@@ -65,6 +64,8 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
 
 export default PaymentContainer
 
+// PaymentElement de Stripe : carte + Apple Pay + Google Pay dans un seul
+// composant (les wallets n'apparaissent que sur les navigateurs compatibles).
 export const StripeCardContainer = ({
   paymentProviderId,
   selectedPaymentOptionId,
@@ -80,23 +81,6 @@ export const StripeCardContainer = ({
 }) => {
   const stripeReady = useContext(StripeContext)
 
-  const useOptions: StripeCardElementOptions = useMemo(() => {
-    return {
-      style: {
-        base: {
-          fontFamily: "Inter, sans-serif",
-          color: "#424270",
-          "::placeholder": {
-            color: "rgb(107 114 128)",
-          },
-        },
-      },
-      classes: {
-        base: "pt-3 pb-1 block w-full h-11 px-4 mt-0 bg-ui-bg-field border rounded-md appearance-none focus:outline-none focus:ring-0 focus:shadow-borders-interactive-with-active border-ui-border-base hover:bg-ui-bg-field-hover transition-all duration-300 ease-in-out",
-      },
-    }
-  }, [])
-
   return (
     <PaymentContainer
       paymentProviderId={paymentProviderId}
@@ -107,16 +91,13 @@ export const StripeCardContainer = ({
       {selectedPaymentOptionId === paymentProviderId &&
         (stripeReady ? (
           <div className="my-4 transition-all duration-150 ease-in-out">
-            <Text className="txt-medium-plus text-brand-ink mb-1">
-              Enter your card details:
-            </Text>
-            <CardElement
-              options={useOptions as StripeCardElementOptions}
+            <PaymentElement
+              options={{ layout: "tabs" }}
               onChange={(e) => {
                 setCardBrand(
-                  e.brand && e.brand.charAt(0).toUpperCase() + e.brand.slice(1)
+                  e.value.type.charAt(0).toUpperCase() + e.value.type.slice(1)
                 )
-                setError(e.error?.message || null)
+                setError(null)
                 setCardComplete(e.complete)
               }}
             />

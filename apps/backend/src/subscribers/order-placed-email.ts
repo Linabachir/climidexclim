@@ -15,20 +15,44 @@ function money(amount: number, currency: string) {
   }
 }
 
+// La quantité vit sur item.detail (order_item) selon le chemin interrogé, et
+// les montants peuvent être des BigNumber : on normalise tout en nombre sûr.
+function itemQuantity(it: any): number {
+  const q = Number(it?.quantity ?? it?.detail?.quantity)
+  return Number.isFinite(q) && q > 0 ? q : 1
+}
+
+function toAmount(value: any): number {
+  const n = Number(value?.numeric_ ?? value)
+  return Number.isFinite(n) ? n : 0
+}
+
 function buildHtml(order: any): string {
   const currency = order.currency_code || "eur"
-  const rows = (order.items ?? [])
-    .map(
-      (it: any) =>
-        `<tr>
-           <td style="padding:8px 0;color:#1c1c1c;">${it.title} × ${it.quantity}</td>
+  const items = order.items ?? []
+  const rows = items
+    .map((it: any) => {
+      const qty = itemQuantity(it)
+      const line = toAmount(it.unit_price) * qty
+      return `<tr>
+           <td style="padding:8px 0;color:#1c1c1c;">${it.title} × ${qty}</td>
            <td style="padding:8px 0;text-align:right;color:#1c1c1c;">${money(
-             Number(it.unit_price) * Number(it.quantity),
+             line,
              currency
            )}</td>
          </tr>`
-    )
+    })
     .join("")
+
+  // Total : celui de la commande si disponible, sinon articles + livraison.
+  let total = toAmount(order.total)
+  if (!total) {
+    total =
+      items.reduce(
+        (sum: number, it: any) => sum + toAmount(it.unit_price) * itemQuantity(it),
+        0
+      ) + toAmount(order.shipping_total)
+  }
 
   const addr = order.shipping_address
   const addressBlock = addr
@@ -54,7 +78,7 @@ function buildHtml(order: any): string {
         <tr>
           <td style="padding:14px 0 0;font-weight:bold;border-top:1px solid #e7e3dd;">Total</td>
           <td style="padding:14px 0 0;text-align:right;font-weight:bold;border-top:1px solid #e7e3dd;">${money(
-            Number(order.total ?? 0),
+            total,
             currency
           )}</td>
         </tr>
@@ -100,8 +124,10 @@ export default async function orderPlacedEmailHandler({
       "email",
       "currency_code",
       "total",
+      "shipping_total",
       "items.title",
       "items.quantity",
+      "items.detail.quantity",
       "items.unit_price",
       "shipping_address.*",
     ],

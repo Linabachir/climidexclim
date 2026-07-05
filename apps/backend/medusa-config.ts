@@ -12,6 +12,9 @@ if (process.env.STRIPE_API_KEY) {
     options: {
       apiKey: process.env.STRIPE_API_KEY,
       webhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
+      // Laisse Stripe proposer carte + Apple Pay + Google Pay dans le
+      // PaymentElement (l'intent est créé avec automatic_payment_methods).
+      automaticPaymentMethods: true,
     },
   })
 }

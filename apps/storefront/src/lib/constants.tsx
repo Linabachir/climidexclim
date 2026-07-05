@@ -10,7 +10,7 @@ export const paymentInfoMap: Record<
   { title: string; icon: React.JSX.Element }
 > = {
   pp_stripe_stripe: {
-    title: "Credit card",
+    title: "Carte bancaire · Apple Pay · Google Pay",
     icon: <CreditCard />,
   },
   "pp_medusa-payments_default": {
