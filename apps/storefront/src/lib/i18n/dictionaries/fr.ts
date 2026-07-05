@@ -86,20 +86,121 @@ export const fr = {
     legalColumn: "Informations",
     legal: "Mentions légales",
     terms: "CGV",
+    returns: "Retours & remboursements",
+    privacy: "Confidentialité",
     contact: "Contact",
   },
   legal: {
     legalTitle: "Mentions légales",
     termsTitle: "Conditions générales de vente",
+    returnsTitle: "Retours & remboursements",
+    privacyTitle: "Politique de confidentialité",
     contactTitle: "Contact",
-    placeholderBody:
-      "Cette page sera bientôt complétée. Les informations légales définitives de CLIMIDEX y figureront prochainement.",
+    legalBody: `Éditeur du site
+Le site climidex.com (ci-après « le Site ») est édité par CLIMIDEX, entreprise en cours d'immatriculation au Registre national des entreprises. [Dénomination, forme juridique, SIREN, adresse du siège — à compléter dès réception de l'immatriculation.]
+Directeur de la publication : le représentant légal de CLIMIDEX.
+Contact : contact@climidex.com
+
+Hébergement
+Le Site est hébergé par Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Allemagne — www.hetzner.com. Les services de DNS et de diffusion de contenu sont fournis par Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis.
+
+Propriété intellectuelle
+L'ensemble des éléments du Site (textes, visuels, logos, marque CLIMIDEX, modèles 3D) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation ou exploitation, totale ou partielle, sans autorisation écrite préalable est interdite.
+
+Responsabilité
+CLIMIDEX s'efforce d'assurer l'exactitude des informations publiées sur le Site mais ne saurait être tenue responsable des erreurs, omissions ou indisponibilités temporaires du service.
+
+Signalement
+Pour signaler un contenu ou poser une question relative au Site : contact@climidex.com.`,
+    termsBody: `Version en vigueur au 5 juillet 2026.
+
+1. Objet et champ d'application
+Les présentes conditions générales de vente (« CGV ») régissent les ventes de produits conclues sur le site climidex.com entre CLIMIDEX (« le Vendeur ») et tout consommateur (« le Client »). Toute commande implique l'acceptation sans réserve des présentes CGV.
+
+2. Produits
+Les produits proposés (notamment le ventilateur sans pales Climaire) sont décrits avec la plus grande exactitude possible. Les photographies et visuels 3D n'ont pas de valeur contractuelle.
+
+3. Prix
+Les prix sont indiqués en euros, toutes taxes comprises (TTC), hors frais de livraison éventuels précisés avant validation de la commande. CLIMIDEX se réserve le droit de modifier ses prix à tout moment, le produit étant facturé au tarif en vigueur au moment de la validation de la commande.
+
+4. Commande
+La commande est confirmée après validation du paiement. Un e-mail de confirmation récapitulant la commande est envoyé au Client. CLIMIDEX se réserve le droit de refuser toute commande anormale ou passée de mauvaise foi.
+
+5. Paiement
+Le paiement s'effectue en ligne par carte bancaire via la plateforme sécurisée Stripe. Les données de carte ne transitent jamais par les serveurs de CLIMIDEX. La commande est débitée à la validation.
+
+6. Livraison
+Les produits sont livrés à l'adresse indiquée par le Client, en France métropolitaine et dans l'Union européenne. Délai indicatif : 7 à 15 jours ouvrés à compter de la confirmation de commande. En cas de retard de plus de 30 jours par rapport à la date annoncée, le Client peut résoudre la commande et être remboursé.
+
+7. Droit de rétractation
+Conformément aux articles L.221-18 et suivants du Code de la consommation, le Client dispose d'un délai de 14 jours à compter de la réception du produit pour exercer son droit de rétractation, sans avoir à motiver sa décision. Les modalités sont détaillées dans notre page « Retours & remboursements ». Le remboursement intervient au plus tard 14 jours après récupération du produit ou preuve d'expédition du retour.
+
+8. Garanties légales
+Tous les produits bénéficient de la garantie légale de conformité (articles L.217-3 et suivants du Code de la consommation, 2 ans) et de la garantie contre les vices cachés (articles 1641 et suivants du Code civil). En cas de défaut, contactez contact@climidex.com.
+
+9. Responsabilité
+La responsabilité de CLIMIDEX ne saurait être engagée en cas d'inexécution due à un cas de force majeure ou au fait du Client.
+
+10. Données personnelles
+Le traitement des données du Client est décrit dans la Politique de confidentialité accessible sur le Site.
+
+11. Médiation de la consommation
+Conformément à l'article L.612-1 du Code de la consommation, le Client peut recourir gratuitement à un médiateur de la consommation. [Coordonnées du médiateur — à compléter après adhésion à un dispositif de médiation.] Plateforme européenne de règlement en ligne des litiges : ec.europa.eu/consumers/odr.
+
+12. Droit applicable
+Les présentes CGV sont soumises au droit français. En cas de litige, une solution amiable sera recherchée avant toute action judiciaire.`,
+    returnsBody: `Vous disposez d'un délai de 14 jours pour changer d'avis.
+
+Droit de rétractation
+Conformément au Code de la consommation, vous disposez de 14 jours calendaires à compter de la réception de votre commande pour exercer votre droit de rétractation, sans avoir à justifier votre décision.
+
+Comment retourner un produit ?
+1. Écrivez-nous à contact@climidex.com en indiquant votre numéro de commande et votre souhait de retour.
+2. Nous vous communiquons l'adresse de retour et les instructions sous 48 h ouvrées.
+3. Renvoyez le produit complet, dans son emballage d'origine, de préférence avec un suivi. Les frais de retour restent à votre charge.
+
+Remboursement
+Le remboursement intégral (produit + frais de livraison standard initiaux) est effectué via le moyen de paiement utilisé lors de la commande, au plus tard 14 jours après réception du retour ou preuve d'expédition. Une décote peut être appliquée si le produit a été manipulé au-delà de ce qui est nécessaire pour l'essayer.
+
+Produit défectueux ou erreur de notre part
+Si le produit reçu est défectueux, endommagé ou ne correspond pas à votre commande, contactez-nous : le retour est alors à nos frais et vous choisissez entre remplacement et remboursement. Vous bénéficiez par ailleurs de la garantie légale de conformité de 2 ans.
+
+Contact
+Pour toute question : contact@climidex.com — réponse sous 48 h ouvrées.`,
+    privacyBody: `Dernière mise à jour : 5 juillet 2026.
+
+Responsable de traitement
+CLIMIDEX, éditeur du site climidex.com — contact@climidex.com.
+
+Données collectées
+Nous collectons uniquement les données nécessaires au fonctionnement de la boutique : identité et coordonnées (nom, e-mail, téléphone), adresses de livraison et de facturation, historique de commandes, avis produits, inscription à la newsletter, et données techniques de connexion (logs).
+
+Nous ne stockons jamais vos données bancaires : le paiement est traité directement par Stripe.
+
+Finalités et bases légales
+• Traitement et livraison des commandes — exécution du contrat.
+• Gestion du compte client et du service après-vente — exécution du contrat.
+• Envoi de la newsletter — consentement (désinscription possible à tout moment).
+• Publication d'avis produits — consentement.
+• Sécurité et prévention de la fraude — intérêt légitime.
+
+Destinataires
+Vos données sont transmises uniquement aux prestataires nécessaires à l'exécution de nos services : Stripe (paiement), Resend (envoi d'e-mails transactionnels), notre partenaire logistique pour l'expédition des commandes, Hetzner et Cloudflare (hébergement et sécurité). Certains prestataires peuvent traiter des données hors de l'Union européenne ; ces transferts sont encadrés par des clauses contractuelles types.
+
+Durées de conservation
+Données de compte : durée de la relation commerciale + 3 ans. Factures et données de commande : 10 ans (obligation comptable). Newsletter : jusqu'à désinscription.
+
+Vos droits
+Vous disposez des droits d'accès, de rectification, d'effacement, de limitation, d'opposition et de portabilité sur vos données, ainsi que du droit de définir des directives post-mortem. Pour les exercer : contact@climidex.com. Vous pouvez également introduire une réclamation auprès de la CNIL (cnil.fr).
+
+Cookies
+Le Site utilise uniquement des cookies strictement nécessaires à son fonctionnement (session, panier, authentification). Aucun cookie publicitaire ou de suivi tiers n'est déposé.`,
     contactBody:
-      "Une question sur le Climaire, votre commande ou un retour ? Écrivez-nous à contact@climidex.fr. Nous répondons sous 48 h ouvrées.",
+      "Une question sur le Climaire, votre commande ou un retour ? Écrivez-nous à contact@climidex.com. Nous répondons sous 48 h ouvrées.",
     contactLead:
       "Une question sur le Climaire, votre commande ou un retour ? Nous sommes là pour vous.",
     contactEmailLabel: "Écrivez-nous",
-    contactEmail: "contact@climidex.fr",
+    contactEmail: "contact@climidex.com",
     contactHoursLabel: "Délai de réponse",
     contactHours: "Sous 48 h ouvrées",
     contactOrderLabel: "Suivi de commande",

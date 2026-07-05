@@ -9,5 +9,5 @@ export const metadata: Metadata = {
 
 export default async function CGV() {
   const { t } = await getI18n()
-  return <LegalPage title={t.legal.termsTitle} body={t.legal.placeholderBody} />
+  return <LegalPage title={t.legal.termsTitle} body={t.legal.termsBody} />
 }

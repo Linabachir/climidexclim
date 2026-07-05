@@ -1,5 +1,5 @@
 # CLIMIDEX — reverse proxy (derrière Cloudflare)
-# Remplace climidex.fr par ton domaine réel.
+# Remplace climidex.com par ton domaine réel.
 #
 # SSL Cloudflare : mettre le mode "Full" (le cert auto-signé `tls internal`
 # de Caddy suffit puisque Cloudflare ne le vérifie pas en "Full").
@@ -15,13 +15,13 @@
 }
 
 # --- API / Admin Medusa ---
-api.climidex.fr {
+api.climidex.com {
 	tls internal
 	reverse_proxy backend:9000
 }
 
 # --- Boutique (Next.js) ---
-climidex.fr, www.climidex.fr {
+climidex.com, www.climidex.com {
 	tls internal
 	encode gzip zstd
 	reverse_proxy storefront:8000

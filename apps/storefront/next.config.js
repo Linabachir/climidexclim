@@ -9,7 +9,7 @@ const S3_HOSTNAME = process.env.MEDUSA_CLOUD_S3_HOSTNAME
 const S3_PATHNAME = process.env.MEDUSA_CLOUD_S3_PATHNAME
 
 // Domaine où sont servies les images produit en prod (bucket public R2 /
-// domaine CDN Cloudflare), ex. "cdn.climidex.fr" ou "pub-xxxx.r2.dev".
+// domaine CDN Cloudflare), ex. "cdn.climidex.com" ou "pub-xxxx.r2.dev".
 const IMAGE_HOSTNAME = process.env.NEXT_PUBLIC_IMAGE_HOSTNAME
 
 /**

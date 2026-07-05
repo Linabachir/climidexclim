@@ -87,20 +87,121 @@ export const en: Dictionary = {
     legalColumn: "Information",
     legal: "Legal notice",
     terms: "Terms of sale",
+    returns: "Returns & refunds",
+    privacy: "Privacy",
     contact: "Contact",
   },
   legal: {
     legalTitle: "Legal notice",
     termsTitle: "Terms of sale",
+    returnsTitle: "Returns & refunds",
+    privacyTitle: "Privacy policy",
     contactTitle: "Contact",
-    placeholderBody:
-      "This page is coming soon. CLIMIDEX's final legal information will appear here shortly.",
+    legalBody: `Site publisher
+The website climidex.com (the "Site") is published by CLIMIDEX, a business currently being registered with the French National Business Register. [Company name, legal form, SIREN and registered office — to be completed upon registration.]
+Publishing director: the legal representative of CLIMIDEX.
+Contact: contact@climidex.com
+
+Hosting
+The Site is hosted by Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany — www.hetzner.com. DNS and content delivery are provided by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA.
+
+Intellectual property
+All elements of the Site (texts, visuals, logos, the CLIMIDEX brand, 3D models) are protected by intellectual property law. Any reproduction, representation or use, in whole or in part, without prior written authorisation is prohibited.
+
+Liability
+CLIMIDEX strives to keep the information on the Site accurate but cannot be held liable for errors, omissions or temporary unavailability of the service.
+
+Reporting
+To report content or ask a question about the Site: contact@climidex.com.`,
+    termsBody: `Version in force as of 5 July 2026.
+
+1. Purpose and scope
+These terms of sale ("Terms") govern all sales of products concluded on climidex.com between CLIMIDEX (the "Seller") and any consumer (the "Customer"). Placing an order implies full acceptance of these Terms.
+
+2. Products
+The products offered (in particular the Climaire bladeless fan) are described as accurately as possible. Photographs and 3D visuals are not contractually binding.
+
+3. Prices
+Prices are shown in euros, all taxes included (VAT), excluding any delivery costs stated before the order is confirmed. CLIMIDEX may change its prices at any time; products are invoiced at the price in force when the order is confirmed.
+
+4. Orders
+An order is confirmed once payment has been validated. A confirmation e-mail summarising the order is sent to the Customer. CLIMIDEX reserves the right to refuse any abnormal or bad-faith order.
+
+5. Payment
+Payment is made online by card via the secure Stripe platform. Card details never pass through CLIMIDEX's servers. The order is charged upon validation.
+
+6. Delivery
+Products are delivered to the address provided by the Customer, in mainland France and the European Union. Indicative lead time: 7 to 15 working days from order confirmation. If delivery is more than 30 days late compared with the announced date, the Customer may cancel the order and be refunded.
+
+7. Right of withdrawal
+In accordance with articles L.221-18 et seq. of the French Consumer Code, the Customer has 14 days from receipt of the product to withdraw, without giving any reason. The procedure is detailed on our "Returns & refunds" page. The refund is made no later than 14 days after the product is recovered or proof of return shipment is provided.
+
+8. Legal warranties
+All products are covered by the legal warranty of conformity (articles L.217-3 et seq. of the French Consumer Code, 2 years) and the warranty against hidden defects (articles 1641 et seq. of the French Civil Code). In case of a defect, contact contact@climidex.com.
+
+9. Liability
+CLIMIDEX cannot be held liable for non-performance caused by force majeure or by the Customer.
+
+10. Personal data
+The processing of the Customer's data is described in the Privacy policy available on the Site.
+
+11. Consumer mediation
+In accordance with article L.612-1 of the French Consumer Code, the Customer may use a consumer mediator free of charge. [Mediator details — to be completed once a mediation scheme has been joined.] European online dispute resolution platform: ec.europa.eu/consumers/odr.
+
+12. Governing law
+These Terms are governed by French law. In the event of a dispute, an amicable solution will be sought before any legal action.`,
+    returnsBody: `You have 14 days to change your mind.
+
+Right of withdrawal
+In accordance with the French Consumer Code, you have 14 calendar days from receipt of your order to withdraw, without giving any reason.
+
+How to return a product
+1. Write to us at contact@climidex.com with your order number and your wish to return the product.
+2. We send you the return address and instructions within 48 business hours.
+3. Ship the complete product back in its original packaging, preferably with tracking. Return shipping costs are borne by you.
+
+Refund
+The full refund (product + initial standard delivery costs) is made using the payment method used for the order, no later than 14 days after we receive the return or proof of shipment. A deduction may apply if the product has been handled beyond what is necessary to try it out.
+
+Defective product or error on our part
+If the product you received is defective, damaged or does not match your order, contact us: the return is then at our expense and you may choose between a replacement and a refund. You also benefit from the 2-year legal warranty of conformity.
+
+Contact
+Any question: contact@climidex.com — we reply within 48 business hours.`,
+    privacyBody: `Last updated: 5 July 2026.
+
+Data controller
+CLIMIDEX, publisher of climidex.com — contact@climidex.com.
+
+Data we collect
+We only collect the data needed to run the store: identity and contact details (name, e-mail, phone), delivery and billing addresses, order history, product reviews, newsletter subscription, and technical connection data (logs).
+
+We never store your card details: payments are processed directly by Stripe.
+
+Purposes and legal bases
+• Order processing and delivery — performance of the contract.
+• Customer account and after-sales service — performance of the contract.
+• Newsletter — consent (you can unsubscribe at any time).
+• Product reviews — consent.
+• Security and fraud prevention — legitimate interest.
+
+Recipients
+Your data is shared only with the providers required to deliver our services: Stripe (payments), Resend (transactional e-mails), our logistics partner for order shipment, Hetzner and Cloudflare (hosting and security). Some providers may process data outside the European Union; such transfers are governed by standard contractual clauses.
+
+Retention periods
+Account data: duration of the commercial relationship + 3 years. Invoices and order data: 10 years (accounting obligation). Newsletter: until you unsubscribe.
+
+Your rights
+You have the right to access, rectify, erase, restrict, object to and port your data, as well as the right to set post-mortem directives. To exercise them: contact@climidex.com. You may also lodge a complaint with the CNIL (cnil.fr).
+
+Cookies
+The Site only uses cookies that are strictly necessary for its operation (session, cart, authentication). No advertising or third-party tracking cookies are set.`,
     contactBody:
-      "A question about the Climaire, your order or a return? Write to us at contact@climidex.fr. We reply within 48 business hours.",
+      "A question about the Climaire, your order or a return? Write to us at contact@climidex.com. We reply within 48 business hours.",
     contactLead:
       "A question about the Climaire, your order or a return? We're here to help.",
     contactEmailLabel: "Write to us",
-    contactEmail: "contact@climidex.fr",
+    contactEmail: "contact@climidex.com",
     contactHoursLabel: "Response time",
     contactHours: "Within 48 business hours",
     contactOrderLabel: "Order tracking",

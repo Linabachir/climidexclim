@@ -2,7 +2,7 @@
 
 Stack : **1 VPS Hetzner** (Docker Compose : Postgres + Redis + Medusa + Next + Caddy) derrière **Cloudflare** (DNS, proxy, SSL) avec **R2** pour les images.
 
-> Remplace partout `climidex.fr` par ton domaine réel.
+> Remplace partout `climidex.com` par ton domaine réel.
 
 ---
 
@@ -16,7 +16,7 @@ Stack : **1 VPS Hetzner** (Docker Compose : Postgres + Redis + Medusa + Next + C
 
 1. **Ajouter le site** dans Cloudflare et faire pointer les *nameservers* du domaine vers Cloudflare.
 2. **R2 → Create bucket** : `climidex-media`.
-   - Active un **domaine public** pour le bucket (R2 → Settings → Public access), ex. `cdn.climidex.fr` (ou l'URL `pub-xxx.r2.dev`).
+   - Active un **domaine public** pour le bucket (R2 → Settings → Public access), ex. `cdn.climidex.com` (ou l'URL `pub-xxx.r2.dev`).
    - **R2 → Manage API Tokens → Create** : note `Access Key ID`, `Secret`, et l'`endpoint` `https://<ACCOUNT_ID>.r2.cloudflarestorage.com`.
 3. **DNS** (après avoir l'IP du serveur à l'étape 2) — enregistrements **proxied (nuage orange)** :
    | Type | Nom  | Contenu        |
@@ -60,10 +60,10 @@ docker compose logs -f backend      # attendre "Server is ready"
 
 ```bash
 # 2) Créer l'admin
-docker compose exec backend npx medusa user -e toi@climidex.fr -p 'MotDePasseFort'
+docker compose exec backend npx medusa user -e toi@climidex.com -p 'MotDePasseFort'
 ```
 
-4. Ouvre l'admin : **https://api.climidex.fr/app** → connecte-toi.
+4. Ouvre l'admin : **https://api.climidex.com/app** → connecte-toi.
    - **Settings → Publishable API keys** : crée-en une, copie la clé `pk_...`.
    - Colle-la dans `.env` → `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY=pk_...`.
 
@@ -91,14 +91,14 @@ docker compose up -d --build storefront caddy
 
 1. `.env` : `STRIPE_API_KEY=sk_live_...` (déjà fait).
 2. Stripe Dashboard → **Developers → Webhooks → Add endpoint** :
-   `https://api.climidex.fr/hooks/payment/stripe` → événement `payment_intent.*`.
+   `https://api.climidex.com/hooks/payment/stripe` → événement `payment_intent.*`.
    Copie le `whsec_...` → `.env` → `STRIPE_WEBHOOK_SECRET=`.
 3. Redémarre le backend : `docker compose up -d backend`.
 
 ---
 
 ## 6. Vérifs finales
-- `https://climidex.fr` s'affiche, `https://api.climidex.fr/health` répond `OK`.
+- `https://climidex.com` s'affiche, `https://api.climidex.com/health` répond `OK`.
 - **Commande test** de bout en bout (ajout panier → paiement Stripe → e-mail).
 - Configure un envoi d'**e-mails transactionnels** (module Notification + Resend/SendGrid) — sinon pas de confirmation de commande.
 - Pages légales (Mentions légales / CGV / Confidentialité) + bandeau cookies.

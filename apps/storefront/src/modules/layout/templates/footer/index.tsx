@@ -93,6 +93,22 @@ export default async function Footer() {
                 </li>
                 <li>
                   <LocalizedClientLink
+                    href="/content/retours"
+                    className="hover:text-brand-ink"
+                  >
+                    {t.footer.returns}
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/content/confidentialite"
+                    className="hover:text-brand-ink"
+                  >
+                    {t.footer.privacy}
+                  </LocalizedClientLink>
+                </li>
+                <li>
+                  <LocalizedClientLink
                     href="/content/contact"
                     className="hover:text-brand-ink"
                   >
