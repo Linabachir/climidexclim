@@ -8,10 +8,16 @@ checkEnvVariables()
 const S3_HOSTNAME = process.env.MEDUSA_CLOUD_S3_HOSTNAME
 const S3_PATHNAME = process.env.MEDUSA_CLOUD_S3_PATHNAME
 
+// Domaine où sont servies les images produit en prod (bucket public R2 /
+// domaine CDN Cloudflare), ex. "cdn.climidex.fr" ou "pub-xxxx.r2.dev".
+const IMAGE_HOSTNAME = process.env.NEXT_PUBLIC_IMAGE_HOSTNAME
+
 /**
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  // Build autonome pour Docker (serveur minimal dans .next/standalone).
+  output: "standalone",
   reactStrictMode: true,
   logging: {
     fetches: {
@@ -47,6 +53,9 @@ const nextConfig = {
               pathname: S3_PATHNAME,
             },
           ]
+        : []),
+      ...(IMAGE_HOSTNAME
+        ? [{ protocol: "https", hostname: IMAGE_HOSTNAME }]
         : []),
     ],
   },

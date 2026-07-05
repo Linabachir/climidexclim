@@ -33,6 +33,31 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        // Palette de marque CLIMIDEX (design system handoff)
+        brand: {
+          // Canvas & surfaces
+          ivory: "#f7f5f2", // canvas principal (cream)
+          "cream-deep": "#efece6", // bande alternée / surface douce
+          paper: "#fbfaf8", // ancien alias clair (conservé)
+          surface: "#ffffff", // cartes, champs, panneaux
+          "surface-sink": "#faf8f5", // puits internes
+          // Ink (texte)
+          ink: "#1a1a1a", // anthracite — titres & texte principal
+          "ink-secondary": "#3a3a38", // texte secondaire
+          mute: "#6b6862", // texte de support / légendes
+          "ink-faint": "#a8a39b", // métadonnées, placeholders, désactivé
+          // Marine (seul accent structurel)
+          navy: "#1a2238", // action principale, liens, sections sombres
+          "navy-deep": "#11162a", // pressé / hover sombre
+          "navy-soft": "#2b3550", // hover sur surfaces sombres
+          "on-navy": "#f7f5f2", // texte sur fond marine
+          // Lignes
+          line: "#e6e2db", // filets & séparateurs (warm)
+          "line-strong": "#d7d2c9", // séparateurs appuyés, bords de champs
+          // Sémantique (sobre)
+          positive: "#2f5d4a", // en stock / confirmation — forêt sourd
+          critical: "#8a3b34", // erreurs — brique sourd
+        },
       },
       borderRadius: {
         none: "0px",
@@ -59,15 +84,26 @@ module.exports = {
       },
       fontFamily: {
         sans: [
+          "var(--font-sans)",
           "Inter",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
           "Roboto",
           "Helvetica Neue",
-          "Ubuntu",
           "sans-serif",
         ],
+        // Playfair Display (titres) — chargée dans app/layout.tsx
+        serif: [
+          "var(--font-serif)",
+          "Playfair Display",
+          "Georgia",
+          "Times New Roman",
+          "serif",
+        ],
+      },
+      letterSpacing: {
+        widest: "0.2em",
       },
       keyframes: {
         ring: {

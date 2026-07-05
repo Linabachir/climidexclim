@@ -1,19 +1,11 @@
 import { Text } from "@modules/common/components/ui"
 
-import Medusa from "../../../common/icons/medusa"
-import NextJs from "../../../common/icons/nextjs"
-
+// Marque discrète affichée en pied de page et de checkout.
+// (Remplace l'ancien "Powered by Medusa & Next.js".)
 const MedusaCTA = () => {
   return (
-    <Text className="flex gap-x-2 txt-compact-small-plus items-center">
-      Powered by
-      <a href="https://www.medusajs.com" target="_blank" rel="noreferrer">
-        <Medusa fill="#9ca3af" className="fill-[#9ca3af]" />
-      </a>
-      &
-      <a href="https://nextjs.org" target="_blank" rel="noreferrer">
-        <NextJs fill="#9ca3af" />
-      </a>
+    <Text className="txt-compact-small-plus uppercase tracking-widest text-brand-mute">
+      CLIMIDEX
     </Text>
   )
 }

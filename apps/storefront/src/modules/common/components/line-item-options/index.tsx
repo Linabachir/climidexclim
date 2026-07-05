@@ -12,14 +12,39 @@ const LineItemOptions = ({
   "data-testid": dataTestid,
   "data-value": dataValue,
 }: LineItemOptionsProps) => {
+  const options = variant?.options ?? []
+
+  // Pas d'options structurées : on retombe sur le titre de variante.
+  if (!options.length) {
+    return variant?.title ? (
+      <Text
+        data-testid={dataTestid}
+        data-value={dataValue}
+        className="text-[13px] text-brand-mute overflow-hidden text-ellipsis"
+      >
+        {variant.title}
+      </Text>
+    ) : null
+  }
+
   return (
-    <Text
+    <div
+      className="flex flex-col gap-0.5"
       data-testid={dataTestid}
       data-value={dataValue}
-      className="inline-block txt-medium text-ui-fg-subtle w-full overflow-hidden text-ellipsis"
     >
-      Variant: {variant?.title}
-    </Text>
+      {options.map((o) => {
+        const label = (o.option?.title ?? "").trim()
+        return (
+          <Text key={o.id} className="text-[13px] text-brand-mute">
+            {label && (
+              <span className="text-brand-ink-faint">{label} : </span>
+            )}
+            {o.value}
+          </Text>
+        )
+      })}
+    </div>
   )
 }
 

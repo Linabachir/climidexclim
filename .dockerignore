@@ -1,0 +1,12 @@
+node_modules
+**/node_modules
+**/.next
+**/.medusa
+**/dist
+**/build
+**/.turbo
+.git
+.env
+**/.env.local
+*.tar.gz
+climidex-design.*

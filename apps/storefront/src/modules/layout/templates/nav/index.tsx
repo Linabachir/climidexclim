@@ -1,58 +1,74 @@
 import { Suspense } from "react"
 
-import { listLocales } from "@lib/data/locales"
-import { getLocale } from "@lib/data/locale-actions"
+import { getI18n } from "@lib/i18n/server"
 import { listRegions } from "@lib/data/regions"
 import { StoreRegion } from "@medusajs/types"
+import { ShoppingBag } from "@medusajs/icons"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
+import LocaleToggle from "@modules/layout/components/locale-toggle"
 import SideMenu from "@modules/layout/components/side-menu"
+import Logo from "@modules/layout/components/logo"
 
 export default async function Nav() {
-  const [regions, locales, currentLocale] = await Promise.all([
+  const [regions, { t }] = await Promise.all([
     listRegions().then((regions: StoreRegion[]) => regions),
-    listLocales(),
-    getLocale(),
+    getI18n(),
   ])
+
+  const links = [
+    { href: "/products/climaire-ventilateur-sans-pales", label: "Le Climaire" },
+    { href: "/", label: "Maison" },
+  ]
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-white border-ui-border-base">
-        <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
-          <div className="flex-1 basis-0 h-full flex items-center">
-            <div className="h-full">
-              <SideMenu regions={regions} locales={locales} currentLocale={currentLocale} />
+      <header className="relative h-[72px] mx-auto bg-brand-ivory text-brand-ink duration-200">
+        <nav className="content-container grid grid-cols-[1fr_auto_1fr] items-center w-full h-full">
+          {/* Gauche : liens (desktop) + menu (mobile) */}
+          <div className="flex items-center h-full">
+            <div className="small:hidden h-full flex items-center text-brand-ink">
+              <SideMenu regions={regions} />
+            </div>
+            <div className="hidden small:flex items-center gap-x-7">
+              {links.map((l) => (
+                <LocalizedClientLink
+                  key={l.label}
+                  href={l.href}
+                  className="text-[13.5px] text-brand-ink-secondary transition-colors duration-150 hover:text-brand-ink"
+                >
+                  {l.label}
+                </LocalizedClientLink>
+              ))}
             </div>
           </div>
 
-          <div className="flex items-center h-full">
-            <LocalizedClientLink
-              href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase tracking-widest"
-              data-testid="nav-store-link"
-            >
-              CLIMIDEX
-            </LocalizedClientLink>
+          {/* Centre : logo */}
+          <div className="flex items-center justify-center h-full">
+            <Logo className="text-[26px]" />
           </div>
 
-          <div className="flex items-center gap-x-6 h-full flex-1 basis-0 justify-end">
-            <div className="hidden small:flex items-center gap-x-6 h-full">
+          {/* Droite : langue · compte · panier */}
+          <div className="flex items-center gap-x-5 h-full justify-end text-xs uppercase tracking-[0.12em] text-brand-mute">
+            <div className="hidden small:flex items-center gap-x-5">
+              <LocaleToggle />
               <LocalizedClientLink
-                className="hover:text-ui-fg-base"
+                className="transition-colors duration-150 hover:text-brand-ink"
                 href="/account"
                 data-testid="nav-account-link"
               >
-                Compte
+                {t.nav.account}
               </LocalizedClientLink>
             </div>
             <Suspense
               fallback={
                 <LocalizedClientLink
-                  className="hover:text-ui-fg-base flex gap-2"
+                  className="flex items-center transition-colors duration-150 hover:text-brand-ink"
                   href="/cart"
+                  aria-label={t.nav.cart}
                   data-testid="nav-cart-link"
                 >
-                  Panier (0)
+                  <ShoppingBag className="w-6 h-6" />
                 </LocalizedClientLink>
               }
             >

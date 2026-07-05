@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"/fr: %{http_code}\\\\n\" \"http://localhost:8000/fr\")",
+      "Bash(curl -s -o /dev/null -w \"logo: %{http_code}\\\\n\" \"http://localhost:8000/logo.png\")",
+      "Bash(python \"C:/Users/linab/AppData/Local/Temp/claude/c--Users-linab-Desktop-boutique-ligne-climidexclim/6a8a0ade-c7f7-4177-b9bb-e2f4fc81e8d3/scratchpad/build_export.py\")",
+      "Bash(cmd.exe /c start \"\" \"climidex-design.html\")",
+      "Bash(python \"C:/Users/linab/AppData/Local/Temp/claude/c--Users-linab-Desktop-boutique-ligne-climidexclim/6a8a0ade-c7f7-4177-b9bb-e2f4fc81e8d3/scratchpad/build_jsx.py\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:8000/fr\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:8000/fr/products/climaire-ventilateur-sans-pales\")"
+    ]
+  }
+}

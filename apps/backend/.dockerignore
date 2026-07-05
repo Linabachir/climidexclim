@@ -1,0 +1,10 @@
+node_modules
+.medusa
+dist
+build
+.env
+.env.*
+!.env.template
+*.log
+.git
+.turbo

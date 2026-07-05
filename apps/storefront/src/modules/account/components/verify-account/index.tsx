@@ -34,36 +34,46 @@ const VerifyAccount = () => {
 
   return (
     <div
-      className="max-w-sm w-full flex flex-col items-center text-center gap-y-4"
+      className="max-w-sm w-full flex flex-col items-center text-center gap-y-4 rounded-lg border border-brand-line bg-white p-8"
       data-testid="verify-account-page"
     >
-      <h1 className="text-large-semi uppercase">Email verification</h1>
+      <h1 className="font-serif text-3xl text-brand-ink">Email verification</h1>
 
       {state === "verifying" && (
-        <p className="text-base-regular text-ui-fg-base">
+        <p className="text-base-regular text-brand-ink-secondary">
           Verifying your email...
         </p>
       )}
 
       {state === "success" && (
         <>
-          <p className="text-base-regular text-ui-fg-base">
+          <p className="text-base-regular text-brand-ink-secondary">
             Your email is verified. You can now sign in to your account.
           </p>
           <LocalizedClientLink href="/account">
-            <Button variant="primary">Go to sign in</Button>
+            <Button
+              variant="primary"
+              className="rounded-md bg-brand-navy uppercase tracking-[0.14em] text-brand-on-navy hover:bg-brand-navy-deep"
+            >
+              Go to sign in
+            </Button>
           </LocalizedClientLink>
         </>
       )}
 
       {state === "error" && (
         <>
-          <p className="text-base-regular text-ui-fg-base">
+          <p className="text-base-regular text-brand-ink-secondary">
             This verification link is invalid or has expired. Sign in to receive
             a new verification email.
           </p>
           <LocalizedClientLink href="/account">
-            <Button variant="secondary">Go to sign in</Button>
+            <Button
+              variant="secondary"
+              className="rounded-md border border-brand-navy text-brand-navy uppercase tracking-[0.1em] hover:bg-brand-navy hover:text-brand-on-navy"
+            >
+              Go to sign in
+            </Button>
           </LocalizedClientLink>
         </>
       )}

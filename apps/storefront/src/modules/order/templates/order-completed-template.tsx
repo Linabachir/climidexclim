@@ -1,6 +1,7 @@
 import { Heading } from "@modules/common/components/ui"
 import { cookies as nextCookies } from "next/headers"
 
+import { getI18n } from "@lib/i18n/server"
 import CartTotals from "@modules/common/components/cart-totals"
 import Help from "@modules/order/components/help"
 import Items from "@modules/order/components/items"
@@ -20,6 +21,7 @@ export default async function OrderCompletedTemplate({
   const cookies = await nextCookies()
 
   const isOnboarding = cookies.get("_medusa_onboarding")?.value === "true"
+  const { t } = await getI18n()
 
   return (
     <div className="py-6 min-h-[calc(100vh-64px)]">
@@ -31,14 +33,19 @@ export default async function OrderCompletedTemplate({
         >
           <Heading
             level="h1"
-            className="flex flex-col gap-y-3 text-ui-fg-base text-3xl mb-4"
+            className="flex flex-col gap-y-3 font-serif font-normal text-brand-ink text-4xl mb-4"
           >
-            <span>Thank you!</span>
-            <span>Your order was placed successfully.</span>
+            <span>{t.order.thankYou}</span>
+            <span className="text-brand-mute text-2xl">
+              {t.order.confirmationSent}
+            </span>
           </Heading>
           <OrderDetails order={order} />
-          <Heading level="h2" className="flex flex-row text-3xl-regular">
-            Summary
+          <Heading
+            level="h2"
+            className="flex flex-row font-serif font-normal text-3xl text-brand-ink"
+          >
+            {t.order.summary}
           </Heading>
           <Items order={order} />
           <CartTotals totals={order} />

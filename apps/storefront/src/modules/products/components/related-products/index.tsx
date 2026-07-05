@@ -1,5 +1,6 @@
 import { listProducts } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
+import { getI18n } from "@lib/i18n/server"
 import { HttpTypes } from "@medusajs/types"
 import Product from "../product-preview"
 
@@ -12,7 +13,10 @@ export default async function RelatedProducts({
   product,
   countryCode,
 }: RelatedProductsProps) {
-  const region = await getRegion(countryCode)
+  const [region, { t }] = await Promise.all([
+    getRegion(countryCode),
+    getI18n(),
+  ])
 
   if (!region) {
     return null
@@ -49,11 +53,11 @@ export default async function RelatedProducts({
   return (
     <div className="product-page-constraint">
       <div className="flex flex-col items-center text-center mb-16">
-        <span className="text-base-regular text-gray-600 mb-6">
-          Related products
+        <span className="text-base-regular text-brand-mute mb-6">
+          {t.product.relatedEyebrow}
         </span>
-        <p className="text-2xl-regular text-ui-fg-base max-w-lg">
-          You might also want to check out these products.
+        <p className="font-serif text-3xl text-brand-ink max-w-lg">
+          {t.product.relatedTitle}
         </p>
       </div>
 

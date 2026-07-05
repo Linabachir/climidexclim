@@ -1,0 +1,93 @@
+"use client"
+
+import { useState } from "react"
+
+const BACKEND = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || ""
+const PUBKEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY || ""
+
+const Newsletter = () => {
+  const [email, setEmail] = useState("")
+  const [state, setState] = useState<"idle" | "loading" | "done" | "error">(
+    "idle"
+  )
+  const [message, setMessage] = useState("")
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setState("loading")
+    setMessage("")
+    try {
+      const res = await fetch(`${BACKEND}/store/newsletter`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "x-publishable-api-key": PUBKEY,
+        },
+        body: JSON.stringify({ email }),
+      })
+      const data = await res.json().catch(() => ({}))
+      if (!res.ok) {
+        throw new Error(data.message || "Une erreur est survenue.")
+      }
+      setState("done")
+      setMessage(
+        data.alreadySubscribed
+          ? "Vous êtes déjà inscrit, merci !"
+          : "Merci, vous êtes inscrit !"
+      )
+      setEmail("")
+    } catch (err) {
+      setState("error")
+      setMessage((err as Error).message)
+    }
+  }
+
+  return (
+    <section className="bg-brand-navy text-white">
+      <div className="content-container py-16 small:py-20">
+        <div className="max-w-2xl mx-auto text-center flex flex-col items-center gap-y-5">
+          <span className="text-[13px] font-medium text-white/60">
+            Newsletter
+          </span>
+          <h2 className="font-serif text-3xl small:text-4xl leading-tight">
+            Armez-vous contre la canicule
+          </h2>
+          <p className="text-[15px] text-white/70 max-w-md">
+            Nos conseils pour garder la tête froide cet été, et nos nouveautés.
+            Désinscription en un clic.
+          </p>
+
+          {state === "done" ? (
+            <p className="mt-2 text-white">{message}</p>
+          ) : (
+            <form
+              onSubmit={submit}
+              className="mt-2 flex w-full max-w-md flex-col sm:flex-row gap-3"
+            >
+              <input
+                type="email"
+                required
+                placeholder="Votre adresse email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 rounded-md bg-white/10 border border-white/20 px-5 py-3 text-sm text-white placeholder-white/50 outline-none focus:border-white/60"
+              />
+              <button
+                type="submit"
+                disabled={state === "loading"}
+                className="rounded-md bg-white px-7 py-3 text-xs uppercase tracking-widest text-brand-navy transition-opacity hover:opacity-90 disabled:opacity-50"
+              >
+                {state === "loading" ? "…" : "S'inscrire"}
+              </button>
+            </form>
+          )}
+          {state === "error" && (
+            <p className="text-sm text-red-300">{message}</p>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Newsletter

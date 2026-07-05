@@ -1,6 +1,5 @@
 import { HttpTypes } from "@medusajs/types"
-import { Heading, Text } from "@modules/common/components/ui"
-import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import { Heading } from "@modules/common/components/ui"
 
 type ProductInfoProps = {
   product: HttpTypes.StoreProduct
@@ -10,28 +9,24 @@ const ProductInfo = ({ product }: ProductInfoProps) => {
   return (
     <div id="product-info">
       <div className="flex flex-col gap-y-4 lg:max-w-[500px] mx-auto">
-        {product.collection && (
-          <LocalizedClientLink
-            href={`/collections/${product.collection.handle}`}
-            className="text-medium text-ui-fg-muted hover:text-ui-fg-subtle"
-          >
-            {product.collection.title}
-          </LocalizedClientLink>
-        )}
+        <div className="flex flex-wrap gap-2">
+          <span className="inline-flex items-center rounded-base px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-brand-positive border border-brand-positive/30">
+            En stock
+          </span>
+          <span className="inline-flex items-center rounded-base px-3 py-1 text-[11px] uppercase tracking-[0.12em] text-brand-mute border border-brand-line">
+            Expédié sous 5 à 9 jours
+          </span>
+        </div>
+        <span className="text-[13px] font-medium text-brand-navy">
+          CLIMIDEX
+        </span>
         <Heading
           level="h2"
-          className="text-3xl leading-10 text-ui-fg-base"
+          className="font-serif text-4xl small:text-5xl leading-tight text-brand-ink font-medium -mt-1"
           data-testid="product-title"
         >
           {product.title}
         </Heading>
-
-        <Text
-          className="text-medium text-ui-fg-subtle whitespace-pre-line"
-          data-testid="product-description"
-        >
-          {product.description}
-        </Text>
       </div>
     </div>
   )
