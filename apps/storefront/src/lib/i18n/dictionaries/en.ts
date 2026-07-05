@@ -115,7 +115,7 @@ export const en: Dictionary = {
     techCta: "See the specs",
     techAlt: "The Climaire on a desk, airflow technology",
     ctaTitle: "Bring the Climaire home.",
-    ctaShipping: "Free delivery in 5 to 8 days, anywhere in France.",
+    ctaShipping: "Free delivery in 5 to 9 days, anywhere in France.",
     ctaAlt: "The Climaire in an upscale interior",
     metaTitle: "CLIMIDEX · Climaire, the bladeless fan",
     metaDescription:
@@ -188,7 +188,7 @@ An order is confirmed once payment has been validated. A confirmation e-mail sum
 Payment is made online by card via the secure Stripe platform. Card details never pass through CLIMIDEX's servers. The order is charged upon validation.
 
 6. Delivery
-Products are delivered to the address provided by the Customer, in mainland France and the European Union. Standard delivery is free. Indicative lead time: 5 to 8 working days from order confirmation. If delivery is more than 30 days late compared with the announced date, the Customer may cancel the order and be refunded.
+Products are delivered to the address provided by the Customer, in mainland France and the European Union. Standard delivery is free. Indicative lead time: 5 to 9 working days from order confirmation. If delivery is more than 30 days late compared with the announced date, the Customer may cancel the order and be refunded.
 
 7. Right of withdrawal
 In accordance with articles L.221-18 et seq. of the French Consumer Code, the Customer has 14 days from receipt of the product to withdraw, without giving any reason. The procedure is detailed on our "Returns & refunds" page. The refund is made no later than 14 days after the product is recovered or proof of return shipment is provided.
@@ -293,7 +293,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     relatedEyebrow: "Also worth a look",
     relatedTitle: "Other products you might be interested in.",
     inStock: "In stock",
-    shippedWithin: "Free delivery · 5 to 8 days",
+    shippedWithin: "Free delivery · 5 to 9 days",
     storyEyebrow: "At a glance",
     storyBody:
       "The Climaire is a bladeless fan built around a smooth, even airflow — quiet and effortless to control. Its slim vertical shape frees up floor space and works on a sideboard, a desk or the floor. The brushless DC motor runs quietly, cleans easily, and there's not a blade in sight.",
@@ -317,7 +317,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     ],
     storyNote: "* Heating and purification available depending on configuration.",
     reassurance: [
-      { title: "Free delivery", body: "5 to 8 working days" },
+      { title: "Free delivery", body: "5 to 9 working days" },
       { title: "Bladeless", body: "Safe for kids and pets" },
       { title: "Customer care", body: "We reply within 48 h" },
       { title: "Payment", body: "Secure card payment via Stripe" },

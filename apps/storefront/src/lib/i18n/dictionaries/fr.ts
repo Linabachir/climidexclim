@@ -114,7 +114,7 @@ export const fr = {
     techCta: "Voir les caractéristiques",
     techAlt: "Le Climaire sur un bureau, technologie de flux d'air",
     ctaTitle: "Le Climaire, chez vous.",
-    ctaShipping: "Livraison offerte en 5 à 8 jours, partout en France.",
+    ctaShipping: "Livraison offerte en 5 à 9 jours, partout en France.",
     ctaAlt: "Le Climaire dans un intérieur de standing",
     metaTitle: "CLIMIDEX · Climaire, le ventilateur sans pales",
     metaDescription:
@@ -187,7 +187,7 @@ La commande est confirmée après validation du paiement. Un e-mail de confirmat
 Le paiement s'effectue en ligne par carte bancaire via la plateforme sécurisée Stripe. Les données de carte ne transitent jamais par les serveurs de CLIMIDEX. La commande est débitée à la validation.
 
 6. Livraison
-Les produits sont livrés à l'adresse indiquée par le Client, en France métropolitaine et dans l'Union européenne. La livraison standard est offerte. Délai indicatif : 5 à 8 jours ouvrés à compter de la confirmation de commande. En cas de retard de plus de 30 jours par rapport à la date annoncée, le Client peut résoudre la commande et être remboursé.
+Les produits sont livrés à l'adresse indiquée par le Client, en France métropolitaine et dans l'Union européenne. La livraison standard est offerte. Délai indicatif : 5 à 9 jours ouvrés à compter de la confirmation de commande. En cas de retard de plus de 30 jours par rapport à la date annoncée, le Client peut résoudre la commande et être remboursé.
 
 7. Droit de rétractation
 Conformément aux articles L.221-18 et suivants du Code de la consommation, le Client dispose d'un délai de 14 jours à compter de la réception du produit pour exercer son droit de rétractation, sans avoir à motiver sa décision. Les modalités sont détaillées dans notre page « Retours & remboursements ». Le remboursement intervient au plus tard 14 jours après récupération du produit ou preuve d'expédition du retour.
@@ -292,7 +292,7 @@ Le Site utilise uniquement des cookies strictement nécessaires à son fonctionn
     relatedEyebrow: "À découvrir aussi",
     relatedTitle: "D'autres produits qui pourraient vous intéresser.",
     inStock: "En stock",
-    shippedWithin: "Livraison offerte · 5 à 8 jours",
+    shippedWithin: "Livraison offerte · 5 à 9 jours",
     storyEyebrow: "En bref",
     storyBody:
       "Le Climaire est un ventilateur sans pales à flux d'air régulier et homogène, silencieux et simple à piloter. Son format vertical libère l'espace au sol : il passe sur une console, un bureau ou au sol. Le moteur DC sans balais reste discret, se nettoie facilement et n'a pas de pale apparente.",
@@ -316,7 +316,7 @@ Le Site utilise uniquement des cookies strictement nécessaires à son fonctionn
     ],
     storyNote: "* Chauffage et purification disponibles selon la configuration.",
     reassurance: [
-      { title: "Livraison offerte", body: "5 à 8 jours ouvrés" },
+      { title: "Livraison offerte", body: "5 à 9 jours ouvrés" },
       { title: "Sans pales", body: "Sûr pour enfants et animaux" },
       { title: "Service client", body: "Réponse sous 48 h" },
       { title: "Paiement", body: "Carte via Stripe" },
