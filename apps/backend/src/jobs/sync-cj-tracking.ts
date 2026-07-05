@@ -10,7 +10,7 @@ let lastBalanceAlertAt = 0
 async function alertLowBalance(amount: number, threshold: number, logger: any) {
   if (Date.now() - lastBalanceAlertAt < 24 * 60 * 60 * 1000) return
   const apiKey = process.env.RESEND_API_KEY
-  const to = process.env.CJ_ALERT_EMAIL || "petitdrogba@icloud.com"
+  const to = process.env.CJ_ALERT_EMAIL || "linabelarbi@yahoo.fr"
   if (!apiKey) return
   try {
     const res = await fetch("https://api.resend.com/emails", {
