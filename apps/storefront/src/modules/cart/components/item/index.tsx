@@ -121,14 +121,9 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
           })}
         >
           {type === "preview" && (
-            <span className="flex gap-x-1 ">
-              <Text className="text-ui-fg-muted">{item.quantity}x </Text>
-              <LineItemUnitPrice
-                item={item}
-                style="tight"
-                currencyCode={currencyCode}
-              />
-            </span>
+            <Text className="text-ui-fg-muted text-right">
+              {item.quantity}x
+            </Text>
           )}
           <LineItemPrice
             item={item}
