@@ -18,7 +18,6 @@ const HomeCta = async ({ productHref, price }: Props) => {
             {t.home.ctaTitle}
           </h2>
           <p className="font-sans text-[16px] leading-relaxed text-brand-ink-secondary mt-5 max-w-[44ch]">
-            {price ? `${price}. ` : ""}
             {t.home.ctaShipping}
           </p>
           <div className="mt-8">

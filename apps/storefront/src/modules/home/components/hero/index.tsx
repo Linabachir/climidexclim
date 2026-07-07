@@ -54,7 +54,6 @@ const Hero = async ({ product }: HeroProps) => {
             {t.home.discoverClimaire}
           </LocalizedClientLink>
           <p className="font-sans text-[14px] text-brand-ink-secondary">
-            {price ? `${price.calculated_price} · ` : ""}
             {t.home.heroTrust}
           </p>
         </div>
