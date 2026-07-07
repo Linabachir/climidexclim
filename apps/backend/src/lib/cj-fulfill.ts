@@ -160,8 +160,13 @@ export async function sendOrderToCj(
   const isEu = EU_COUNTRIES.has(endCountryCode)
   const iossTypeEnv = process.env.CJ_IOSS_TYPE
   const iossType = isEu && iossTypeEnv ? Number(iossTypeEnv) : undefined
-  const iossNumber =
+  let iossNumber =
     isEu && iossTypeEnv ? process.env.CJ_IOSS_NUMBER || undefined : undefined
+  // Doc CJ : avec iossType 3 (IOSS de CJ), iossNumber doit valoir la
+  // constante "CJ-IOSS" — sans elle l'API répond « Please enter a IOSS number ».
+  if (iossType === 3 && !iossNumber) {
+    iossNumber = "CJ-IOSS"
+  }
 
   const created = await cj.createOrder({
     orderNumber: `MED-${order.display_id ?? order.id}`,
