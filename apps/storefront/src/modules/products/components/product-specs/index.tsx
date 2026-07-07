@@ -21,10 +21,10 @@ const ProductSpecs = async () => {
             {t.landing.specs.map((spec) => (
               <div
                 key={spec.label}
-                className="flex items-baseline justify-between py-4"
+                className="flex items-baseline justify-between gap-6 py-4"
               >
-                <dt className="text-sm text-brand-mute">{spec.label}</dt>
-                <dd className="text-base text-brand-ink font-medium">
+                <dt className="text-sm text-brand-mute shrink-0">{spec.label}</dt>
+                <dd className="text-base text-brand-ink font-medium text-right">
                   {spec.value}
                 </dd>
               </div>
