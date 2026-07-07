@@ -15,6 +15,9 @@ if (process.env.STRIPE_API_KEY) {
       // Laisse Stripe proposer carte + Apple Pay + Google Pay dans le
       // PaymentElement (l'intent est créé avec automatic_payment_methods).
       automaticPaymentMethods: true,
+      // Encaisse immédiatement (sinon l'autorisation expire au bout de
+      // 7 jours sans capture manuelle et l'argent est rendu au client).
+      capture: true,
     },
   })
 }
