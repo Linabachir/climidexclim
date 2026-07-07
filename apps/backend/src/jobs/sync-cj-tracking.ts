@@ -72,15 +72,20 @@ export default async function syncCjTrackingJob(container: MedusaContainer) {
       (o: any) => o.metadata?.cj_order_id && !o.metadata?.shipping_email_sent_at
     )
 
-    // Surveillance du solde : alerte si bas et qu'il reste du travail à payer.
-    const threshold = Number(process.env.CJ_BALANCE_ALERT_THRESHOLD || 60)
-    try {
-      const { amount } = await cj.getBalance()
-      if (amount < threshold) {
-        await alertLowBalance(amount, threshold, logger)
+    // Mode wallet uniquement : surveillance du solde + retentatives de
+    // paiement. En mode carte (CJ_AUTO_PAY=false), le paiement se fait
+    // manuellement dans le dashboard CJ, on ne touche pas au wallet.
+    const autoPay = (process.env.CJ_AUTO_PAY ?? "true") !== "false"
+    if (autoPay) {
+      const threshold = Number(process.env.CJ_BALANCE_ALERT_THRESHOLD || 60)
+      try {
+        const { amount } = await cj.getBalance()
+        if (amount < threshold) {
+          await alertLowBalance(amount, threshold, logger)
+        }
+      } catch (e) {
+        logger.warn(`[cj] getBalance failed: ${(e as Error).message}`)
       }
-    } catch (e) {
-      logger.warn(`[cj] getBalance failed: ${(e as Error).message}`)
     }
 
     if (!pending.length) return
@@ -90,7 +95,8 @@ export default async function syncCjTrackingJob(container: MedusaContainer) {
       try {
         // Rattrapage : la commande CJ existe mais n'a pas pu être payée
         // (wallet vide à ce moment-là) → on retente à chaque passage.
-        if (!order.metadata?.cj_auto_paid) {
+        // Uniquement en mode wallet ; en mode carte le paiement est manuel.
+        if (autoPay && !order.metadata?.cj_auto_paid) {
           try {
             await cj.payBalance(String(order.metadata!.cj_order_id))
             order.metadata = { ...(order.metadata ?? {}), cj_auto_paid: true }

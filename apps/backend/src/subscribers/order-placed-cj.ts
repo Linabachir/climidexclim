@@ -54,13 +54,12 @@ async function notifyUnpaidCjOrder(
   await sendAlertEmail(
     `🛒 CLIMIDEX — Commande CJ à payer (#${cjOrderId})`,
     `<div style="font-family:Inter,Arial,sans-serif;max-width:520px;margin:0 auto;">
-      <h2 style="color:#1a2238;">Une commande client attend son paiement chez CJ</h2>
-      <p>La commande a bien été créée et confirmée chez CJ (n° <strong>${cjOrderId}</strong>${
+      <h2 style="color:#1a2238;">Nouvelle vente ! Une commande est à régler chez CJ</h2>
+      <p>La commande a été créée et confirmée automatiquement chez CJ (n° <strong>${cjOrderId}</strong>${
         shippingCost ? `, transport ~${shippingCost} $` : ""
-      }), mais le portefeuille CJ n'a pas pu la payer.</p>
-      <p><strong>Action :</strong> paie-la par carte ou PayPal dans le dashboard CJ, sinon elle ne partira pas.</p>
-      <p><a href="https://www.cjdropshipping.com/mine/dropshipping/orderList" style="background:#1a2238;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;">Ouvrir mes commandes CJ</a></p>
-      <p style="color:#888;font-size:12px;">Astuce : si tu recharges le wallet, le paiement sera retenté automatiquement sous 2 h et ces emails cesseront.</p>
+      }).</p>
+      <p><strong>Dernière étape :</strong> règle-la par carte ou PayPal dans le dashboard CJ pour que le colis parte. Plusieurs commandes peuvent se payer en une fois (Orders Picking).</p>
+      <p><a href="https://www.cjdropshipping.com/mine/dropshipping/orderList" style="background:#1a2238;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;">Payer la commande chez CJ</a></p>
     </div>`,
     logger
   )
