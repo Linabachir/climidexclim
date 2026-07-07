@@ -116,19 +116,23 @@ export default function ProductActions({
     return false
   }, [selectedVariant])
 
-  // add the selected variant to the cart
+  // Ajoute la variante au panier puis ouvre directement la page panier :
+  // plus clair que le mini-panier (évite les doubles ajouts).
   const handleAddToCart = async () => {
     if (!selectedVariant?.id) return null
 
     setIsAdding(true)
 
-    await addToCart({
-      variantId: selectedVariant.id,
-      quantity: 1,
-      countryCode,
-    })
-
-    setIsAdding(false)
+    try {
+      await addToCart({
+        variantId: selectedVariant.id,
+        quantity: 1,
+        countryCode,
+      })
+      router.push(`/${countryCode}/cart`)
+    } finally {
+      setIsAdding(false)
+    }
   }
 
   return (

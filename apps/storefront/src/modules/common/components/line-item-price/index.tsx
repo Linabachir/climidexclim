@@ -29,7 +29,7 @@ const LineItemPrice = ({
                 <span className="text-ui-fg-subtle">Original: </span>
               )}
               <span
-                className="line-through text-ui-fg-muted"
+                className="line-through text-ui-fg-muted whitespace-nowrap"
                 data-testid="product-original-price"
               >
                 {convertToLocale({
@@ -46,7 +46,7 @@ const LineItemPrice = ({
           </>
         )}
         <span
-          className={clx("text-base-regular", {
+          className={clx("text-base-regular whitespace-nowrap", {
             "text-ui-fg-interactive": hasReducedPrice,
           })}
           data-testid="product-price"
