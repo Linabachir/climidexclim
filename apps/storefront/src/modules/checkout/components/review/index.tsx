@@ -1,15 +1,18 @@
 "use client"
 
+import { useEffect } from "react"
 import { Heading, Text, clx } from "@modules/common/components/ui"
 
 import PaymentButton from "../payment-button"
-import { useSearchParams } from "next/navigation"
+import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useI18n } from "@lib/i18n/context"
 import { HttpTypes } from "@medusajs/types"
 
 const Review = ({ cart }: { cart: HttpTypes.StoreCart }) => {
   const { t } = useI18n()
   const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
 
   const isOpen = searchParams.get("step") === "review"
 
@@ -17,10 +20,25 @@ const Review = ({ cart }: { cart: HttpTypes.StoreCart }) => {
     (cart as unknown as Record<string, unknown>)?.gift_cards && ((cart as unknown as Record<string, unknown>)?.gift_cards as unknown[])?.length > 0 && cart?.total === 0
   )
 
+  // Une session de paiement valide est requise pour confirmer. Elle peut être
+  // invalidée après coup (ex. code promo appliqué => total modifié) : dans ce
+  // cas on renvoie automatiquement à l'étape paiement au lieu de laisser un
+  // bouton grisé sans issue.
+  const activeSession = cart.payment_collection?.payment_sessions?.find(
+    (s) => s.status === "pending"
+  )
+  const paymentReady = !!activeSession || paidByGiftcard
+
+  useEffect(() => {
+    if (isOpen && !paymentReady) {
+      router.replace(`${pathname}?step=payment`)
+    }
+  }, [isOpen, paymentReady, router, pathname])
+
   const previousStepsCompleted =
     cart.shipping_address &&
     (cart.shipping_methods?.length ?? 0) > 0 &&
-    (cart.payment_collection || paidByGiftcard)
+    paymentReady
 
   return (
     <div className="rounded-lg border border-brand-line bg-white p-6 small:p-8">
