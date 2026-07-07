@@ -83,7 +83,7 @@ export const en: Dictionary = {
       "The Climaire delivers a smooth, quiet stream of air, with no blades and no sharp edges. Easy to clean and safe around kids.",
     heroAlt: "The Climaire in a bright, uncluttered interior",
     discoverClimaire: "Discover the Climaire",
-    heroTrust: "Free delivery · Secure payment · 14-day returns",
+    heroTrust: "Free delivery · Secure payment",
     stats: [
       { value: "35–39 dB", label: "Whisper-quiet" },
       { value: "8 speeds", label: "Precise control" },

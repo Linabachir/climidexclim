@@ -82,7 +82,7 @@ export const fr = {
       "Le Climaire diffuse un air régulier et silencieux, sans pales ni surface tranchante. Facile à nettoyer, sûr autour des enfants.",
     heroAlt: "Le Climaire dans un intérieur lumineux et épuré",
     discoverClimaire: "Découvrir le Climaire",
-    heroTrust: "Livraison offerte · Paiement sécurisé · Retours 14 jours",
+    heroTrust: "Livraison offerte · Paiement sécurisé",
     stats: [
       { value: "35–39 dB", label: "Niveau sonore" },
       { value: "8 vitesses", label: "Réglage précis" },
