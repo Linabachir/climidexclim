@@ -47,7 +47,7 @@ const LineItemOptions = ({
           locale
         )
         return (
-          <Text key={o.id} className="text-[13px] text-brand-mute">
+          <Text key={o.id} className="text-[13px] text-brand-mute truncate">
             {label && (
               <span className="text-brand-ink-faint">{label} : </span>
             )}

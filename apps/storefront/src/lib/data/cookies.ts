@@ -23,13 +23,17 @@ export const getCacheTag = async (tag: string): Promise<string> => {
     const cookies = await nextCookies()
     const cacheId = cookies.get("_medusa_cache_id")?.value
 
+    // Sans cookie d'identification (ex. première visite servie par le CDN,
+    // qui retire les Set-Cookie), on retombe sur le tag générique :
+    // revalidateTag("") lèverait une erreur et casserait les server actions
+    // (panier, code promo...).
     if (!cacheId) {
-      return ""
+      return tag
     }
 
     return `${tag}-${cacheId}`
   } catch {
-    return ""
+    return tag
   }
 }
 
