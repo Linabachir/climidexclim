@@ -1,4 +1,9 @@
 import { HttpTypes } from "@medusajs/types"
+import { useI18n } from "@lib/i18n/context"
+import {
+  translateOptionTitle,
+  translateOptionValue,
+} from "@lib/i18n/product-options"
 import { clx } from "@modules/common/components/ui"
 import React from "react"
 
@@ -19,11 +24,12 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
   "data-testid": dataTestId,
   disabled,
 }) => {
+  const { locale } = useI18n()
   const filteredOptions = (option.values ?? []).map((v) => v.value)
 
   return (
     <div className="flex flex-col gap-y-3">
-      <span className="text-sm">Select {title}</span>
+      <span className="text-sm">{translateOptionTitle(title, locale)}</span>
       <div
         className="flex flex-wrap justify-between gap-2"
         data-testid={dataTestId}
@@ -44,7 +50,7 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
               disabled={disabled}
               data-testid="option-button"
             >
-              {v}
+              {translateOptionValue(v, locale)}
             </button>
           )
         })}

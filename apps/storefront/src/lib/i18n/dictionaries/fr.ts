@@ -50,7 +50,7 @@ export const fr = {
       {
         eyebrow: "Contrôle immédiat",
         title: "Huit vitesses, à portée de main",
-        body: "Huit niveaux d'intensité pour ajuster le confort au degré près. Le réglage est immédiat, sans menu ni latence — vous sentez la différence à l'instant.",
+        body: "Huit niveaux d'intensité pour ajuster le confort au degré près. Le réglage est immédiat, sans menu ni latence : vous sentez la différence à l'instant.",
       },
       {
         eyebrow: "Usage toute saison",
@@ -82,6 +82,7 @@ export const fr = {
       "Le Climaire diffuse un air régulier et silencieux, sans pales ni surface tranchante. Facile à nettoyer, sûr autour des enfants.",
     heroAlt: "Le Climaire dans un intérieur lumineux et épuré",
     discoverClimaire: "Découvrir le Climaire",
+    heroTrust: "Livraison offerte · Paiement sécurisé · Retours 14 jours",
     stats: [
       { value: "35–39 dB", label: "Niveau sonore" },
       { value: "8 vitesses", label: "Réglage précis" },
@@ -139,6 +140,7 @@ export const fr = {
     myAccount: "Mon compte",
     myOrders: "Mes commandes",
     legalColumn: "Informations",
+    about: "À propos",
     legal: "Mentions légales",
     terms: "CGV",
     returns: "Retours & remboursements",
@@ -146,6 +148,24 @@ export const fr = {
     contact: "Contact",
   },
   legal: {
+    aboutTitle: "À propos de CLIMIDEX",
+    aboutBody: `Une seule mission : bien vous rafraîchir.
+
+CLIMIDEX est une jeune marque française fondée en 2026, avec un parti pris assumé : plutôt que de vendre cinquante gadgets, nous nous concentrons sur un seul produit, le Climaire, et nous le faisons bien.
+
+Pourquoi un ventilateur sans pales ?
+Parce que c'est la technologie la plus agréable au quotidien : un flux d'air régulier plutôt que des rafales, un silence compatible avec une chambre (35 à 39 dB), aucune pale accessible pour les doigts des enfants ou la curiosité des animaux, et un nettoyage qui prend dix secondes. Nous avons sélectionné le Climaire après avoir comparé les modèles disponibles sur les critères qui comptent vraiment : bruit, sécurité, consommation et durabilité.
+
+Nos engagements
+• Livraison offerte et suivie, sous 5 à 9 jours ouvrés, partout en France.
+• Paiement 100 % sécurisé par Stripe (carte, Apple Pay, Google Pay) : vos données bancaires ne passent jamais par nos serveurs.
+• 14 jours pour changer d'avis, remboursement intégral, et garantie légale de 2 ans.
+• Un service client qui répond en français, sous 48 h ouvrées, à contact@climidex.com.
+
+Qui sommes-nous ?
+CLIMIDEX est l'enseigne de Melvin Sokambi, entrepreneur individuel immatriculé en France (SIREN 889 863 361). Une petite structure, volontairement : vous écrivez, un humain vous répond.
+
+Une question avant de commander ? Écrivez-nous, nous serons ravis d'aider : contact@climidex.com.`,
     legalTitle: "Mentions légales",
     termsTitle: "Conditions générales de vente",
     returnsTitle: "Retours & remboursements",
@@ -153,13 +173,13 @@ export const fr = {
     contactTitle: "Contact",
     legalBody: `Éditeur du site
 Le site climidex.com (ci-après « le Site ») est édité sous l'enseigne CLIMIDEX par Melvin Sokambi, entrepreneur individuel.
-SIREN : 889 863 361 — SIRET (siège) : 889 863 361 00024
+SIREN : 889 863 361. SIRET (siège) : 889 863 361 00024.
 Siège : 62 rue d'Amsterdam, 75009 Paris, France
 Directeur de la publication : Melvin Sokambi.
 Contact : contact@climidex.com
 
 Hébergement
-Le Site est hébergé par Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Allemagne — www.hetzner.com. Les services de DNS et de diffusion de contenu sont fournis par Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis.
+Le Site est hébergé par Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Allemagne (www.hetzner.com). Les services de DNS et de diffusion de contenu sont fournis par Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, États-Unis.
 
 Propriété intellectuelle
 L'ensemble des éléments du Site (textes, visuels, logos, marque CLIMIDEX, modèles 3D) est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation ou exploitation, totale ou partielle, sans autorisation écrite préalable est interdite.
@@ -172,7 +192,7 @@ Pour signaler un contenu ou poser une question relative au Site : contact@climid
     termsBody: `Version en vigueur au 5 juillet 2026.
 
 1. Objet et champ d'application
-Les présentes conditions générales de vente (« CGV ») régissent les ventes de produits conclues sur le site climidex.com entre CLIMIDEX — enseigne de Melvin Sokambi, entrepreneur individuel, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris (« le Vendeur ») — et tout consommateur (« le Client »). Toute commande implique l'acceptation sans réserve des présentes CGV.
+Les présentes conditions générales de vente (« CGV ») régissent les ventes de produits conclues sur le site climidex.com entre CLIMIDEX, enseigne de Melvin Sokambi, entrepreneur individuel, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris (« le Vendeur »), et tout consommateur (« le Client »). Toute commande implique l'acceptation sans réserve des présentes CGV.
 
 2. Produits
 Les produits proposés (notamment le ventilateur sans pales Climaire) sont décrits avec la plus grande exactitude possible. Les photographies et visuels 3D n'ont pas de valeur contractuelle.
@@ -202,7 +222,7 @@ La responsabilité de CLIMIDEX ne saurait être engagée en cas d'inexécution d
 Le traitement des données du Client est décrit dans la Politique de confidentialité accessible sur le Site.
 
 11. Médiation de la consommation
-Conformément à l'article L.612-1 du Code de la consommation, le Client peut recourir gratuitement à un médiateur de la consommation. [Coordonnées du médiateur — à compléter après adhésion à un dispositif de médiation.] Plateforme européenne de règlement en ligne des litiges : ec.europa.eu/consumers/odr.
+Conformément à l'article L.612-1 du Code de la consommation, le Client peut recourir gratuitement à un médiateur de la consommation. CLIMIDEX finalise son adhésion à un dispositif de médiation agréé ; les coordonnées du médiateur seront publiées sur cette page dès validation et sont communiquées sur simple demande à contact@climidex.com. Plateforme européenne de règlement en ligne des litiges : ec.europa.eu/consumers/odr.
 
 12. Droit applicable
 Les présentes CGV sont soumises au droit français. En cas de litige, une solution amiable sera recherchée avant toute action judiciaire.`,
@@ -223,11 +243,11 @@ Produit défectueux ou erreur de notre part
 Si le produit reçu est défectueux, endommagé ou ne correspond pas à votre commande, contactez-nous : le retour est alors à nos frais et vous choisissez entre remplacement et remboursement. Vous bénéficiez par ailleurs de la garantie légale de conformité de 2 ans.
 
 Contact
-Pour toute question : contact@climidex.com — réponse sous 48 h ouvrées.`,
+Pour toute question : contact@climidex.com (réponse sous 48 h ouvrées).`,
     privacyBody: `Dernière mise à jour : 5 juillet 2026.
 
 Responsable de traitement
-CLIMIDEX, éditeur du site climidex.com — contact@climidex.com.
+CLIMIDEX, éditeur du site climidex.com. Contact : contact@climidex.com.
 
 Données collectées
 Nous collectons uniquement les données nécessaires au fonctionnement de la boutique : identité et coordonnées (nom, e-mail, téléphone), adresses de livraison et de facturation, historique de commandes, avis produits, inscription à la newsletter, et données techniques de connexion (logs).
@@ -235,11 +255,11 @@ Nous collectons uniquement les données nécessaires au fonctionnement de la bou
 Nous ne stockons jamais vos données bancaires : le paiement est traité directement par Stripe.
 
 Finalités et bases légales
-• Traitement et livraison des commandes — exécution du contrat.
-• Gestion du compte client et du service après-vente — exécution du contrat.
-• Envoi de la newsletter — consentement (désinscription possible à tout moment).
-• Publication d'avis produits — consentement.
-• Sécurité et prévention de la fraude — intérêt légitime.
+• Traitement et livraison des commandes : exécution du contrat.
+• Gestion du compte client et du service après-vente : exécution du contrat.
+• Envoi de la newsletter : consentement (désinscription possible à tout moment).
+• Publication d'avis produits : consentement.
+• Sécurité et prévention de la fraude : intérêt légitime.
 
 Destinataires
 Vos données sont transmises uniquement aux prestataires nécessaires à l'exécution de nos services : Stripe (paiement), Resend (envoi d'e-mails transactionnels), notre partenaire logistique pour l'expédition des commandes, Hetzner et Cloudflare (hébergement et sécurité). Certains prestataires peuvent traiter des données hors de l'Union européenne ; ces transferts sont encadrés par des clauses contractuelles types.
@@ -280,7 +300,7 @@ Le Site utilise uniquement des cookies strictement nécessaires à son fonctionn
     dimensions: "Dimensions",
     fastDelivery: "Livraison rapide",
     fastDeliveryText:
-      "Votre colis arrive sous 3 à 5 jours ouvrés, en point relais ou directement chez vous.",
+      "Livraison offerte, directement chez vous sous 5 à 9 jours ouvrés, avec numéro de suivi.",
     exchanges: "Échanges simples",
     exchangesText:
       "Le produit ne vous convient pas ? Aucun souci, nous l'échangeons sans difficulté.",
@@ -358,6 +378,7 @@ Le Site utilise uniquement des cookies strictement nécessaires à son fonctionn
     emptyShort: "Votre panier est vide.",
     shipping: "Livraison",
     taxes: "Taxes",
+    taxesIncluded: "Incluses",
     discount: "Remise",
     subtotalExcl: "Sous-total (hors livraison et taxes)",
     freeShipping: "Offerte",

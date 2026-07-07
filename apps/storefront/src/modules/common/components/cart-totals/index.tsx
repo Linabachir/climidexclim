@@ -75,7 +75,9 @@ const CartTotals: React.FC<CartTotalsProps> = ({ totals }) => {
             data-testid="cart-taxes"
             data-value={tax_total || 0}
           >
-            {convertToLocale({ amount: tax_total ?? 0, currency_code })}
+            {tax_total
+              ? convertToLocale({ amount: tax_total, currency_code })
+              : t.cart.taxesIncluded}
           </span>
         </div>
       </div>

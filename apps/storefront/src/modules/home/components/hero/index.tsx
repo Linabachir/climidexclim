@@ -43,23 +43,18 @@ const Hero = async ({ product }: HeroProps) => {
           {t.home.heroDescription}
         </p>
 
-        <div className="flex flex-col xsmall:flex-row items-stretch xsmall:items-center gap-4 mt-11 w-full max-w-[560px]">
+        <div className="flex flex-col items-center gap-4 mt-11">
           <LocalizedClientLink
             href={productHref}
-            className="cj-cta flex-1 inline-flex items-center justify-center rounded-md bg-brand-navy px-8 py-4 text-[15px] font-medium text-white transition-colors duration-200 hover:bg-black"
-            data-testid="hero-cart-link"
-          >
-            {price
-              ? `${t.common.addToCart} · ${price.calculated_price}`
-              : t.common.addToCart}
-          </LocalizedClientLink>
-          <LocalizedClientLink
-            href={productHref}
-            className="flex-1 inline-flex items-center justify-center rounded-md border border-brand-ink/25 px-8 py-4 text-[15px] font-medium text-brand-ink transition-colors duration-200 hover:border-brand-ink hover:bg-brand-ink/5"
+            className="cj-cta inline-flex items-center justify-center rounded-md bg-brand-navy px-12 py-4 text-[15px] font-medium text-white transition-colors duration-200 hover:bg-black"
             data-testid="hero-discover-link"
           >
             {t.home.discoverClimaire}
           </LocalizedClientLink>
+          <p className="font-sans text-[14px] text-brand-ink-secondary">
+            {price ? `${price.calculated_price} · ` : ""}
+            {t.home.heroTrust}
+          </p>
         </div>
       </div>
 

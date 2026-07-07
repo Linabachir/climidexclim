@@ -29,19 +29,19 @@ export const en: Dictionary = {
     title1: "Barely there.",
     title2: "Instantly cooler.",
     description:
-      "The Climaire delivers a smooth, quiet stream of air with no visible blades. Technology that earns its place — nothing more.",
+      "The Climaire delivers a smooth, quiet stream of air with no visible blades. Technology that earns its place, nothing more.",
     discover: "Discover",
     fromPrice: "From",
     placeholder: "Climaire",
   },
   landing: {
     intro:
-      "No gimmicks — just technology that earns its place. The Climaire focuses on what matters: comfortable air, delivered quietly.",
+      "No gimmicks: just technology that earns its place. The Climaire focuses on what matters: comfortable air, delivered quietly.",
     features: [
       {
         eyebrow: "Bladeless airflow",
         title: "A smooth, steady breeze",
-        body: "With no visible blades, the Climaire wraps the room in soft, even airflow. No gusts, no choppy draft — just a constant feeling of freshness.",
+        body: "With no visible blades, the Climaire wraps the room in soft, even airflow. No gusts, no choppy draft: just a constant feeling of freshness.",
       },
       {
         eyebrow: "Quiet by design",
@@ -51,7 +51,7 @@ export const en: Dictionary = {
       {
         eyebrow: "Instant control",
         title: "Eight speeds, at your fingertips",
-        body: "Eight levels to dial in exactly the comfort you want. Adjustments are instant — no menus, no lag, you feel the difference right away.",
+        body: "Eight levels to dial in exactly the comfort you want. Adjustments are instant: no menus, no lag, you feel the difference right away.",
       },
       {
         eyebrow: "Built for every season",
@@ -80,9 +80,10 @@ export const en: Dictionary = {
     heroEyebrow: "Bladeless fan",
     heroTitle: "Breathe. It handles the rest.",
     heroDescription:
-      "The Climaire delivers a smooth, quiet stream of air — no blades, no sharp edges. Easy to clean and safe around kids.",
+      "The Climaire delivers a smooth, quiet stream of air, with no blades and no sharp edges. Easy to clean and safe around kids.",
     heroAlt: "The Climaire in a bright, uncluttered interior",
     discoverClimaire: "Discover the Climaire",
+    heroTrust: "Free delivery · Secure payment · 14-day returns",
     stats: [
       { value: "35–39 dB", label: "Whisper-quiet" },
       { value: "8 speeds", label: "Precise control" },
@@ -111,7 +112,7 @@ export const en: Dictionary = {
     techEyebrow: "Technology",
     techTitle: "How it works.",
     techBody:
-      "A brushless DC motor draws air in through the base and releases it through the ring in one continuous, even flow. No blades — quiet, safe and easy to clean.",
+      "A brushless DC motor draws air in through the base and releases it through the ring in one continuous, even flow. No blades: quiet, safe and easy to clean.",
     techCta: "See the specs",
     techAlt: "The Climaire on a desk, airflow technology",
     ctaTitle: "Bring the Climaire home.",
@@ -127,8 +128,8 @@ export const en: Dictionary = {
     body: "Tips for keeping cool this summer, plus what's new at CLIMIDEX. Unsubscribe anytime, in one click.",
     emailPlaceholder: "Your email address",
     subscribe: "Subscribe",
-    thanks: "Thanks — you're on the list!",
-    alreadySubscribed: "You're already on the list — thank you!",
+    thanks: "Thanks, you're on the list!",
+    alreadySubscribed: "You're already on the list, thank you!",
     genericError: "Something went wrong. Please try again.",
   },
   footer: {
@@ -140,6 +141,7 @@ export const en: Dictionary = {
     myAccount: "My account",
     myOrders: "My orders",
     legalColumn: "Information",
+    about: "About us",
     legal: "Legal notice",
     terms: "Terms of sale",
     returns: "Returns & refunds",
@@ -147,6 +149,24 @@ export const en: Dictionary = {
     contact: "Contact",
   },
   legal: {
+    aboutTitle: "About CLIMIDEX",
+    aboutBody: `One mission: keeping you properly cool.
+
+CLIMIDEX is a young French brand founded in 2026, with a deliberate choice: rather than selling fifty gadgets, we focus on a single product, the Climaire, and we do it well.
+
+Why a bladeless fan?
+Because it is the most pleasant technology to live with: a steady stream of air instead of gusts, a noise level compatible with a bedroom (35 to 39 dB), no accessible blades for children's fingers or curious pets, and a ten-second cleaning routine. We selected the Climaire after comparing the available models on the criteria that actually matter: noise, safety, power consumption and durability.
+
+Our commitments
+• Free, tracked delivery within 5 to 9 working days across France.
+• 100% secure payment through Stripe (card, Apple Pay, Google Pay): your card details never touch our servers.
+• 14 days to change your mind, full refund, and a 2-year legal warranty.
+• A customer service team that replies within 48 business hours at contact@climidex.com.
+
+Who are we?
+CLIMIDEX is the brand of Melvin Sokambi, a sole trader registered in France (SIREN 889 863 361). A small structure, on purpose: when you write to us, a human answers.
+
+A question before ordering? Write to us, we will be happy to help: contact@climidex.com.`,
     legalTitle: "Legal notice",
     termsTitle: "Terms of sale",
     returnsTitle: "Returns & refunds",
@@ -154,13 +174,13 @@ export const en: Dictionary = {
     contactTitle: "Contact",
     legalBody: `Site publisher
 The website climidex.com (the "Site") is published under the CLIMIDEX brand by Melvin Sokambi, sole trader (entrepreneur individuel).
-SIREN: 889 863 361 — SIRET (head office): 889 863 361 00024
+SIREN: 889 863 361. SIRET (head office): 889 863 361 00024.
 Registered office: 62 rue d'Amsterdam, 75009 Paris, France
 Publishing director: Melvin Sokambi.
 Contact: contact@climidex.com
 
 Hosting
-The Site is hosted by Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany — www.hetzner.com. DNS and content delivery are provided by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA.
+The Site is hosted by Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Germany (www.hetzner.com). DNS and content delivery are provided by Cloudflare, Inc., 101 Townsend St, San Francisco, CA 94107, USA.
 
 Intellectual property
 All elements of the Site (texts, visuals, logos, the CLIMIDEX brand, 3D models) are protected by intellectual property law. Any reproduction, representation or use, in whole or in part, without prior written authorisation is prohibited.
@@ -173,7 +193,7 @@ To report content or ask a question about the Site: contact@climidex.com.`,
     termsBody: `Version in force as of 5 July 2026.
 
 1. Purpose and scope
-These terms of sale ("Terms") govern all sales of products concluded on climidex.com between CLIMIDEX — the brand of Melvin Sokambi, sole trader, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris, France (the "Seller") — and any consumer (the "Customer"). Placing an order implies full acceptance of these Terms.
+These terms of sale ("Terms") govern all sales of products concluded on climidex.com between CLIMIDEX, the brand of Melvin Sokambi, sole trader, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris, France (the "Seller"), and any consumer (the "Customer"). Placing an order implies full acceptance of these Terms.
 
 2. Products
 The products offered (in particular the Climaire bladeless fan) are described as accurately as possible. Photographs and 3D visuals are not contractually binding.
@@ -203,7 +223,7 @@ CLIMIDEX cannot be held liable for non-performance caused by force majeure or by
 The processing of the Customer's data is described in the Privacy policy available on the Site.
 
 11. Consumer mediation
-In accordance with article L.612-1 of the French Consumer Code, the Customer may use a consumer mediator free of charge. [Mediator details — to be completed once a mediation scheme has been joined.] European online dispute resolution platform: ec.europa.eu/consumers/odr.
+In accordance with article L.612-1 of the French Consumer Code, the Customer may use a consumer mediator free of charge. CLIMIDEX is finalising its membership of an approved mediation scheme; the mediator's details will be published on this page once confirmed and are available on request at contact@climidex.com. European online dispute resolution platform: ec.europa.eu/consumers/odr.
 
 12. Governing law
 These Terms are governed by French law. In the event of a dispute, an amicable solution will be sought before any legal action.`,
@@ -224,11 +244,11 @@ Defective product or error on our part
 If the product you received is defective, damaged or does not match your order, contact us: the return is then at our expense and you may choose between a replacement and a refund. You also benefit from the 2-year legal warranty of conformity.
 
 Contact
-Any question: contact@climidex.com — we reply within 48 business hours.`,
+Any question: contact@climidex.com (we reply within 48 business hours).`,
     privacyBody: `Last updated: 5 July 2026.
 
 Data controller
-CLIMIDEX, publisher of climidex.com — contact@climidex.com.
+CLIMIDEX, publisher of climidex.com. Contact: contact@climidex.com.
 
 Data we collect
 We only collect the data needed to run the store: identity and contact details (name, e-mail, phone), delivery and billing addresses, order history, product reviews, newsletter subscription, and technical connection data (logs).
@@ -236,11 +256,11 @@ We only collect the data needed to run the store: identity and contact details (
 We never store your card details: payments are processed directly by Stripe.
 
 Purposes and legal bases
-• Order processing and delivery — performance of the contract.
-• Customer account and after-sales service — performance of the contract.
-• Newsletter — consent (you can unsubscribe at any time).
-• Product reviews — consent.
-• Security and fraud prevention — legitimate interest.
+• Order processing and delivery: performance of the contract.
+• Customer account and after-sales service: performance of the contract.
+• Newsletter: consent (you can unsubscribe at any time).
+• Product reviews: consent.
+• Security and fraud prevention: legitimate interest.
 
 Recipients
 Your data is shared only with the providers required to deliver our services: Stripe (payments), Resend (transactional e-mails), our logistics partner for order shipment, Hetzner and Cloudflare (hosting and security). Some providers may process data outside the European Union; such transfers are governed by standard contractual clauses.
@@ -281,7 +301,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     dimensions: "Dimensions",
     fastDelivery: "Fast delivery",
     fastDeliveryText:
-      "Your package arrives within 3 to 5 business days, at a pick-up point or directly at your door.",
+      "Free delivery to your door within 5 to 9 working days, with tracking.",
     exchanges: "Simple exchanges",
     exchangesText:
       "The product isn't quite right? No worries, we'll exchange it with no hassle.",
@@ -296,7 +316,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     shippedWithin: "Free delivery · 5 to 9 days",
     storyEyebrow: "At a glance",
     storyBody:
-      "The Climaire is a bladeless fan built around a smooth, even airflow — quiet and effortless to control. Its slim vertical shape frees up floor space and works on a sideboard, a desk or the floor. The brushless DC motor runs quietly, cleans easily, and there's not a blade in sight.",
+      "The Climaire is a bladeless fan built around a smooth, even airflow, quiet and effortless to control. Its slim vertical shape frees up floor space and works on a sideboard, a desk or the floor. The brushless DC motor runs quietly, cleans easily, and there's not a blade in sight.",
     storyPoints: [
       {
         title: "Bladeless airflow",
@@ -324,7 +344,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     ],
     reviewsTitle: "Customer reviews",
     reviewsCountLabel: "reviews",
-    reviewsEmpty: "No reviews yet — be the first to share yours.",
+    reviewsEmpty: "No reviews yet. Be the first to share yours.",
     reviewsClose: "Close",
     reviewsLeave: "Write a review",
     reviewsThanks:
@@ -358,6 +378,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     emptyShort: "Your cart is empty.",
     shipping: "Shipping",
     taxes: "Taxes",
+    taxesIncluded: "Included",
     discount: "Discount",
     subtotalExcl: "Subtotal (excl. shipping and taxes)",
     freeShipping: "Free",
@@ -499,7 +520,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     ordersSubtitle:
       "View your past orders and their status. You can also request a return or exchange.",
     noOrdersTitle: "No orders",
-    noOrdersText: "You haven't placed any orders yet — let's change that.",
+    noOrdersText: "You haven't placed any orders yet. Let's change that!",
     continueShopping: "Continue shopping",
     orderDate: "Order placed on",
     orderStatus: "Status",

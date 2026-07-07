@@ -1,4 +1,11 @@
+"use client"
+
 import { HttpTypes } from "@medusajs/types"
+import { useI18n } from "@lib/i18n/context"
+import {
+  translateOptionTitle,
+  translateOptionValue,
+} from "@lib/i18n/product-options"
 import { Text } from "@modules/common/components/ui"
 
 type LineItemOptionsProps = {
@@ -12,6 +19,7 @@ const LineItemOptions = ({
   "data-testid": dataTestid,
   "data-value": dataValue,
 }: LineItemOptionsProps) => {
+  const { locale } = useI18n()
   const options = variant?.options ?? []
 
   // Pas d'options structurées : on retombe sur le titre de variante.
@@ -34,13 +42,16 @@ const LineItemOptions = ({
       data-value={dataValue}
     >
       {options.map((o) => {
-        const label = (o.option?.title ?? "").trim()
+        const label = translateOptionTitle(
+          (o.option?.title ?? "").trim(),
+          locale
+        )
         return (
           <Text key={o.id} className="text-[13px] text-brand-mute">
             {label && (
               <span className="text-brand-ink-faint">{label} : </span>
             )}
-            {o.value}
+            {translateOptionValue(o.value, locale)}
           </Text>
         )
       })}

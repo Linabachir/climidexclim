@@ -45,37 +45,42 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 
 const ProductInfoTab = ({ product }: ProductTabsProps) => {
   const { t } = useI18n()
+
+  // On n'affiche que les champs renseignés (pas de lignes « - »).
+  const rows = [
+    { label: t.product.material, value: product.material },
+    { label: t.product.originCountry, value: product.origin_country },
+    { label: t.product.type, value: product.type?.value },
+    {
+      label: t.product.weight,
+      value: product.weight ? `${product.weight} g` : null,
+    },
+    {
+      label: t.product.dimensions,
+      value:
+        product.length && product.width && product.height
+          ? `${product.length} × ${product.width} × ${product.height} mm`
+          : null,
+    },
+  ].filter((r) => r.value)
+
+  if (!rows.length) {
+    return (
+      <div className="text-small-regular py-8">
+        <p className="text-brand-mute">{t.landing.specsNote}</p>
+      </div>
+    )
+  }
+
   return (
     <div className="text-small-regular py-8">
-      <div className="grid grid-cols-2 gap-x-8">
-        <div className="flex flex-col gap-y-4">
-          <div>
-            <span className="font-semibold">{t.product.material}</span>
-            <p>{product.material ? product.material : "-"}</p>
+      <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+        {rows.map((r) => (
+          <div key={r.label}>
+            <span className="font-semibold">{r.label}</span>
+            <p>{r.value}</p>
           </div>
-          <div>
-            <span className="font-semibold">{t.product.originCountry}</span>
-            <p>{product.origin_country ? product.origin_country : "-"}</p>
-          </div>
-          <div>
-            <span className="font-semibold">{t.product.type}</span>
-            <p>{product.type ? product.type.value : "-"}</p>
-          </div>
-        </div>
-        <div className="flex flex-col gap-y-4">
-          <div>
-            <span className="font-semibold">{t.product.weight}</span>
-            <p>{product.weight ? `${product.weight} g` : "-"}</p>
-          </div>
-          <div>
-            <span className="font-semibold">{t.product.dimensions}</span>
-            <p>
-              {product.length && product.width && product.height
-                ? `${product.length}L x ${product.width}l x ${product.height}H`
-                : "-"}
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )
