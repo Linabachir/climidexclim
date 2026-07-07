@@ -56,7 +56,7 @@ export const en: Dictionary = {
       {
         eyebrow: "Built for every season",
         title: "Designed to stay put",
-        body: "Understated and compact, the Climaire is at home on a desk, a sideboard or the floor. Its brushless DC motor sips power and keeps going, season after season.",
+        body: "Understated and compact, the Climaire is at home on a desk, a sideboard or the floor. Its efficient electric motor sips power and keeps going, season after season.",
       },
     ],
     specsEyebrow: "Specifications",
@@ -78,7 +78,8 @@ export const en: Dictionary = {
   },
   home: {
     heroEyebrow: "Bladeless fan",
-    heroTitle: "Breathe. It handles the rest.",
+    heroTitle1: "Breathe.",
+    heroTitle2: "It handles the rest.",
     heroDescription:
       "The Climaire delivers a smooth, quiet stream of air, with no blades and no sharp edges. Easy to clean and safe around kids.",
     heroAlt: "The Climaire in a bright, uncluttered interior",
@@ -101,7 +102,7 @@ export const en: Dictionary = {
       },
       {
         title: "Efficient",
-        body: "Brushless DC motor and ABS shell: low noise, low maintenance.",
+        body: "An efficient electric motor and ABS shell: low noise, low maintenance.",
       },
     ],
     lifestyleEyebrow: "Design",
@@ -112,7 +113,7 @@ export const en: Dictionary = {
     techEyebrow: "Technology",
     techTitle: "How it works.",
     techBody:
-      "A brushless DC motor draws air in through the base and releases it through the ring in one continuous, even flow. No blades: quiet, safe and easy to clean.",
+      "An electric motor draws air in through the base and releases it through the ring in one continuous, even flow. No blades: quiet, safe and easy to clean.",
     techCta: "See the specs",
     techAlt: "The Climaire on a desk, airflow technology",
     ctaTitle: "Bring the Climaire home.",
@@ -316,7 +317,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     shippedWithin: "Free delivery · 5 to 9 days",
     storyEyebrow: "At a glance",
     storyBody:
-      "The Climaire is a bladeless fan built around a smooth, even airflow, quiet and effortless to control. Its slim vertical shape frees up floor space and works on a sideboard, a desk or the floor. The brushless DC motor runs quietly, cleans easily, and there's not a blade in sight.",
+      "The Climaire is a bladeless fan built around a smooth, even airflow, quiet and effortless to control. Its slim vertical shape frees up floor space and works on a sideboard, a desk or the floor. The electric motor runs quietly, cleans easily, and there's not a blade in sight.",
     storyPoints: [
       {
         title: "Bladeless airflow",

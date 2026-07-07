@@ -55,7 +55,7 @@ export const fr = {
       {
         eyebrow: "Usage toute saison",
         title: "Pensé pour rester en place",
-        body: "Sobre et compact, le Climaire trouve sa place sur un bureau, une console ou au sol. Son moteur DC sans balais consomme peu et dure, saison après saison.",
+        body: "Sobre et compact, le Climaire trouve sa place sur un bureau, une console ou au sol. Son moteur électrique consomme peu et dure, saison après saison.",
       },
     ],
     specsEyebrow: "Caractéristiques",
@@ -77,7 +77,8 @@ export const fr = {
   },
   home: {
     heroEyebrow: "Ventilateur sans pales",
-    heroTitle: "Respirez. Il s'occupe du reste.",
+    heroTitle1: "Respirez.",
+    heroTitle2: "Il s'occupe du reste.",
     heroDescription:
       "Le Climaire diffuse un air régulier et silencieux, sans pales ni surface tranchante. Facile à nettoyer, sûr autour des enfants.",
     heroAlt: "Le Climaire dans un intérieur lumineux et épuré",
@@ -100,7 +101,7 @@ export const fr = {
       },
       {
         title: "Sobre",
-        body: "Moteur DC sans balais et coque ABS : peu de bruit, peu d'entretien.",
+        body: "Moteur électrique sobre et coque ABS : peu de bruit, peu d'entretien.",
       },
     ],
     lifestyleEyebrow: "Design",
@@ -111,7 +112,7 @@ export const fr = {
     techEyebrow: "Technologie",
     techTitle: "Comment ça marche.",
     techBody:
-      "Un moteur DC sans balais aspire l'air par la base et le diffuse par l'anneau, en un flux continu et régulier. Sans pale : silencieux, sûr et facile à nettoyer.",
+      "Un moteur électrique aspire l'air par la base et le diffuse par l'anneau, en un flux continu et régulier. Sans pale : silencieux, sûr et facile à nettoyer.",
     techCta: "Voir les caractéristiques",
     techAlt: "Le Climaire sur un bureau, technologie de flux d'air",
     ctaTitle: "Le Climaire, chez vous.",
@@ -315,7 +316,7 @@ Le Site utilise uniquement des cookies strictement nécessaires à son fonctionn
     shippedWithin: "Livraison offerte · 5 à 9 jours",
     storyEyebrow: "En bref",
     storyBody:
-      "Le Climaire est un ventilateur sans pales à flux d'air régulier et homogène, silencieux et simple à piloter. Son format vertical libère l'espace au sol : il passe sur une console, un bureau ou au sol. Le moteur DC sans balais reste discret, se nettoie facilement et n'a pas de pale apparente.",
+      "Le Climaire est un ventilateur sans pales à flux d'air régulier et homogène, silencieux et simple à piloter. Son format vertical libère l'espace au sol : il passe sur une console, un bureau ou au sol. Le moteur électrique reste discret, se nettoie facilement et n'a pas de pale apparente.",
     storyPoints: [
       {
         title: "Diffusion sans pales",

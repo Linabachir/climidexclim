@@ -36,7 +36,9 @@ const Hero = async ({ product }: HeroProps) => {
         </span>
 
         <h1 className="font-serif font-bold text-brand-ink leading-[0.98] tracking-[-0.02em] text-[clamp(46px,7vw,88px)] mt-6 max-w-[15ch]">
-          {t.home.heroTitle}
+          {t.home.heroTitle1}
+          <br />
+          {t.home.heroTitle2}
         </h1>
 
         <p className="font-sans text-[18px] leading-relaxed text-brand-ink-secondary mt-7 max-w-[48ch]">
