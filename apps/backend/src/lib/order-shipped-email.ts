@@ -127,6 +127,17 @@ function buildHtml({ order, trackNumber, trackingUrl, logistic }: ShippedEmailIn
       }
     </div>
 
+    <div style="border-top:1px solid #e7e3dd;padding:26px 28px;text-align:center;">
+      <div style="font-size:15px;color:#1c1c1c;font-weight:600;margin-bottom:6px;">Content de ton Climaire&nbsp;?</div>
+      <p style="color:#6b6864;font-size:13px;line-height:1.6;margin:0 0 16px;max-width:38ch;margin-left:auto;margin-right:auto;">
+        Une fois reçu et testé, ton avis nous aide énormément et guide les prochains clients. Ça prend une minute.
+      </p>
+      <a href="https://www.trustpilot.com/evaluate/climidex.com"
+         style="display:inline-block;border:1px solid #1a2238;color:#1a2238;text-decoration:none;padding:11px 26px;border-radius:6px;font-size:14px;font-weight:500;">
+        ★ Laisser un avis sur Trustpilot
+      </a>
+    </div>
+
     <div style="background:#f7f5f2;padding:20px;text-align:center;color:#8a8478;font-size:12px;line-height:1.7;">
       Une question&nbsp;? Écris-nous à
       <a href="mailto:contact@climidex.com" style="color:#1a2238;">contact@climidex.com</a><br/>
