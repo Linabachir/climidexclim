@@ -132,6 +132,17 @@ export const fr = {
     alreadySubscribed: "Vous êtes déjà inscrit, merci !",
     genericError: "Une erreur est survenue.",
   },
+  trust: {
+    delivery: "Livraison offerte & suivie",
+    deliverySub: "Partout en France, 5 à 9 jours",
+    service: "Service client en français",
+    serviceSub: "Réponse sous 48 h ouvrées",
+    warranty: "Garantie 2 ans",
+    warrantySub: "Garantie légale de conformité",
+    payment: "Paiement 100 % sécurisé",
+    paymentSub: "Carte, Apple Pay & Google Pay",
+    payLabel: "Paiement sécurisé via",
+  },
   footer: {
     tagline: "Le Climaire : un ventilateur sans pales, silencieux et facile à nettoyer.",
     productColumn: "Le produit",

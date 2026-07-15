@@ -133,6 +133,17 @@ export const en: Dictionary = {
     alreadySubscribed: "You're already on the list, thank you!",
     genericError: "Something went wrong. Please try again.",
   },
+  trust: {
+    delivery: "Free tracked delivery",
+    deliverySub: "Across France, 5 to 9 days",
+    service: "French customer service",
+    serviceSub: "Reply within 48 business hours",
+    warranty: "2-year warranty",
+    warrantySub: "Legal warranty of conformity",
+    payment: "100% secure payment",
+    paymentSub: "Card, Apple Pay & Google Pay",
+    payLabel: "Secure payment via",
+  },
   footer: {
     tagline: "The Climaire: a bladeless fan that's quiet and built to last.",
     productColumn: "The product",
