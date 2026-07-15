@@ -14,13 +14,14 @@ const PaymentMarks = () => (
       <path d="M19.5 6.8a7 7 0 0 0 0 10.4 7 7 0 0 0 0-10.4z" fill="#ff5f00" />
     </svg>
     {/* Apple Pay */}
-    <svg width="38" height="24" viewBox="0 0 38 24" className="rounded-[3px] border border-brand-line bg-white">
-      <text x="19" y="16" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="600" fontSize="9.5" fill="#000"> Pay</text>
-      <path d="M11.1 8.6c-.3.4-.8.7-1.3.6-.1-.5.2-1 .5-1.3.3-.4.9-.6 1.3-.7.1.5-.1 1-.5 1.4z" fill="#000" />
+    <svg width="44" height="24" viewBox="0 0 44 24" className="rounded-[3px] border border-brand-line bg-white">
+      <path d="M13 8.2c-.25.32-.66.56-1.06.53-.05-.4.15-.83.38-1.1.25-.32.68-.55 1.05-.57.04.42-.13.83-.37 1.14zm.37.6c-.58-.03-1.08.33-1.36.33-.28 0-.7-.31-1.16-.3-.6.01-1.15.35-1.46.88-.62 1.08-.16 2.68.44 3.56.3.43.65.92 1.11.9.44-.02.61-.29 1.14-.29.53 0 .68.29 1.16.28.48-.01.78-.44 1.07-.87.34-.5.48-.98.49-1-.01-.01-.94-.37-.95-1.45 0-.9.74-1.33.77-1.36-.42-.62-1.08-.69-1.31-.7z" fill="#000" />
+      <text x="27" y="16" fontFamily="Arial, sans-serif" fontWeight="600" fontSize="9" fill="#000">Pay</text>
     </svg>
     {/* Google Pay */}
-    <svg width="38" height="24" viewBox="0 0 38 24" className="rounded-[3px] border border-brand-line bg-white">
-      <text x="19" y="16" textAnchor="middle" fontFamily="Arial, sans-serif" fontWeight="600" fontSize="9" fill="#5f6368"><tspan fill="#4285f4">G</tspan><tspan fill="#ea4335">o</tspan><tspan fill="#fbbc04">o</tspan><tspan fill="#4285f4">g</tspan><tspan fill="#34a853">l</tspan><tspan fill="#ea4335">e</tspan> Pay</text>
+    <svg width="44" height="24" viewBox="0 0 44 24" className="rounded-[3px] border border-brand-line bg-white">
+      <text x="9" y="16" fontFamily="Arial, sans-serif" fontWeight="700" fontSize="10"><tspan fill="#4285f4">G</tspan></text>
+      <text x="17" y="16" fontFamily="Arial, sans-serif" fontWeight="500" fontSize="9" fill="#5f6368">Pay</text>
     </svg>
   </div>
 )
