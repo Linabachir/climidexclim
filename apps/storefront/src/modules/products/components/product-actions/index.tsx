@@ -11,6 +11,7 @@ import { useParams, usePathname, useSearchParams } from "next/navigation"
 import { useEffect, useMemo, useState } from "react"
 import ProductPrice from "../product-price"
 import { useRouter } from "next/navigation"
+import { useSelectedColor } from "../color-context"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -35,6 +36,7 @@ export default function ProductActions({
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const { setColor } = useSelectedColor()
 
   const [options, setOptions] = useState<Record<string, string | undefined>>({})
   const [isAdding, setIsAdding] = useState(false)
@@ -65,6 +67,11 @@ export default function ProductActions({
       ...prev,
       [optionId]: value,
     }))
+    // Si c'est l'option "Color", on prévient la galerie pour basculer la photo.
+    const opt = product.options?.find((o) => o.id === optionId)
+    if (opt?.title === "Color") {
+      setColor(value)
+    }
   }
 
   //check if the selected options produce a valid variant

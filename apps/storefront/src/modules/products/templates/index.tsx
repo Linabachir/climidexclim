@@ -13,6 +13,7 @@ import { HttpTypes } from "@medusajs/types"
 
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import ProductActionsWrapper from "./product-actions-wrapper"
+import { SelectedColorProvider } from "@modules/products/components/color-context"
 
 const TRUST = [
   "Livraison suivie",
@@ -78,6 +79,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           <span className="text-brand-ink">{product.title}</span>
         </nav>
 
+        <SelectedColorProvider>
         <div className="grid grid-cols-1 small:grid-cols-2 gap-10 small:gap-16 items-start">
           {/* Colonne galerie photos */}
           <div className="w-full">
@@ -111,6 +113,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             <ProductTabs product={product} />
           </div>
         </div>
+        </SelectedColorProvider>
       </div>
 
       {/* Récit produit premium (visuels + bénéfices) */}

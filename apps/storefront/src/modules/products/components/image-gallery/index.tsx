@@ -2,9 +2,13 @@
 
 import { HttpTypes } from "@medusajs/types"
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 import { useI18n } from "@lib/i18n/context"
+import {
+  imageKeyForColor,
+  useSelectedColor,
+} from "@modules/products/components/color-context"
 
 type ImageGalleryProps = {
   images: HttpTypes.StoreProductImage[]
@@ -28,8 +32,19 @@ const rank = (url?: string) => {
 
 const ImageGallery = ({ images: rawImages }: ImageGalleryProps) => {
   const { t } = useI18n()
+  const { color } = useSelectedColor()
   const images = [...rawImages].sort((a, b) => rank(a.url) - rank(b.url))
   const [active, setActive] = useState(0)
+
+  // Quand un coloris est choisi, on bascule sur sa photo (si elle existe).
+  useEffect(() => {
+    const key = imageKeyForColor(color)
+    if (!key) return
+    const idx = images.findIndex((img) => (img.url ?? "").includes(key))
+    if (idx >= 0) setActive(idx)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [color])
+
   const current = images[active] ?? images[0]
 
   const go = (dir: number) =>
