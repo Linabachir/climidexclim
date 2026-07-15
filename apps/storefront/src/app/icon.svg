@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <!-- Favicon CLIMIDEX : « c » géométrique blanc sur bleu nuit de la marque -->
-  <rect width="64" height="64" rx="14" fill="#1a2238"/>
-  <path d="M 40.4 43 A 13 13 0 1 1 40.4 23" fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+  <!-- Favicon CLIMIDEX : « c » bleu nuit de la marque sur fond blanc -->
+  <rect width="64" height="64" rx="14" fill="#ffffff"/>
+  <path d="M 40.4 43 A 13 13 0 1 1 40.4 23" fill="none" stroke="#1a2238" stroke-width="9" stroke-linecap="round"/>
 </svg>
