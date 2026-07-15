@@ -25,6 +25,10 @@ const OPTION_VALUES: Record<string, Record<Locale, string>> = {
     fr: "Bleu & blanc, ventilation",
     en: "Blue & white, cooling",
   },
+  "Cold wind titanium dust": {
+    fr: "Gris anthracite, ventilation",
+    en: "Anthracite grey, cooling",
+  },
   EU: { fr: "EU (France)", en: "EU" },
   UK: { fr: "UK", en: "UK" },
   US: { fr: "US", en: "US" },
