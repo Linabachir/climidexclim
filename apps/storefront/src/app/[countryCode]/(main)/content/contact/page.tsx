@@ -5,6 +5,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 
 export const metadata: Metadata = {
   title: "Contact | CLIMIDEX",
+  alternates: { canonical: "/fr/content/contact", languages: { fr: "/fr/content/contact", en: "/en/content/contact", "x-default": "/fr/content/contact" } },
 }
 
 export default async function Contact() {

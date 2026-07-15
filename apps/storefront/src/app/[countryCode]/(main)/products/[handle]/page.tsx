@@ -88,11 +88,21 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${product.title} | CLIMIDEX`,
-    description: `${product.title}`,
+    title: `${product.title} · Ventilateur sans pales | CLIMIDEX`,
+    description:
+      "Silencieux (35 dB), 8 vitesses & mode nuit. Sûr pour les enfants, sans pales. Rafraîchit jusqu'à 20 m². Livraison offerte partout en France.",
+    // Version officielle = /fr (évite les doublons entre variantes pays).
+    alternates: {
+      canonical: `/fr/products/${handle}`,
+      languages: {
+        fr: `/fr/products/${handle}`,
+        en: `/en/products/${handle}`,
+        "x-default": `/fr/products/${handle}`,
+      },
+    },
     openGraph: {
-      title: `${product.title} | CLIMIDEX`,
-      description: `${product.title}`,
+      title: `${product.title} · Ventilateur sans pales | CLIMIDEX`,
+      description: "Le ventilateur sans pales, silencieux et sûr pour toute la famille.",
       images: product.thumbnail ? [product.thumbnail] : [],
     },
   }

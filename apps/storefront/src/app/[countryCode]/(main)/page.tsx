@@ -21,6 +21,13 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t.home.metaTitle,
     description: t.home.metaDescription,
+    // Version officielle = /fr (toutes les variantes pays servent le même
+    // contenu ; sans canonical, Google les voit comme des doublons et
+    // n'indexe rien).
+    alternates: {
+      canonical: "/fr",
+      languages: { fr: "/fr", en: "/en", "x-default": "/fr" },
+    },
   }
 }
 
