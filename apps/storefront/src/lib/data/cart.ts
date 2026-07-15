@@ -67,8 +67,16 @@ export async function getOrSetCart(countryCode: string) {
 
   if (!cart) {
     const locale = await getLocale()
+    // Attribution influenceur : on grave le ref du cookie dans le panier,
+    // recopié sur la commande à la validation (voir subscriber order-placed-ref).
+    const { cookies: nextCookies } = await import("next/headers")
+    const ref = (await nextCookies()).get("_climidex_ref")?.value
     const cartResp = await sdk.store.cart.create(
-      { region_id: region.id, locale: locale || undefined },
+      {
+        region_id: region.id,
+        locale: locale || undefined,
+        ...(ref ? { metadata: { ref } } : {}),
+      },
       {},
       headers
     )

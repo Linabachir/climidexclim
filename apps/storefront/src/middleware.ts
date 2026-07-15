@@ -100,9 +100,26 @@ async function getCountryCode(
 /**
  * Middleware to handle region selection and onboarding status.
  */
+// Lien d'affiliation influenceur : ?ref=sarah → cookie 30 jours, attribué à
+// la commande. On sanitise (lettres/chiffres/tiret, 40 max).
+const REF_COOKIE = "_climidex_ref"
+const applyRefCookie = (request: NextRequest, response: NextResponse) => {
+  const raw = request.nextUrl.searchParams.get("ref")
+  if (!raw) return response
+  const ref = raw.toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40)
+  if (ref) {
+    response.cookies.set(REF_COOKIE, ref, {
+      maxAge: 60 * 60 * 24 * 30,
+      sameSite: "lax",
+      path: "/",
+    })
+  }
+  return response
+}
+
 export async function middleware(request: NextRequest) {
   if (request.nextUrl.pathname.includes(".")) {
-    return NextResponse.next()
+    return applyRefCookie(request, NextResponse.next())
   }
 
   const cacheIdCookie = request.cookies.get("_medusa_cache_id")
@@ -117,14 +134,13 @@ export async function middleware(request: NextRequest) {
   const urlHasCountry = firstPathSegment === country.toLowerCase()
 
   if (urlHasCountry) {
+    const response = NextResponse.next()
     if (!cacheIdCookie) {
-      const response = NextResponse.next()
       response.cookies.set("_medusa_cache_id", cacheId, {
         maxAge: 60 * 60 * 24,
       })
-      return response
     }
-    return NextResponse.next()
+    return applyRefCookie(request, response)
   }
 
   // if the url doesn't have the country, redirect to it
@@ -133,7 +149,7 @@ export async function middleware(request: NextRequest) {
   const queryString = request.nextUrl.search || ""
   const redirectUrl = `${request.nextUrl.origin}/${country}${redirectPath}${queryString}`
 
-  return NextResponse.redirect(redirectUrl, 307)
+  return applyRefCookie(request, NextResponse.redirect(redirectUrl, 307))
 }
 
 export const config = {
