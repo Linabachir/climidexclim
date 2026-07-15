@@ -119,9 +119,9 @@ export const en: Dictionary = {
     ctaTitle: "Bring the Climaire home.",
     ctaShipping: "Free delivery in 5 to 9 days, anywhere in France.",
     ctaAlt: "The Climaire in an upscale interior",
-    metaTitle: "CLIMIDEX · Climaire, the bladeless fan",
+    metaTitle: "The Climaire · Official Site · Bladeless Fan",
     metaDescription:
-      "The Climaire: a bladeless fan, 35–39 dB, 8 speeds, for rooms up to 20 m². No exposed blades, easy to clean.",
+      "Quiet (35 dB), 8 speeds & night mode. Safe around children, bladeless. Cools rooms up to 20 m². Free delivery across France, secure payment.",
   },
   newsletter: {
     eyebrow: "Newsletter",

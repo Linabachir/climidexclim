@@ -32,6 +32,14 @@ const logo = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
+  // Logo CLIMIDEX servi comme favicon (onglet navigateur + résultats Google).
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/icon.svg",
+  },
 }
 
 export default async function RootLayout(props: {

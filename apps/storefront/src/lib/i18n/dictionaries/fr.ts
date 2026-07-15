@@ -118,9 +118,9 @@ export const fr = {
     ctaTitle: "Le Climaire, chez vous.",
     ctaShipping: "Livraison offerte en 5 à 9 jours, partout en France.",
     ctaAlt: "Le Climaire dans un intérieur de standing",
-    metaTitle: "CLIMIDEX · Climaire, le ventilateur sans pales",
+    metaTitle: "Le Climaire · Site officiel · Ventilateur sans pales",
     metaDescription:
-      "Le Climaire : un ventilateur sans pales, 35–39 dB, 8 vitesses, pour une pièce jusqu'à 20 m². Sans pale apparente, facile à nettoyer.",
+      "Silencieux (35 dB), 8 vitesses & mode nuit. Sûr pour les enfants, sans pales. Rafraîchit jusqu'à 20 m². Livraison offerte partout en France, paiement sécurisé.",
   },
   newsletter: {
     eyebrow: "Newsletter",
