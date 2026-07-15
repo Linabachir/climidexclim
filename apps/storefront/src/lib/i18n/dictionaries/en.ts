@@ -147,7 +147,54 @@ export const en: Dictionary = {
     terms: "Terms of sale",
     returns: "Returns & refunds",
     privacy: "Privacy",
+    faq: "FAQ",
     contact: "Contact",
+  },
+  faq: {
+    title: "Frequently asked questions",
+    lead: "Everything you need to know about the Climaire, delivery and returns. Another question? Write to us at contact@climidex.com.",
+    items: [
+      {
+        q: "How does a bladeless fan work?",
+        a: "An electric motor draws air in through the base and pushes it out through the ring, creating a steady, enveloping airflow. With no exposed blades, it's safer, quieter and far easier to clean than a traditional fan.",
+      },
+      {
+        q: "Is the Climaire really quiet?",
+        a: "Yes. It runs between 35 and 39 dB depending on the speed, with a night mode. It's discreet enough to sleep right next to it, in a bedroom.",
+      },
+      {
+        q: "Is it safe around children and pets?",
+        a: "Absolutely. With no accessible blades or sharp surfaces, there's no risk for curious fingers or pets. It's one of its biggest advantages over bladed fans.",
+      },
+      {
+        q: "What area can it cool?",
+        a: "Up to around 20 m² — a bedroom, an office or a standard living room. Its 8 speeds let you fine-tune the airflow precisely.",
+      },
+      {
+        q: "What are the delivery times?",
+        a: "Delivery is free across France, within 5 to 9 working days. You receive an email with a tracking number as soon as your order ships.",
+      },
+      {
+        q: "Can I return the product if I change my mind?",
+        a: "Yes. You have 14 days after delivery to change your mind and be fully refunded, with no need to justify your decision. Details are on our Returns & refunds page.",
+      },
+      {
+        q: "Is the product under warranty?",
+        a: "Yes, all our products come with the 2-year legal warranty of conformity. In case of a defect, write to us at contact@climidex.com and we'll take care of it.",
+      },
+      {
+        q: "Is payment secure?",
+        a: "Completely. Payments are processed by Stripe (card, Apple Pay, Google Pay). Your card details never pass through our servers.",
+      },
+      {
+        q: "How do I track my order?",
+        a: "As soon as it ships, you receive an email with the tracking link. You can also check your order status anytime in your customer account.",
+      },
+      {
+        q: "How do I clean the Climaire?",
+        a: "A simple wipe with a dry or slightly damp cloth on the ring and base is enough. With no blades or grille, there are no nooks where dust builds up.",
+      },
+    ],
   },
   legal: {
     aboutTitle: "About CLIMIDEX",

@@ -7,6 +7,7 @@ const PATHS = [
   "",
   "/products/climaire-ventilateur-sans-pales",
   "/content/a-propos",
+  "/content/faq",
   "/content/cgv",
   "/content/mentions-legales",
   "/content/retours",

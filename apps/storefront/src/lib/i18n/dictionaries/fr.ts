@@ -146,7 +146,54 @@ export const fr = {
     terms: "CGV",
     returns: "Retours & remboursements",
     privacy: "Confidentialité",
+    faq: "FAQ",
     contact: "Contact",
+  },
+  faq: {
+    title: "Questions fréquentes",
+    lead: "Tout ce qu'il faut savoir sur le Climaire, la livraison et les retours. Une autre question ? Écrivez-nous à contact@climidex.com.",
+    items: [
+      {
+        q: "Comment fonctionne un ventilateur sans pales ?",
+        a: "Un moteur électrique aspire l'air par la base et le propulse à travers l'anneau, créant un flux d'air régulier et enveloppant. Aucune pale n'est apparente : c'est plus sûr, plus silencieux et bien plus facile à nettoyer qu'un ventilateur classique.",
+      },
+      {
+        q: "Le Climaire est-il vraiment silencieux ?",
+        a: "Oui. Il fonctionne entre 35 et 39 dB selon la vitesse, avec un mode nuit. C'est assez discret pour dormir juste à côté, dans une chambre.",
+      },
+      {
+        q: "Est-il sûr pour les enfants et les animaux ?",
+        a: "Absolument. Sans pale accessible ni surface tranchante, il n'y a aucun risque pour les doigts curieux ni pour les animaux. C'est l'un de ses grands avantages face aux ventilateurs à pales.",
+      },
+      {
+        q: "Quelle surface peut-il rafraîchir ?",
+        a: "Jusqu'à environ 20 m², soit une chambre, un bureau ou un salon de taille standard. Ses 8 vitesses permettent d'ajuster le flux d'air au degré près.",
+      },
+      {
+        q: "Quels sont les délais de livraison ?",
+        a: "La livraison est offerte partout en France, sous 5 à 9 jours ouvrés. Vous recevez un email avec un numéro de suivi dès l'expédition de votre commande.",
+      },
+      {
+        q: "Puis-je retourner le produit si je change d'avis ?",
+        a: "Oui. Vous disposez de 14 jours après réception pour changer d'avis et être intégralement remboursé, sans avoir à vous justifier. Les détails figurent sur notre page Retours & remboursements.",
+      },
+      {
+        q: "Le produit est-il garanti ?",
+        a: "Oui, tous nos produits bénéficient de la garantie légale de conformité de 2 ans. En cas de défaut, écrivez-nous à contact@climidex.com et nous nous en occupons.",
+      },
+      {
+        q: "Le paiement est-il sécurisé ?",
+        a: "Totalement. Les paiements sont traités par Stripe (carte bancaire, Apple Pay, Google Pay). Vos données bancaires ne transitent jamais par nos serveurs.",
+      },
+      {
+        q: "Comment suivre ma commande ?",
+        a: "Dès l'expédition, vous recevez un email avec le lien de suivi. Vous retrouvez aussi l'état de vos commandes à tout moment dans votre compte client.",
+      },
+      {
+        q: "Comment nettoyer le Climaire ?",
+        a: "Un simple coup de chiffon sec ou légèrement humide sur l'anneau et la base suffit. Sans pale ni grille, il n'y a pas de recoins où la poussière s'accumule.",
+      },
+    ],
   },
   legal: {
     aboutTitle: "À propos de CLIMIDEX",
