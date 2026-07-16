@@ -32,6 +32,46 @@ const logo = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL(getBaseURL()),
+  // Titre par défaut ; les pages qui définissent le leur passent tel quel (%s).
+  title: {
+    default: "CLIMIDEX · Le Climaire, ventilateur sans pales",
+    template: "%s",
+  },
+  applicationName: "CLIMIDEX",
+  keywords: [
+    "ventilateur sans pales",
+    "ventilateur silencieux",
+    "ventilateur colonne",
+    "ventilateur tour",
+    "rafraîchissement",
+    "ventilateur design",
+    "Climaire",
+    "CLIMIDEX",
+  ],
+  authors: [{ name: "CLIMIDEX" }],
+  creator: "CLIMIDEX",
+  publisher: "CLIMIDEX",
+  // Indexation par défaut, avec grandes previews d'image/snippet pour Google.
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  openGraph: {
+    type: "website",
+    siteName: "CLIMIDEX",
+    locale: "fr_FR",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+  manifest: "/manifest.webmanifest",
   // Logo CLIMIDEX servi comme favicon (onglet navigateur + résultats Google).
   icons: {
     icon: [

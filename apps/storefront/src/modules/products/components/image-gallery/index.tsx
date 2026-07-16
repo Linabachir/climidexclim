@@ -66,7 +66,7 @@ const ImageGallery = ({ images: rawImages }: ImageGalleryProps) => {
             src={current.url}
             priority
             className="object-contain p-3"
-            alt="Climaire"
+            alt="Climaire, ventilateur sans pales — vue du produit"
             fill
             sizes="(max-width: 1024px) 100vw, 440px"
           />
@@ -122,7 +122,7 @@ const ImageGallery = ({ images: rawImages }: ImageGalleryProps) => {
                 <Image
                   src={image.url}
                   className="object-cover"
-                  alt={`Miniature ${i + 1}`}
+                  alt={`Climaire, ventilateur sans pales — miniature ${i + 1}`}
                   fill
                   sizes="72px"
                 />
