@@ -1,5 +1,6 @@
 import { getI18n } from "@lib/i18n/server"
 
+
 type Props = {
   /** Ancre vers le bloc d'achat (non utilisée pour l'instant). */
   buyHref?: string
@@ -16,9 +17,9 @@ const ProductStory = async ({ buyHref = "#acheter" }: Props) => {
     <div className="w-full">
       {/* ============ EN BREF ============ */}
       <section className="content-container py-16 small:py-20 border-t border-brand-line">
-        <span className="text-[14px] font-medium text-brand-navy">
+        <h2 className="text-[14px] font-medium text-brand-navy">
           {t.product.storyEyebrow}
-        </span>
+        </h2>
         <p className="font-sans text-[18px] leading-relaxed text-brand-ink-secondary mt-4 max-w-[68ch]">
           {t.product.storyBody}
         </p>
@@ -26,7 +27,7 @@ const ProductStory = async ({ buyHref = "#acheter" }: Props) => {
         <div className="mt-10 grid grid-cols-1 xsmall:grid-cols-2 gap-x-12 gap-y-8 border-t border-brand-line pt-8">
           {t.product.storyPoints.map(({ title, body }) => (
             <div key={title}>
-              <div className="text-[15px] font-medium text-brand-ink">{title}</div>
+              <h3 className="text-[15px] font-medium text-brand-ink">{title}</h3>
               <p className="text-[14px] leading-relaxed text-brand-ink-secondary mt-1.5">
                 {body}
               </p>

@@ -25,7 +25,7 @@ const ProductInfo = async ({ product }: ProductInfoProps) => {
           CLIMIDEX
         </span>
         <Heading
-          level="h2"
+          level="h1"
           className="font-serif text-4xl small:text-5xl leading-tight text-brand-ink font-medium -mt-1"
           data-testid="product-title"
         >
