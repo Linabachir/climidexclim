@@ -3,6 +3,7 @@
 import { useState } from "react"
 
 import { useI18n } from "@lib/i18n/context"
+import { track } from "@lib/analytics/gtag"
 
 const BACKEND = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || ""
 const PUBKEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY || ""
@@ -38,6 +39,9 @@ const Newsletter = () => {
           ? t.newsletter.alreadySubscribed
           : t.newsletter.thanks
       )
+      if (!data.alreadySubscribed) {
+        track("sign_up", { method: "newsletter" })
+      }
       setEmail("")
     } catch (err) {
       setState("error")

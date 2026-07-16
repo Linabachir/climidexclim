@@ -3,6 +3,7 @@ import { Metadata } from "next"
 import { Archivo, Inter, Poppins } from "next/font/google"
 import { getI18n } from "@lib/i18n/server"
 import { I18nProvider } from "@lib/i18n/context"
+import Analytics from "@lib/analytics/analytics"
 import "styles/globals.css"
 
 // CLIMIDEX type pairing — Archivo (grotesque affirmé/éditorial, titres) + Inter
@@ -103,6 +104,7 @@ export default async function RootLayout(props: {
           crossOrigin="anonymous"
         />
         <link rel="dns-prefetch" href="https://api.climidex.com" />
+        <Analytics />
         <I18nProvider locale={locale} dictionary={t}>
           <main className="relative">{props.children}</main>
         </I18nProvider>

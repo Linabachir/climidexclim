@@ -4,6 +4,7 @@ import { listProducts } from "@lib/data/products"
 import { getRegion, listRegions } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
 import { HttpTypes } from "@medusajs/types"
+import TrackEvent from "@lib/analytics/track-event"
 
 type Props = {
   params: Promise<{ countryCode: string; handle: string }>
@@ -181,6 +182,20 @@ export default async function ProductPage(props: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <TrackEvent
+        event="view_item"
+        params={{
+          currency: "EUR",
+          value: lowPrice,
+          items: [
+            {
+              item_id: pricedProduct.id,
+              item_name: pricedProduct.title,
+              price: lowPrice,
+            },
+          ],
+        }}
       />
       <ProductTemplate
         product={pricedProduct}

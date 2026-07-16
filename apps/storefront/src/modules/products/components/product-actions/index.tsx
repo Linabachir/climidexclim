@@ -12,6 +12,7 @@ import { useEffect, useMemo, useState } from "react"
 import ProductPrice from "../product-price"
 import { useRouter } from "next/navigation"
 import { useSelectedColor } from "../color-context"
+import { track } from "@lib/analytics/gtag"
 
 type ProductActionsProps = {
   product: HttpTypes.StoreProduct
@@ -135,6 +136,21 @@ export default function ProductActions({
         variantId: selectedVariant.id,
         quantity: 1,
         countryCode,
+      })
+      track("add_to_cart", {
+        currency: "EUR",
+        value: (selectedVariant.calculated_price as { calculated_amount?: number })
+          ?.calculated_amount,
+        items: [
+          {
+            item_id: selectedVariant.id,
+            item_name: product.title,
+            price: (
+              selectedVariant.calculated_price as { calculated_amount?: number }
+            )?.calculated_amount,
+            quantity: 1,
+          },
+        ],
       })
       router.push(`/${countryCode}/cart`)
     } finally {
