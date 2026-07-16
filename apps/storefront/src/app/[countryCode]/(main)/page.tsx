@@ -11,6 +11,7 @@ import HomeCta from "@modules/home/components/home-cta"
 import { listProducts } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
 import { getProductPrice } from "@lib/util/get-product-price"
+import { graph, organizationJsonLd, websiteJsonLd } from "@lib/seo/jsonld"
 
 // Handle du produit phare. La boutique est mono-produit pour l'instant ;
 // ce handle pointe vers le Climaire dans le backend Medusa.
@@ -64,26 +65,8 @@ export default async function Home(props: {
     : null
 
   // Données structurées Organisation + Site : aide Google à comprendre la
-  // marque CLIMIDEX (entité, logo) et peut activer la barre de recherche.
-  const base = process.env.NEXT_PUBLIC_BASE_URL || "https://climidex.com"
-  const orgJsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        name: "CLIMIDEX",
-        url: base,
-        logo: `${base}/logo.png`,
-        email: "contact@climidex.com",
-      },
-      {
-        "@type": "WebSite",
-        name: "CLIMIDEX",
-        url: base,
-        inLanguage: "fr-FR",
-      },
-    ],
-  }
+  // marque CLIMIDEX (entité, logo). Schémas centralisés dans lib/seo.
+  const orgJsonLd = graph(organizationJsonLd(), websiteJsonLd())
 
   return (
     <>

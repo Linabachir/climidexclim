@@ -5,6 +5,7 @@ import { getRegion, listRegions } from "@lib/data/regions"
 import ProductTemplate from "@modules/products/templates"
 import { HttpTypes } from "@medusajs/types"
 import TrackEvent from "@lib/analytics/track-event"
+import { graph, productJsonLd, breadcrumbJsonLd } from "@lib/seo/jsonld"
 
 type Props = {
   params: Promise<{ countryCode: string; handle: string }>
@@ -139,43 +140,20 @@ export default async function ProductPage(props: Props) {
     .filter((n): n is number => typeof n === "number")
   const lowPrice = prices.length ? Math.min(...prices) : undefined
   const productUrl = `${base}/fr/products/${pricedProduct.handle}`
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Product",
-        name: pricedProduct.title,
-        description:
-          "Ventilateur sans pales silencieux (35-39 dB), 8 vitesses, mode nuit. Rafraîchissement continu, faible consommation, sûr pour les enfants.",
-        image: (pricedProduct.images ?? []).map((i) => i.url).slice(0, 6),
-        brand: { "@type": "Brand", name: "CLIMIDEX" },
-        ...(lowPrice
-          ? {
-              offers: {
-                "@type": "Offer",
-                url: productUrl,
-                priceCurrency: "EUR",
-                price: lowPrice.toFixed(2),
-                availability: "https://schema.org/InStock",
-                seller: { "@type": "Organization", name: "CLIMIDEX" },
-              },
-            }
-          : {}),
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Accueil", item: `${base}/fr` },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: pricedProduct.title,
-            item: productUrl,
-          },
-        ],
-      },
-    ],
-  }
+  const jsonLd = graph(
+    productJsonLd({
+      name: pricedProduct.title,
+      description:
+        "Ventilateur sans pales silencieux (35-39 dB), 8 vitesses, mode nuit. Rafraîchissement continu, faible consommation, sûr pour les enfants.",
+      images: (pricedProduct.images ?? []).map((i) => i.url),
+      url: productUrl,
+      price: lowPrice,
+    }),
+    breadcrumbJsonLd([
+      { name: "Accueil", url: `${base}/fr` },
+      { name: pricedProduct.title, url: productUrl },
+    ])
+  )
 
   return (
     <>
