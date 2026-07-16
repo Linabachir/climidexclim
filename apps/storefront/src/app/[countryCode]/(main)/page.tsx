@@ -63,8 +63,34 @@ export default async function Home(props: {
     ? getProductPrice({ product }).cheapestPrice?.calculated_price
     : null
 
+  // Données structurées Organisation + Site : aide Google à comprendre la
+  // marque CLIMIDEX (entité, logo) et peut activer la barre de recherche.
+  const base = process.env.NEXT_PUBLIC_BASE_URL || "https://climidex.com"
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        name: "CLIMIDEX",
+        url: base,
+        logo: `${base}/logo.png`,
+        email: "contact@climidex.com",
+      },
+      {
+        "@type": "WebSite",
+        name: "CLIMIDEX",
+        url: base,
+        inLanguage: "fr-FR",
+      },
+    ],
+  }
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+      />
       <Hero product={product} />
       <HomeStats />
       <HomePrinciples />

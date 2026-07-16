@@ -130,12 +130,64 @@ export default async function ProductPage(props: Props) {
 
   const images = getImagesForVariant(pricedProduct, selectedVariantId)
 
+  // Données structurées Product + fil d'Ariane : permet à Google d'afficher le
+  // prix, la disponibilité et le chemin directement dans les résultats.
+  const base = process.env.NEXT_PUBLIC_BASE_URL || "https://climidex.com"
+  const prices = (pricedProduct.variants ?? [])
+    .map((v) => (v.calculated_price as any)?.calculated_amount)
+    .filter((n): n is number => typeof n === "number")
+  const lowPrice = prices.length ? Math.min(...prices) : undefined
+  const productUrl = `${base}/fr/products/${pricedProduct.handle}`
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        name: pricedProduct.title,
+        description:
+          "Ventilateur sans pales silencieux (35-39 dB), 8 vitesses, mode nuit. Rafraîchissement continu, faible consommation, sûr pour les enfants.",
+        image: (pricedProduct.images ?? []).map((i) => i.url).slice(0, 6),
+        brand: { "@type": "Brand", name: "CLIMIDEX" },
+        ...(lowPrice
+          ? {
+              offers: {
+                "@type": "Offer",
+                url: productUrl,
+                priceCurrency: "EUR",
+                price: lowPrice.toFixed(2),
+                availability: "https://schema.org/InStock",
+                seller: { "@type": "Organization", name: "CLIMIDEX" },
+              },
+            }
+          : {}),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Accueil", item: `${base}/fr` },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: pricedProduct.title,
+            item: productUrl,
+          },
+        ],
+      },
+    ],
+  }
+
   return (
-    <ProductTemplate
-      product={pricedProduct}
-      region={region}
-      countryCode={params.countryCode}
-      images={images ?? []}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <ProductTemplate
+        product={pricedProduct}
+        region={region}
+        countryCode={params.countryCode}
+        images={images ?? []}
+      />
+    </>
   )
 }
