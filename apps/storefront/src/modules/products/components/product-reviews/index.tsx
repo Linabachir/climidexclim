@@ -171,6 +171,8 @@ const ProductReviews = ({ productId }: { productId: string }) => {
                 <input
                   type="text"
                   placeholder={t.product.reviewsNamePlaceholder}
+                  aria-label={t.product.reviewsNamePlaceholder}
+                  autoComplete="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="border border-brand-line bg-white px-4 py-3 text-sm text-brand-ink outline-none focus:border-brand-ink"
@@ -178,12 +180,14 @@ const ProductReviews = ({ productId }: { productId: string }) => {
                 <input
                   type="text"
                   placeholder={t.product.reviewsTitlePlaceholder}
+                  aria-label={t.product.reviewsTitlePlaceholder}
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   className="border border-brand-line bg-white px-4 py-3 text-sm text-brand-ink outline-none focus:border-brand-ink"
                 />
                 <textarea
                   placeholder={t.product.reviewsContentPlaceholder}
+                  aria-label={t.product.reviewsContentPlaceholder}
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
                   rows={4}
