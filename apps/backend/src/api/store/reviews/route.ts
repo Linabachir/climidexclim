@@ -75,6 +75,18 @@ export async function POST(
       .json({ message: "La note doit être comprise entre 1 et 5." })
   }
 
+  // Plafonds de taille : évite les payloads abusifs (bloat DB / DoS léger).
+  if (
+    author_name.trim().length > 80 ||
+    (title?.trim().length ?? 0) > 120 ||
+    content.trim().length > 2000 ||
+    (email?.trim().length ?? 0) > 160
+  ) {
+    return res
+      .status(400)
+      .json({ message: "Un des champs dépasse la longueur autorisée." })
+  }
+
   const reviewModule: ReviewModuleService = req.scope.resolve(REVIEW_MODULE)
 
   const review = await reviewModule.createReviews({
