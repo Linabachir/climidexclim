@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
     // n'indexe rien).
     alternates: {
       canonical: "/fr",
-      languages: { fr: "/fr", en: "/en", "x-default": "/fr" },
+      languages: { fr: "/fr", "x-default": "/fr" },
     },
   }
 }

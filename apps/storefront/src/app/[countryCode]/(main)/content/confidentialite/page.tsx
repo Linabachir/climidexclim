@@ -5,7 +5,7 @@ import LegalPage from "@modules/content/components/legal-page"
 
 export const metadata: Metadata = {
   title: "Politique de confidentialité | CLIMIDEX",
-  alternates: { canonical: "/fr/content/confidentialite", languages: { fr: "/fr/content/confidentialite", en: "/en/content/confidentialite", "x-default": "/fr/content/confidentialite" } },
+  alternates: { canonical: "/fr/content/confidentialite", languages: { fr: "/fr/content/confidentialite", "x-default": "/fr/content/confidentialite" } },
 }
 
 export default async function Confidentialite() {

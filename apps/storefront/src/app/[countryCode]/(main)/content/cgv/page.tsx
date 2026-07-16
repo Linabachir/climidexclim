@@ -5,7 +5,7 @@ import LegalPage from "@modules/content/components/legal-page"
 
 export const metadata: Metadata = {
   title: "Conditions générales de vente | CLIMIDEX",
-  alternates: { canonical: "/fr/content/cgv", languages: { fr: "/fr/content/cgv", en: "/en/content/cgv", "x-default": "/fr/content/cgv" } },
+  alternates: { canonical: "/fr/content/cgv", languages: { fr: "/fr/content/cgv", "x-default": "/fr/content/cgv" } },
 }
 
 export default async function CGV() {

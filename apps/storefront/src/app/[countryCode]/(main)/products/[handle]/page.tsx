@@ -98,7 +98,6 @@ export async function generateMetadata(props: Props): Promise<Metadata> {
       canonical: `/fr/products/${handle}`,
       languages: {
         fr: `/fr/products/${handle}`,
-        en: `/en/products/${handle}`,
         "x-default": `/fr/products/${handle}`,
       },
     },

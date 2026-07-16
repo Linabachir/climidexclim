@@ -4,7 +4,11 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://climidex.com"
 const BACKEND = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || ""
 const PUBKEY = process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY || ""
 
-const LOCALES = ["fr", "en"] as const
+// Le site sert son contenu sur des chemins par code pays (/fr, /gb, …) avec
+// la langue gérée par cookie, PAS par des chemins /en. On ne déclare donc
+// que le français (chemin canonique) + x-default pour éviter des alternates
+// hreflang vers des URL inexistantes.
+const LOCALES = ["fr"] as const
 
 // Pages statiques connues. Ajouter ici les futurs hubs éditoriaux
 // (/blog, /guide, /comparatif, /aide) au fur et à mesure de leur création.

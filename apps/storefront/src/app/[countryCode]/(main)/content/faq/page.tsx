@@ -11,7 +11,6 @@ export const metadata: Metadata = {
     canonical: "/fr/content/faq",
     languages: {
       fr: "/fr/content/faq",
-      en: "/en/content/faq",
       "x-default": "/fr/content/faq",
     },
   },
