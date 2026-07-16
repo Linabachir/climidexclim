@@ -4,6 +4,7 @@ import { Archivo, Inter, Poppins } from "next/font/google"
 import { getI18n } from "@lib/i18n/server"
 import { I18nProvider } from "@lib/i18n/context"
 import Analytics from "@lib/analytics/analytics"
+import ConsentBanner from "@lib/analytics/consent-banner"
 import "styles/globals.css"
 
 // CLIMIDEX type pairing — Archivo (grotesque affirmé/éditorial, titres) + Inter
@@ -107,6 +108,7 @@ export default async function RootLayout(props: {
         <Analytics />
         <I18nProvider locale={locale} dictionary={t}>
           <main className="relative">{props.children}</main>
+          <ConsentBanner />
         </I18nProvider>
       </body>
     </html>
