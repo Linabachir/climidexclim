@@ -27,6 +27,11 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Tree-shaking ciblé : n'embarque que les fonctions réellement importées
+  // (lodash côté client via product-actions, icônes Medusa) au lieu du module entier.
+  experimental: {
+    optimizePackageImports: ["lodash", "@medusajs/icons"],
+  },
   typescript: {
     ignoreBuildErrors: true,
   },

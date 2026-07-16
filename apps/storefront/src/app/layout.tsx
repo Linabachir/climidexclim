@@ -94,6 +94,15 @@ export default async function RootLayout(props: {
       className={`${serif.variable} ${sans.variable} ${logo.variable}`}
     >
       <body className="bg-brand-ivory text-brand-ink antialiased">
+        {/* Ouvre en avance la connexion vers le domaine des images produit et
+            des avis (DNS + TLS) → LCP/FCP plus rapides sur les fiches.
+            React 19 hisse ces balises dans le <head>. */}
+        <link
+          rel="preconnect"
+          href="https://api.climidex.com"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://api.climidex.com" />
         <I18nProvider locale={locale} dictionary={t}>
           <main className="relative">{props.children}</main>
         </I18nProvider>
