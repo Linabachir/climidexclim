@@ -3,7 +3,9 @@
 import { useEffect, useState } from "react"
 import { updateConsent } from "./gtag"
 
-const STORAGE_KEY = "climidex_consent"
+// Versionner la clé permet de redemander le consentement lorsque l'expérience
+// ou les catégories de cookies évoluent, sans afficher le bandeau à chaque page.
+const STORAGE_KEY = "climidex_consent_v2"
 
 /**
  * Bandeau de consentement (RGPD/CNIL) piloté par Consent Mode v2.
