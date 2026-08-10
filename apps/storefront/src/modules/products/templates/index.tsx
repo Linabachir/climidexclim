@@ -135,7 +135,13 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                 ["/product/climaire-blue-front.webp", "Climaire Bleu"],
               ].map(([src, alt]) => (
                 <div key={src} className="relative aspect-[3/5] overflow-hidden">
-                  <Image src={src} alt={alt} fill sizes="33vw" className="object-contain object-bottom" />
+                  <Image
+                    src={src}
+                    alt={alt}
+                    fill
+                    sizes="33vw"
+                    className="object-contain object-bottom mix-blend-multiply"
+                  />
                 </div>
               ))}
             </div>
