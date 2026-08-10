@@ -41,26 +41,23 @@ const ProductStory = async ({}: Props) => {
     {
       name: isFrench ? "Ivoire" : "Ivory",
       image: "/product/climaire-gold-front.webp",
-      background: "bg-[#f5f1e9]",
     },
     {
       name: isFrench ? "Noir" : "Black",
       image: "/product/climaire-anthracite-front.webp",
-      background: "bg-[#eeeeef]",
     },
     {
       name: isFrench ? "Bleu" : "Blue",
       image: "/product/climaire-blue-front.webp",
-      background: "bg-[#eef3f8]",
     },
   ]
 
   return (
     <div id="product-story" className="w-full overflow-hidden bg-white scroll-mt-20">
       <section className="bg-black text-white">
-        <div className="content-container grid min-h-[760px] grid-cols-1 items-center gap-8 py-20 small:grid-cols-[0.8fr_1.2fr] small:py-24">
+        <div className="content-container grid min-h-[620px] grid-cols-1 items-center gap-8 py-16 small:grid-cols-[0.85fr_1.15fr] small:py-20">
           <div className="relative z-10">
-            <h2 className="max-w-[8ch] text-[clamp(3.4rem,7vw,7.5rem)] font-semibold leading-[0.92] tracking-[-0.065em]">
+            <h2 className="max-w-[9ch] text-[clamp(3rem,6vw,5.75rem)] font-semibold leading-[0.94] tracking-[-0.06em]">
               {isFrench ? "Un appareil. Quatre saisons." : "One device. Four seasons."}
             </h2>
             <p className="mt-8 max-w-[33rem] text-lg leading-8 text-white/65 small:text-xl">
@@ -69,35 +66,35 @@ const ProductStory = async ({}: Props) => {
                 : "It cools in summer, warms in winter and cares for your air all year round."}
             </p>
           </div>
-          <div className="relative h-[520px] overflow-hidden rounded-[32px] bg-white small:h-[650px] small:rounded-[48px]">
+          <div className="relative h-[440px] overflow-hidden bg-black small:h-[540px]">
             <Image
               src="/product/climaire-gold-front.webp"
               alt={isFrench ? "Climaire ivoire" : "Ivory Climaire"}
               fill
               sizes="(max-width: 768px) 100vw, 60vw"
-              className="object-contain p-5 small:p-8"
+              className="object-contain p-3 small:p-5 [mask-image:radial-gradient(ellipse_at_center,black_52%,transparent_88%)]"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-20 small:py-32">
+      <section className="bg-white py-16 small:py-24">
         <div className="content-container">
-          <h2 className="max-w-[12ch] text-[clamp(3rem,6vw,6.5rem)] font-semibold leading-[0.95] tracking-[-0.06em] text-[#1d1d1f]">
+          <h2 className="max-w-[13ch] text-[clamp(2.6rem,5vw,5rem)] font-semibold leading-[0.97] tracking-[-0.055em] text-[#1d1d1f]">
             {isFrench ? "Le confort, dans chaque détail." : "Comfort, in every detail."}
           </h2>
-          <div className="mt-16 small:mt-24">
+          <div className="mt-12 small:mt-20">
             {benefits.map((benefit, index) => (
               <article
                 key={benefit.title}
-                className="grid min-h-[520px] grid-cols-1 border-t border-[#d2d2d7] small:grid-cols-2"
+                className="grid min-h-[420px] grid-cols-1 border-t border-[#d2d2d7] small:grid-cols-2"
               >
                 <div
                   className={`flex flex-col justify-center py-14 small:px-12 small:py-20 ${
                     index % 2 === 1 ? "small:order-2" : ""
                   }`}
                 >
-                  <h3 className="text-[clamp(2.7rem,5vw,5.5rem)] font-semibold leading-none tracking-[-0.055em] text-[#1d1d1f]">
+                  <h3 className="text-[clamp(2.3rem,4vw,4.25rem)] font-semibold leading-none tracking-[-0.05em] text-[#1d1d1f]">
                     {benefit.title}
                   </h3>
                   <p className="mt-6 max-w-[30rem] text-lg leading-8 text-[#6e6e73] small:text-xl">
@@ -105,7 +102,7 @@ const ProductStory = async ({}: Props) => {
                   </p>
                 </div>
                 <div
-                  className={`relative min-h-[420px] overflow-hidden bg-[#f5f5f7] small:min-h-[620px] ${
+                  className={`relative min-h-[340px] overflow-hidden bg-white small:min-h-[500px] ${
                     index % 2 === 1 ? "small:order-1" : ""
                   }`}
                 >
@@ -123,10 +120,10 @@ const ProductStory = async ({}: Props) => {
         </div>
       </section>
 
-      <section className="bg-black py-20 text-white small:py-32">
+      <section className="bg-black py-16 text-white small:py-24">
         <div className="content-container grid grid-cols-1 items-center gap-12 small:grid-cols-[0.95fr_1.05fr] small:gap-20">
           <div>
-            <h2 className="max-w-[9ch] text-[clamp(3.2rem,6vw,6.5rem)] font-semibold leading-[0.94] tracking-[-0.06em]">
+            <h2 className="max-w-[10ch] text-[clamp(2.8rem,5vw,5rem)] font-semibold leading-[0.96] tracking-[-0.055em]">
               {isFrench ? "Le confort, au degré près." : "Comfort, down to the degree."}
             </h2>
             <p className="mt-8 max-w-[32rem] text-lg leading-8 text-white/60 small:text-xl">
@@ -135,21 +132,21 @@ const ProductStory = async ({}: Props) => {
                 : "The circular display brings temperature and essential controls together at a glance."}
             </p>
           </div>
-          <div className="relative aspect-square overflow-hidden rounded-[32px] bg-white small:rounded-[48px]">
+          <div className="relative aspect-square overflow-hidden bg-black">
             <Image
               src="/product/climaire-gold-display.webp"
               alt={isFrench ? "Écran circulaire affichant 24 degrés" : "Circular display showing 24 degrees"}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+              className="object-cover [mask-image:radial-gradient(ellipse_at_center,black_50%,transparent_88%)]"
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-20 small:py-32">
+      <section className="bg-white py-16 small:py-24">
         <div className="content-container">
-          <h2 className="max-w-[12ch] text-[clamp(3rem,6vw,6.5rem)] font-semibold leading-[0.95] tracking-[-0.06em] text-[#1d1d1f]">
+          <h2 className="max-w-[13ch] text-[clamp(2.6rem,5vw,5rem)] font-semibold leading-[0.97] tracking-[-0.055em] text-[#1d1d1f]">
             {isFrench ? "Trois finitions. Une même exigence." : "Three finishes. The same standard."}
           </h2>
           <p className="mt-7 max-w-[38rem] text-lg leading-8 text-[#6e6e73] small:text-xl">
@@ -160,7 +157,7 @@ const ProductStory = async ({}: Props) => {
           <div className="mt-14 grid grid-cols-1 gap-5 xsmall:grid-cols-3">
             {finishes.map((finish) => (
               <article key={finish.name}>
-                <div className={`relative aspect-[4/5] overflow-hidden rounded-[28px] ${finish.background}`}>
+                <div className="relative aspect-[4/5] overflow-hidden bg-white">
                   <Image
                     src={finish.image}
                     alt={`Climaire ${finish.name}`}
