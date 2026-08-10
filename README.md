@@ -40,6 +40,8 @@
 
 # Medusa DTC Starter
 
+> Pour travailler à plusieurs sur Climidex, suivre le [guide de collaboration pour débutants](./GUIDE-COLLABORATION.md).
+
 A production-ready monorepo starter for direct-to-consumer ecommerce stores powered by Medusa and Next.js. Includes a fully featured storefront with product browsing, cart, checkout, customer accounts, and order management.
 
 ## Features
