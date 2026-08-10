@@ -39,15 +39,15 @@ const ProductStory = async ({}: Props) => {
 
   const finishes = [
     {
-      name: isFrench ? "Ivoire" : "Ivory",
+      name: isFrench ? "Ivoire Impérial" : "Imperial Ivory",
       image: "/product/climaire-gold-front.webp",
     },
     {
-      name: isFrench ? "Noir" : "Black",
+      name: isFrench ? "Noir Élysée" : "Élysée Black",
       image: "/product/climaire-anthracite-front.webp",
     },
     {
-      name: isFrench ? "Bleu" : "Blue",
+      name: isFrench ? "Bleu Bourbon" : "Bourbon Blue",
       image: "/product/climaire-blue-front.webp",
     },
   ]

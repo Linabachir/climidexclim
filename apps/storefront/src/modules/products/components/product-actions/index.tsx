@@ -230,7 +230,8 @@ export default function ProductActions({
             !isValidVariant
           }
           variant="primary"
-          className="h-14 w-full rounded-full bg-[#1d1d1f] text-sm font-medium tracking-normal text-white hover:bg-black disabled:bg-[#d2d2d7] disabled:text-white"
+          className="h-14 w-full !rounded-full bg-[#1d1d1f] text-sm font-medium tracking-normal text-white hover:bg-black disabled:bg-[#d2d2d7] disabled:text-white"
+          style={{ borderRadius: "9999px" }}
           isLoading={isAdding}
           data-testid="add-product-button"
         >

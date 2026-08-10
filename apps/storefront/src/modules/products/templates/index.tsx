@@ -125,7 +125,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                 Trois finitions. Un même confort.
               </h3>
               <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#6e6e73] small:text-lg">
-                Ivoire, Noir ou Bleu. Le Climaire trouve naturellement sa place dans votre intérieur.
+                Ivoire Impérial, Noir Élysée ou Bleu Bourbon. Le Climaire trouve naturellement sa place dans votre intérieur.
               </p>
             </div>
             <div className="grid grid-cols-3 items-end gap-1 px-2 pt-5 small:gap-6 small:px-[8vw] small:pt-10">
