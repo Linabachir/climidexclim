@@ -17,32 +17,32 @@ import ProductActionsWrapper from "./product-actions-wrapper"
 import { SelectedColorProvider } from "@modules/products/components/color-context"
 
 const TRUST = [
-  "Livraison suivie",
-  "Sans pales, sûr pour les enfants",
-  "Paiement sécurisé",
+  { label: "Livraison suivie", icon: "delivery" },
+  { label: "Sans pales, sûr pour les enfants", icon: "safety" },
+  { label: "Paiement sécurisé", icon: "payment" },
 ]
 
 const TrustList = () => (
-  <div className="flex flex-col gap-y-3 border-t border-brand-line pt-6">
-    {TRUST.map((t) => (
-      <div key={t} className="flex items-center gap-x-3 text-brand-ink-secondary">
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          className="text-brand-navy shrink-0"
-          aria-hidden
-        >
-          <path
-            d="M5 12.5l4.5 4.5L19 7.5"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <span className="text-sm">{t}</span>
+  <div className="flex flex-col items-start gap-3 border-t border-brand-line pt-7">
+    {TRUST.map((item) => (
+      <div
+        key={item.label}
+        className="flex max-w-full items-center gap-3 rounded-full bg-[#f5f5f7] py-3 pl-3 pr-6 text-[#1d1d1f]"
+      >
+        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#86868b] bg-white">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden>
+            {item.icon === "delivery" && (
+              <path d="M3 6.5h11v10H3zM14 10h3.5L21 13.5v3H14M7 19a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm10 0a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+            )}
+            {item.icon === "safety" && (
+              <path d="M12 3.5 19 6v5.2c0 4.2-2.8 7.3-7 9.3-4.2-2-7-5.1-7-9.3V6l7-2.5Zm-3 8.4 2 2 4.2-4.2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            )}
+            {item.icon === "payment" && (
+              <path d="M4 8h16v10H4zM4 11h16M8 15h3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            )}
+          </svg>
+        </span>
+        <span className="text-sm font-medium small:text-base">{item.label}</span>
       </div>
     ))}
   </div>
