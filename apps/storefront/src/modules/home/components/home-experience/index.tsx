@@ -2,6 +2,7 @@ import Image from "next/image"
 
 import { getI18n } from "@lib/i18n/server"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
+import ComfortShowcase from "@modules/home/components/comfort-showcase"
 
 type Props = {
   productHref: string
@@ -153,15 +154,7 @@ const HomeExperience = async ({ productHref }: Props) => {
         </div>
       </section>
 
-      <section id="sec-tech" className="content-container grid gap-14 py-24 small:py-32 large:grid-cols-[0.72fr_1.28fr] large:items-end scroll-mt-20">
-        <div>
-          <h2 className="whitespace-pre-line text-[clamp(2.8rem,5vw,5.4rem)] font-semibold leading-[0.95] tracking-[-0.04em]">{text.comfort}</h2>
-          <p className="mt-7 max-w-md leading-7 text-brand-ink-secondary">{text.comfortBody}</p>
-        </div>
-        <div className="relative aspect-[16/10] overflow-hidden bg-[#f0f1f2]">
-          <Image src="/product/climaire-gold-filter.webp" alt={text.comfort.replace("\n", " ")} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-contain mix-blend-multiply" />
-        </div>
-      </section>
+      <ComfortShowcase locale={locale} />
 
       <section className="bg-white py-10 small:py-14">
         <dl className="content-container grid grid-cols-2 gap-3 large:grid-cols-4 large:gap-4">
