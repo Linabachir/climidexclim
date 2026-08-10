@@ -99,7 +99,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
         </div>
       </section>
 
-      <section id="decouvrir" className="bg-[#000] pb-24 text-white small:pb-36">
+      <section id="decouvrir" className="bg-[#000] text-white">
         <div className="sticky top-0 z-30 border-b border-white/10 bg-black/80 backdrop-blur-xl">
           <div className="content-container flex h-16 items-center justify-between">
             <span className="text-lg font-semibold tracking-[-0.02em]">Climaire</span>
@@ -172,12 +172,25 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
               </div>
             </article>
           </div>
+
+          <div className="pb-20 pt-16 text-center small:pb-24 small:pt-20">
+            <p className="text-[clamp(1.8rem,3vw,3rem)] font-semibold tracking-[-0.035em]">
+              Choisissez votre finition.
+            </p>
+            <a
+              href="#acheter"
+              className="mt-5 inline-flex items-center gap-2 text-base font-medium text-white/70 transition-colors hover:text-white"
+            >
+              Découvrir les trois coloris
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
         </div>
       </section>
 
       <div
         id="acheter"
-        className="content-container py-7 small:py-12 scroll-mt-24"
+        className="content-container relative z-10 -mt-10 scroll-mt-24 rounded-t-[32px] bg-white pb-7 pt-12 small:-mt-14 small:rounded-t-[48px] small:pb-12 small:pt-16"
         data-testid="product-container"
       >
         <nav className="flex items-center gap-x-2 mb-6 text-[13px] text-brand-mute">
