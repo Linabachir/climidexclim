@@ -218,21 +218,12 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                 été, diffuse une chaleur douce en hiver et contribue à purifier
                 l’air de votre intérieur au quotidien.
               </p>
-              <ul className="mt-6 grid grid-cols-1 border-y border-brand-line xsmall:grid-cols-3">
-                {[
-                  ["01", "Rafraîchit"],
-                  ["02", "Chauffe"],
-                  ["03", "Purifie"],
-                ].map(([number, label], index) => (
+              <ul className="mt-6 grid grid-cols-3 gap-1 rounded-full bg-[#e8e8ed] p-1.5">
+                {["Rafraîchit", "Chauffe", "Purifie"].map((label) => (
                   <li
                     key={label}
-                    className={`flex items-baseline gap-3 py-4 text-base font-medium text-brand-ink xsmall:px-4 ${
-                      index > 0 ? "border-t border-brand-line xsmall:border-l xsmall:border-t-0" : ""
-                    }`}
+                    className="flex min-h-11 items-center justify-center rounded-full px-2 text-center text-sm font-medium text-[#3a3a3c] transition-colors duration-200 hover:bg-white hover:text-[#1d1d1f] small:text-base"
                   >
-                    <span className="text-[11px] font-normal tracking-[0.12em] text-brand-mute" aria-hidden>
-                      {number}
-                    </span>
                     {label}
                   </li>
                 ))}
