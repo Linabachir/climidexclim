@@ -223,7 +223,7 @@ Our commitments
 • A customer service team that replies within 48 business hours at contact@climidex.com.
 
 Who are we?
-CLIMIDEX is led by Lina Bachir and Melvin Sokambi. The sole-trader business is registered in France (SIREN 889 863 361). A small structure, on purpose: when you write to us, a human answers.
+CLIMIDEX is the brand of Lina Bachir and Melvin Sokambi, registered in France under SIREN 889 863 361. A small structure, on purpose: when you write to us, a human answers.
 
 A question before ordering? Write to us, we will be happy to help: contact@climidex.com.`,
     legalTitle: "Legal notice",
@@ -252,7 +252,7 @@ To report content or ask a question about the Site: contact@climidex.com.`,
     termsBody: `Version in force as of 5 July 2026.
 
 1. Purpose and scope
-These terms of sale ("Terms") govern all sales of products concluded on climidex.com between CLIMIDEX, led by Lina Bachir and operated through Melvin Sokambi’s sole-trader business, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris, France (the "Seller"), and any consumer (the "Customer"). Placing an order implies full acceptance of these Terms.
+These terms of sale ("Terms") govern all sales of products concluded on climidex.com between CLIMIDEX, the brand of Lina Bachir and Melvin Sokambi, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris, France (the "Seller"), and any consumer (the "Customer"). Placing an order implies full acceptance of these Terms.
 
 2. Products
 The products offered (in particular the Climaire bladeless fan) are described as accurately as possible. Photographs and 3D visuals are not contractually binding.
