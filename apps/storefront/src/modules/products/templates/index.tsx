@@ -156,7 +156,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                 </h3>
               </div>
               <div className="relative mx-5 mb-5 mt-8 aspect-[16/10] overflow-hidden rounded-[22px] small:mx-7 small:mb-7 small:rounded-[26px]">
-                <Image src="/product/climaire-gold-arc.webp" alt="Finition de l'anneau du Climaire" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                <Image src="/product/climaire-gold-arc.webp" alt="Finition de l'anneau du Climaire" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover mix-blend-multiply" />
               </div>
             </article>
 
@@ -168,7 +168,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                 </h3>
               </div>
               <div className="relative mx-5 mb-5 mt-8 aspect-[16/10] overflow-hidden rounded-[22px] small:mx-7 small:mb-7 small:rounded-[26px]">
-                <Image src="/product/climaire-gold-filter.webp" alt="Système de filtration du Climaire" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+                <Image src="/product/climaire-gold-filter.webp" alt="Système de filtration du Climaire" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover mix-blend-multiply" />
               </div>
             </article>
           </div>

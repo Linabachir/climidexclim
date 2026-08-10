@@ -60,12 +60,12 @@ const ImageGallery = (_props: ImageGalleryProps) => {
 
   return (
     <div className="flex w-full flex-col gap-4">
-      <div className="group relative aspect-square w-full overflow-hidden bg-white">
+      <div className="group relative isolate aspect-square w-full overflow-hidden bg-white">
         <Image
           key={current.id}
           src={current.url}
           priority
-          className="scale-[1.08] object-contain p-5 small:p-8"
+          className="scale-[1.08] object-contain p-5 mix-blend-multiply small:p-8"
           alt={current.alt}
           fill
           sizes="(max-width: 1024px) 100vw, 55vw"
@@ -96,7 +96,7 @@ const ImageGallery = (_props: ImageGalleryProps) => {
               aria-label={`Voir le visuel ${index + 1}`}
               className={`relative h-[72px] w-[72px] shrink-0 overflow-hidden bg-white border transition-colors ${active === index ? "border-brand-ink" : "border-[#e5e5e7] hover:border-brand-mute"}`}
             >
-              <Image src={item.url} className="object-cover" alt={item.alt} fill sizes="72px" />
+              <Image src={item.url} className="object-cover mix-blend-multiply" alt={item.alt} fill sizes="72px" />
             </button>
           ))}
         </div>

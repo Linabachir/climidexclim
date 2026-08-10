@@ -111,7 +111,7 @@ const ProductStory = async ({}: Props) => {
                     alt={benefit.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    className="object-cover"
+                    className="object-cover mix-blend-multiply"
                   />
                 </div>
               </article>
