@@ -54,13 +54,13 @@ const ImageGallery = (_props: ImageGalleryProps) => {
 
   if (!media.length) {
     return (
-      <div className="aspect-[4/5] w-full bg-white border border-[#e5e5e7]" />
+      <div className="aspect-[4/5] w-full bg-white" />
     )
   }
 
   return (
     <div className="flex w-full flex-col gap-4">
-      <div className="group relative aspect-square w-full overflow-hidden bg-white border border-[#e5e5e7]">
+      <div className="group relative aspect-square w-full overflow-hidden bg-white">
         <Image
           key={current.id}
           src={current.url}
