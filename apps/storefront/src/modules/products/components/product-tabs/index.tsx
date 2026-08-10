@@ -44,13 +44,25 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
 }
 
 const ProductInfoTab = ({ product }: ProductTabsProps) => {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
+
+  const cleanValue = (value?: string | null) =>
+    value?.replace(/�/g, "é").trim() || null
+
+  const countryNames: Record<string, string> = {
+    CN: locale === "fr" ? "Chine" : "China",
+    FR: "France",
+    GB: locale === "fr" ? "Royaume-Uni" : "United Kingdom",
+  }
+  const originCountry = product.origin_country
+    ? (countryNames[product.origin_country.toUpperCase()] ?? cleanValue(product.origin_country))
+    : null
 
   // On n'affiche que les champs renseignés (pas de lignes « - »).
   const rows = [
-    { label: t.product.material, value: product.material },
-    { label: t.product.originCountry, value: product.origin_country },
-    { label: t.product.type, value: product.type?.value },
+    { label: t.product.material, value: cleanValue(product.material) },
+    { label: t.product.originCountry, value: originCountry },
+    { label: t.product.type, value: cleanValue(product.type?.value) },
     {
       label: t.product.weight,
       value: product.weight ? `${product.weight} g` : null,
