@@ -8,7 +8,6 @@ Repository privé : https://github.com/Linabachir/climidexclim
 
 - Git : https://git-scm.com/downloads
 - Node.js 20 ou plus récent : https://nodejs.org
-- Docker Desktop : https://www.docker.com/products/docker-desktop/
 - Visual Studio Code : https://code.visualstudio.com/
 
 Sous Windows, redémarrer l'ordinateur après l'installation si une commande n'est pas reconnue.
@@ -32,38 +31,37 @@ npm install
 
 Le téléchargement avec `git clone` ne doit être fait qu'une seule fois.
 
-## 4. Récupérer les fichiers de configuration
+## 4. Récupérer le fichier de configuration
 
-Les fichiers contenant les clés et mots de passe ne sont volontairement pas sur GitHub.
+Les fichiers contenant des clés ou mots de passe ne sont volontairement pas sur GitHub.
 
-Demander à Lina les deux fichiers suivants et les placer exactement ici :
+Pour commencer à modifier le design, demander à Lina uniquement ce fichier et le placer exactement ici :
 
 ```text
-apps/backend/.env
 apps/storefront/.env.local
 ```
 
-Ne jamais envoyer ces fichiers sur GitHub, WhatsApp public ou dans une capture d'écran.
+Ne jamais envoyer ce fichier sur GitHub, dans un groupe public ou dans une capture d'écran.
 
-## 5. Lancer le projet
+## 5. Lancer le site
 
-### Solution simple pour travailler sur le site
-
-Ouvrir Docker Desktop et attendre qu'il indique qu'il est démarré. Dans le dossier du projet :
+Dans le dossier du projet, lancer uniquement le storefront :
 
 ```bash
-npm run dev
+npm run storefront:dev
 ```
 
 Adresses utiles :
 
 - Site : http://localhost:8000/fr
-- Interface Medusa : http://localhost:9000/app
-- API Medusa : http://localhost:9000
 
 Arrêter les serveurs avec `Ctrl + C` dans le terminal.
 
-Si la base de données locale et Redis ne sont pas installés, demander à Lina la procédure Docker locale avant de modifier le backend. Pour une modification uniquement visuelle du storefront, le fichier `.env.local` peut pointer vers l'API Climidex existante.
+Cette méthode suffit pour modifier les textes, les couleurs, les images, les pages et le responsive. Le fichier `.env.local` connecte le site au backend Climidex existant.
+
+### Docker et le backend : seulement plus tard
+
+Docker n'est pas nécessaire pour commencer. Il servira uniquement si la personne doit modifier Medusa, la base de données, les produits, les commandes ou le fonctionnement interne du panier. Dans ce cas, demander à Lina le fichier `apps/backend/.env` et la procédure correspondante.
 
 ## 6. Règle importante : une branche par modification
 
@@ -168,11 +166,10 @@ Ne pas supprimer de fichiers au hasard. Envoyer une capture du terminal et atten
 
 Vérifier dans cet ordre :
 
-1. Docker Desktop est ouvert.
-2. Node.js 20 ou plus récent est installé avec `node -v`.
-3. Les deux fichiers `.env` sont présents.
-4. Les dépendances sont installées avec `npm install`.
-5. Aucun autre programme n'utilise les ports 8000 ou 9000.
+1. Node.js 20 ou plus récent est installé avec `node -v`.
+2. Le fichier `apps/storefront/.env.local` est présent.
+3. Les dépendances sont installées avec `npm install`.
+4. Aucun autre programme n'utilise le port 8000.
 
 ### GitHub refuse le push
 
