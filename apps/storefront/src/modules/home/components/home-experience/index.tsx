@@ -158,8 +158,8 @@ const HomeExperience = async ({ productHref }: Props) => {
           <h2 className="whitespace-pre-line text-[clamp(2.8rem,5vw,5.4rem)] font-semibold leading-[0.95] tracking-[-0.04em]">{text.comfort}</h2>
           <p className="mt-7 max-w-md leading-7 text-brand-ink-secondary">{text.comfortBody}</p>
         </div>
-        <div className="relative aspect-[16/10] overflow-hidden bg-[#f0f1f2]">
-          <Image src="/product/climaire-gold-filter.webp" alt={text.comfort.replace("\n", " ")} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-contain mix-blend-multiply" />
+        <div className="relative aspect-[16/10] overflow-hidden bg-white">
+          <Image src="/product/climaire-gold-filter.webp" alt={text.comfort.replace("\n", " ")} fill sizes="(max-width: 1024px) 100vw, 60vw" className="object-cover object-center" />
         </div>
       </section>
 
