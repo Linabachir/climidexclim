@@ -14,14 +14,14 @@ const LegalPage = ({
   return (
     <div className="bg-white">
       <div className="content-container py-16 small:py-24">
-        <div className="mx-auto max-w-4xl">
+        <div className="mx-auto max-w-3xl">
           <p className="font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-brand-mute">
             {eyebrow}
           </p>
-          <h1 className="mt-4 max-w-3xl font-serif text-5xl font-semibold leading-[1.02] tracking-[-0.04em] text-brand-ink small:text-6xl">
+          <h1 className="mt-4 max-w-3xl font-serif text-4xl font-semibold leading-[1.04] tracking-[-0.035em] text-brand-ink small:text-5xl">
             {title}
           </h1>
-          <div className="mt-12 grid gap-4">
+          <div className="mt-10 border-t border-[#d2d2d7]">
             {sections.map((section, index) => {
               const [heading, ...content] = section.split("\n")
               const hasContent = content.length > 0
@@ -29,14 +29,14 @@ const LegalPage = ({
               return (
                 <section
                   key={`${heading}-${index}`}
-                  className="rounded-[28px] bg-[#f5f5f7] px-6 py-7 small:px-8 small:py-8"
+                  className="border-b border-[#e5e5e7] py-8 small:py-10"
                 >
                   {hasContent && (
-                    <h2 className="text-xl font-semibold tracking-[-0.02em] text-brand-ink">
+                    <h2 className="text-lg font-semibold tracking-[-0.015em] text-brand-ink small:text-xl">
                       {heading}
                     </h2>
                   )}
-                  <p className={`${hasContent ? "mt-3" : ""} whitespace-pre-line font-sans text-[15.5px] leading-[1.75] text-brand-ink-secondary`}>
+                  <p className={`${hasContent ? "mt-3" : ""} whitespace-pre-line font-sans text-[15.5px] leading-[1.8] text-brand-ink-secondary`}>
                     {hasContent ? content.join("\n") : heading}
                   </p>
                 </section>
