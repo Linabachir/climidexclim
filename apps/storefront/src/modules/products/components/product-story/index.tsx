@@ -154,19 +154,22 @@ const ProductStory = async ({}: Props) => {
               ? "Des couleurs conçues pour trouver naturellement leur place chez vous."
               : "Colours designed to find their place naturally in your home."}
           </p>
-          <div className="mt-14 grid grid-cols-1 gap-5 xsmall:grid-cols-3">
+          <div className="mt-12 grid grid-cols-3 overflow-hidden rounded-[28px] bg-[#f5f5f7] px-2 small:mt-14 small:rounded-[40px] small:px-8">
             {finishes.map((finish) => (
-              <article key={finish.name}>
-                <div className="relative aspect-[4/5] overflow-hidden bg-white">
+              <article
+                key={finish.name}
+                className="group relative flex h-[320px] min-w-0 flex-col justify-end small:h-[500px]"
+              >
+                <div className="relative flex-1 overflow-hidden">
                   <Image
                     src={finish.image}
                     alt={`Climaire ${finish.name}`}
                     fill
                     sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-contain p-5 small:p-8"
+                    className="object-contain object-bottom p-1 mix-blend-multiply transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.035] small:p-5"
                   />
                 </div>
-                <h3 className="mt-5 text-xl font-semibold tracking-[-0.025em] text-[#1d1d1f]">
+                <h3 className="pb-5 text-center text-sm font-semibold tracking-[-0.02em] text-[#1d1d1f] transition-transform duration-500 group-hover:-translate-y-1 small:pb-8 small:text-xl">
                   {finish.name}
                 </h3>
               </article>
