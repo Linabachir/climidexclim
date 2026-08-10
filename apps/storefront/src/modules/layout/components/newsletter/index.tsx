@@ -50,7 +50,7 @@ const Newsletter = () => {
   }
 
   return (
-    <section className="bg-brand-navy text-white">
+    <section className="bg-black text-white">
       <div className="content-container py-16 small:py-20">
         <div className="max-w-2xl mx-auto text-center flex flex-col items-center gap-y-5">
           <span className="text-[13px] font-medium text-white/60">
@@ -81,7 +81,7 @@ const Newsletter = () => {
               <button
                 type="submit"
                 disabled={state === "loading"}
-                className="rounded-md bg-white px-7 py-3 text-xs uppercase tracking-widest text-brand-navy transition-opacity hover:opacity-90 disabled:opacity-50"
+                className="rounded-md bg-white px-7 py-3 text-xs uppercase tracking-widest text-black transition-opacity hover:opacity-90 disabled:opacity-50"
               >
                 {state === "loading" ? "…" : t.newsletter.subscribe}
               </button>
