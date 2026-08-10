@@ -56,7 +56,7 @@ const ProductStory = async ({}: Props) => {
   ]
 
   return (
-    <div className="w-full overflow-hidden bg-white">
+    <div id="product-story" className="w-full overflow-hidden bg-white scroll-mt-20">
       <section className="bg-black text-white">
         <div className="content-container grid min-h-[760px] grid-cols-1 items-center gap-8 py-20 small:grid-cols-[0.8fr_1.2fr] small:py-24">
           <div className="relative z-10">
