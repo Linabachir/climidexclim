@@ -1,8 +1,6 @@
 "use client"
 
-import React, { useEffect, useActionState } from "react";
-
-import Input from "@modules/common/components/input"
+import React from "react"
 
 import AccountInfo from "../account-info"
 import { HttpTypes } from "@medusajs/types"
@@ -15,58 +13,16 @@ type MyInformationProps = {
 
 const ProfileEmail: React.FC<MyInformationProps> = ({ customer }) => {
   const { t } = useI18n()
-  const [successState, setSuccessState] = React.useState(false)
-
-  // TODO: It seems we don't support updating emails now?
-  const updateCustomerEmail = (
-    _currentState: Record<string, unknown>,
-    _formData: FormData
-  ) => {
-    try {
-      // email: formData.get("email") as string
-      return { success: true, error: null }
-    } catch (error) {
-      return { success: false, error: String(error) }
-    }
-  }
-
-  const [state, formAction] = useActionState(updateCustomerEmail, {
-    error: null as string | null,
-    success: false,
-  })
-
-  const clearState = () => {
-    setSuccessState(false)
-  }
-
-  useEffect(() => {
-    setSuccessState(state.success)
-  }, [state])
-
   return (
-    <form action={formAction} className="w-full">
+    <div className="w-full">
       <AccountInfo
         label={t.account.email}
-        currentInfo={`${customer.email}`}
-        isSuccess={successState}
-        isError={!!state.error}
-        errorMessage={state.error || undefined}
-        clearState={clearState}
+        currentInfo={customer.email}
+        clearState={() => undefined}
+        editable={false}
         data-testid="account-email-editor"
-      >
-        <div className="grid grid-cols-1 gap-y-2">
-          <Input
-            label={t.account.email}
-            name="email"
-            type="email"
-            autoComplete="email"
-            required
-            defaultValue={customer.email}
-            data-testid="email-input"
-          />
-        </div>
-      </AccountInfo>
-    </form>
+      />
+    </div>
   )
 }
 

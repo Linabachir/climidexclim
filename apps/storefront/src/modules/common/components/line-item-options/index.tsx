@@ -21,9 +21,12 @@ const LineItemOptions = ({
 }: LineItemOptionsProps) => {
   const { locale } = useI18n()
   const options = variant?.options ?? []
+  const visibleOptions = options.filter(
+    (option) => option.option?.title !== "Electrical outlet"
+  )
 
   // Pas d'options structurées : on retombe sur le titre de variante.
-  if (!options.length) {
+  if (!visibleOptions.length) {
     return variant?.title ? (
       <Text
         data-testid={dataTestid}
@@ -41,14 +44,14 @@ const LineItemOptions = ({
       data-testid={dataTestid}
       data-value={dataValue}
     >
-      {options.map((o) => {
+      {visibleOptions.map((o) => {
         const label = translateOptionTitle(
           (o.option?.title ?? "").trim(),
           locale
         )
         return (
           <Text key={o.id} className="text-[13px] text-brand-mute truncate">
-            {label && (
+            {label && o.option?.title !== "Color" && (
               <span className="text-brand-ink-faint">{label} : </span>
             )}
             {translateOptionValue(o.value, locale)}

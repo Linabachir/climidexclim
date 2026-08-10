@@ -69,9 +69,9 @@ export const fr = {
       { label: "Commande", value: "Tactile + télécommande" },
       { label: "Structure", value: "ABS haute résistance" },
       { label: "Dimensions (L×P×H)", value: "140 × 140 × 560 mm" },
-      { label: "Modes", value: "Cool · Heat* · Purify*" },
+      { label: "Modes", value: "Froid · Chaud · Purification" },
     ],
-    specsNote: "* Chauffage et purification disponibles selon la configuration.",
+    specsNote: "",
     ctaTitle: "Le confort, sans le superflu.",
     ctaButton: "Découvrir le Climaire",
   },
@@ -118,9 +118,9 @@ export const fr = {
     ctaTitle: "Le Climaire, chez vous.",
     ctaShipping: "Livraison offerte en 5 à 9 jours, partout en France.",
     ctaAlt: "Le Climaire dans un intérieur de standing",
-    metaTitle: "Le Climaire · Site officiel · Ventilateur sans pales",
+    metaTitle: "Climaire · Ventilateur chaud, froid et purificateur d’air",
     metaDescription:
-      "Silencieux (35 dB), 8 vitesses & mode nuit. Sûr pour les enfants, sans pales. Rafraîchit jusqu'à 20 m². Livraison offerte partout en France, paiement sécurisé.",
+      "Climaire rafraîchit en été, diffuse une chaleur douce en hiver et purifie l’air intérieur. Silencieux, sans pales et livré gratuitement en France.",
   },
   newsletter: {
     eyebrow: "Newsletter",
@@ -431,6 +431,7 @@ Le Site utilise uniquement des cookies strictement nécessaires à son fonctionn
     signInTitle: "Vous avez déjà un compte ?",
     signInText: "Connectez-vous pour retrouver vos commandes et vos adresses.",
     remove: "Retirer",
+    edit: "Modifier",
     subtotal: "Sous-total",
     exclTaxes: "(TTC)",
     goToCart: "Voir le panier",
@@ -561,6 +562,7 @@ Le Site utilise uniquement des cookies strictement nécessaires à son fonctionn
     firstName: "Prénom",
     lastName: "Nom",
     noBillingAddress: "Aucune adresse de facturation",
+    notProvided: "Non renseigné",
     // Adresses
     addressesTitle: "Adresses de livraison",
     addressesSubtitle:

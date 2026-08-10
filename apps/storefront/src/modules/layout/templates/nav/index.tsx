@@ -18,12 +18,12 @@ export default async function Nav() {
 
   const links = [
     { href: "/products/climaire-ventilateur-sans-pales", label: "Le Climaire" },
-    { href: "/", label: "Maison" },
+    { href: "/", label: "La Maison" },
   ]
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-[72px] mx-auto bg-brand-ivory text-brand-ink duration-200">
+      <header className="relative h-[72px] mx-auto bg-white text-brand-ink duration-200">
         <nav className="content-container grid grid-cols-[1fr_auto_1fr] items-center w-full h-full">
           {/* Gauche : liens (desktop) + menu (mobile) */}
           <div className="flex items-center h-full">

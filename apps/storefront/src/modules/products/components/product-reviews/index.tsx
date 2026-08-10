@@ -105,11 +105,11 @@ const ProductReviews = ({ productId }: { productId: string }) => {
   }
 
   return (
-    <section className="border-t border-brand-line bg-brand-ivory">
+    <section className="border-t border-[#e5e5e7] bg-white">
       <div className="content-container py-16 small:py-24">
         <div className="flex flex-col small:flex-row small:items-end justify-between gap-6 mb-10">
           <div>
-            <h2 className="font-serif text-3xl small:text-4xl text-brand-ink">
+            <h2 className="font-sans font-semibold tracking-[-0.025em] text-3xl small:text-4xl text-brand-ink">
               {t.product.reviewsTitle}
             </h2>
             {count > 0 ? (
@@ -138,7 +138,7 @@ const ProductReviews = ({ productId }: { productId: string }) => {
 
         {/* Formulaire */}
         {open && (
-          <div className="mb-12 rounded-large border border-brand-line bg-brand-paper p-6 small:p-8 max-w-2xl">
+          <div className="mb-12 rounded-large border border-[#e5e5e7] bg-white p-6 small:p-8 max-w-2xl">
             {done ? (
               <p className="text-brand-ink">
                 {t.product.reviewsThanks}
@@ -216,7 +216,7 @@ const ProductReviews = ({ productId }: { productId: string }) => {
               >
                 <Stars value={r.rating} />
                 {r.title && (
-                  <p className="font-serif text-lg text-brand-ink">{r.title}</p>
+                  <p className="font-sans font-medium text-lg text-brand-ink">{r.title}</p>
                 )}
                 <p className="text-sm leading-6 text-brand-mute">{r.content}</p>
                 <p className="text-xs uppercase tracking-wider text-brand-ink mt-1">

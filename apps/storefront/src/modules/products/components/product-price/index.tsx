@@ -28,7 +28,7 @@ export default function ProductPrice({
   return (
     <div className="flex flex-col text-brand-ink">
       <span
-        className={clx("font-serif text-3xl small:text-4xl", {
+        className={clx("font-sans font-semibold tracking-[-0.025em] text-3xl small:text-4xl", {
           "text-brand-navy": selectedPrice.price_type === "sale",
         })}
       >

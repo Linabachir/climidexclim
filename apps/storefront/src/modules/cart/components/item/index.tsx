@@ -13,6 +13,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import Spinner from "@modules/common/icons/spinner"
 import Thumbnail from "@modules/products/components/thumbnail"
 import { useState } from "react"
+import { getClimaireCartImage } from "@lib/util/climaire-cart-image"
 
 type ItemProps = {
   item: HttpTypes.StoreCartLineItem
@@ -60,8 +61,8 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
           })}
         >
           <Thumbnail
-            thumbnail={item.thumbnail}
-            images={item.variant?.product?.images}
+            thumbnail={getClimaireCartImage(item)}
+            images={[]}
             size="square"
           />
         </LocalizedClientLink>
@@ -72,7 +73,7 @@ const Item = ({ item, type = "full", currencyCode }: ItemProps) => {
           className="txt-medium-plus text-ui-fg-base break-words"
           data-testid="product-title"
         >
-          {item.product_title}
+          Climaire
         </Text>
         <LineItemOptions variant={item.variant} data-testid="product-variant" />
       </Table.Cell>

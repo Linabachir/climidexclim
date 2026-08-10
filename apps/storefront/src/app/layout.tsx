@@ -77,10 +77,11 @@ export const metadata: Metadata = {
   // Logo CLIMIDEX servi comme favicon (onglet navigateur + résultats Google).
   icons: {
     icon: [
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon-64.png?v=4", type: "image/png", sizes: "64x64" },
+      { url: "/icon.svg?v=4", type: "image/svg+xml" },
     ],
-    apple: "/icon.svg",
+    shortcut: "/favicon.ico?v=4",
+    apple: "/favicon-64.png?v=4",
   },
 }
 
@@ -95,7 +96,7 @@ export default async function RootLayout(props: {
       data-mode="light"
       className={`${serif.variable} ${sans.variable} ${logo.variable}`}
     >
-      <body className="bg-brand-ivory text-brand-ink antialiased">
+      <body className="bg-white text-brand-ink antialiased">
         {/* Ouvre en avance la connexion vers le domaine des images produit et
             des avis (DNS + TLS) → LCP/FCP plus rapides sur les fiches.
             React 19 hisse ces balises dans le <head>. */}

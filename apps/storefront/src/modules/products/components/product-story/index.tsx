@@ -41,7 +41,7 @@ const ProductStory = async ({ buyHref = "#acheter" }: Props) => {
       </section>
 
       {/* ============ RÉASSURANCE ============ */}
-      <section className="bg-brand-cream-deep border-t border-brand-line">
+      <section className="bg-white border-t border-[#e5e5e7]">
         <div className="content-container grid grid-cols-2 small:grid-cols-4 gap-x-8 gap-y-8 py-10">
           {t.product.reassurance.map(({ title, body }) => (
             <div key={title}>

@@ -14,6 +14,7 @@ type AccountInfoProps = {
   errorMessage?: string
   clearState: () => void
   children?: React.ReactNode
+  editable?: boolean
   'data-testid'?: string
 }
 
@@ -25,6 +26,7 @@ const AccountInfo = ({
   clearState,
   errorMessage,
   children,
+  editable = true,
   'data-testid': dataTestid
 }: AccountInfoProps) => {
   const { t } = useI18n()
@@ -48,8 +50,8 @@ const AccountInfo = ({
       className="text-small-regular rounded-lg border border-brand-line bg-white p-6 small:p-8"
       data-testid={dataTestid}
     >
-      <div className="flex items-end justify-between">
-        <div className="flex flex-col">
+      <div className="flex items-start justify-between gap-5">
+        <div className="flex min-w-0 flex-col">
           <span className="uppercase tracking-[0.08em] text-brand-ink-secondary">
             {label}
           </span>
@@ -61,7 +63,7 @@ const AccountInfo = ({
             )}
           </div>
         </div>
-        <div>
+        {editable ? <div className="shrink-0">
           <Button
             variant="secondary"
             className="w-[100px] min-h-[25px] py-1 rounded-md border border-brand-navy text-brand-navy uppercase tracking-[0.1em] hover:bg-brand-navy hover:text-brand-on-navy"
@@ -72,11 +74,11 @@ const AccountInfo = ({
           >
             {state ? t.account.cancel : t.account.edit}
           </Button>
-        </div>
+        </div> : null}
       </div>
 
       {/* Success state */}
-      <Disclosure>
+      {editable ? <Disclosure>
         <Disclosure.Panel
           static
           className={clx(
@@ -92,7 +94,7 @@ const AccountInfo = ({
             <span>{t.account.updatedSuccessfully}</span>
           </Badge>
         </Disclosure.Panel>
-      </Disclosure>
+      </Disclosure> : null}
 
       {/* Error state  */}
       <Disclosure>

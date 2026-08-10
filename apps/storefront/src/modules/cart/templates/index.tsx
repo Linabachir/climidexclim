@@ -12,7 +12,7 @@ const CartTemplate = ({
   customer: HttpTypes.StoreCustomer | null
 }) => {
   return (
-    <div className="bg-brand-ivory min-h-[70vh] py-14 small:py-20">
+    <div className="min-h-[calc(100vh-72px)] bg-white py-14 small:py-20">
       <div className="content-container" data-testid="cart-container">
         {cart?.items?.length ? (
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-10 lg:gap-16 items-start">

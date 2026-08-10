@@ -10,24 +10,24 @@ const OPTION_TITLES: Record<string, Record<Locale, string>> = {
 
 const OPTION_VALUES: Record<string, Record<Locale, string>> = {
   "Bright gold cold wind": {
-    fr: "Doré, ventilation",
-    en: "Gold, cooling",
+    fr: "Ivoire",
+    en: "Ivory",
   },
   "Silver cold wind": {
-    fr: "Argenté, ventilation",
-    en: "Silver, cooling",
+    fr: "Ivoire",
+    en: "Ivory",
   },
   "Silver cooling and heating": {
-    fr: "Argenté, ventilation + chauffage",
-    en: "Silver, cooling + heating",
+    fr: "Ivoire",
+    en: "Ivory",
   },
   "White blue cold wind": {
-    fr: "Bleu & blanc, ventilation",
-    en: "Blue & white, cooling",
+    fr: "Bleu",
+    en: "Blue",
   },
   "Cold wind titanium dust": {
-    fr: "Gris anthracite, ventilation",
-    en: "Anthracite grey, cooling",
+    fr: "Noir",
+    en: "Black",
   },
   EU: { fr: "EU (France)", en: "EU" },
   UK: { fr: "UK", en: "UK" },

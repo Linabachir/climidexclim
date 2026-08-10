@@ -7,6 +7,7 @@ export const SITE_URL =
 export const BRAND = {
   name: "CLIMIDEX",
   logo: `${SITE_URL}/logo.png`,
+  image: `${SITE_URL}/opengraph-image.jpg`,
   email: "contact@climidex.com",
 }
 
@@ -19,6 +20,7 @@ export function organizationJsonLd(): JsonLd {
     name: BRAND.name,
     url: SITE_URL,
     logo: BRAND.logo,
+    image: BRAND.image,
     email: BRAND.email,
   }
 }
@@ -29,6 +31,7 @@ export function websiteJsonLd(): JsonLd {
     "@type": "WebSite",
     name: BRAND.name,
     url: SITE_URL,
+    image: BRAND.image,
     inLanguage: "fr-FR",
   }
 }

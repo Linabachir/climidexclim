@@ -431,6 +431,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     signInTitle: "Already have an account?",
     signInText: "Sign in for a smoother experience.",
     remove: "Remove",
+    edit: "Edit",
     subtotal: "Subtotal",
     exclTaxes: "(tax incl.)",
     goToCart: "Go to cart",
@@ -559,6 +560,7 @@ The Site only uses cookies that are strictly necessary for its operation (sessio
     firstName: "First name",
     lastName: "Last name",
     noBillingAddress: "No billing address",
+    notProvided: "Not provided",
     addressesTitle: "Shipping addresses",
     addressesSubtitle:
       "View and update your shipping addresses. You can add as many as you like.",

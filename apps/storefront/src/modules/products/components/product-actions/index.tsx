@@ -39,7 +39,33 @@ export default function ProductActions({
   const searchParams = useSearchParams()
   const { setColor } = useSelectedColor()
 
-  const [options, setOptions] = useState<Record<string, string | undefined>>({})
+  const visibleOptions = useMemo(
+    () =>
+      (product.options || []).filter(
+        (option) => option.title !== "Electrical outlet"
+      ),
+    [product.options]
+  )
+
+  const defaultOptions = useMemo(() => {
+    const plugOption = product.options?.find(
+      (option) => option.title === "Electrical outlet"
+    )
+    const colorOption = product.options?.find(
+      (option) => option.title === "Color"
+    )
+
+    return {
+      ...(plugOption ? { [plugOption.id]: "EU" } : {}),
+      ...(colorOption
+        ? { [colorOption.id]: "Bright gold cold wind" }
+        : {}),
+    }
+  }, [product.options])
+
+  const [options, setOptions] = useState<Record<string, string | undefined>>(
+    defaultOptions
+  )
   const [isAdding, setIsAdding] = useState(false)
   const countryCode = useParams().countryCode as string
 
@@ -160,17 +186,26 @@ export default function ProductActions({
 
   return (
     <>
-      <div className="flex flex-col gap-y-2">
+      <div className="flex flex-col gap-y-6">
         <div>
           {(product.variants?.length ?? 0) > 1 && (
-            <div className="flex flex-col gap-y-4">
-              {(product.options || []).map((option) => {
+            <div className="flex flex-col gap-y-6">
+              {visibleOptions.map((option) => {
                 return (
                   <div key={option.id}>
                     <OptionSelect
                       option={option}
                       current={options[option.id]}
                       updateOption={setOptionValue}
+                      previewOption={setColor}
+                      endPreview={() => {
+                        const selectedColor = product.options?.find(
+                          (item) => item.title === "Color"
+                        )
+                        if (selectedColor) {
+                          setColor(options[selectedColor.id] ?? null)
+                        }
+                      }}
                       title={option.title ?? ""}
                       data-testid="product-options"
                       disabled={!!disabled || isAdding}
@@ -195,12 +230,12 @@ export default function ProductActions({
             !isValidVariant
           }
           variant="primary"
-          className="w-full h-12 rounded-full bg-brand-navy hover:bg-brand-ink uppercase tracking-widest text-xs"
+          className="h-14 w-full rounded-full bg-[#1d1d1f] text-sm font-medium tracking-normal text-white hover:bg-black disabled:bg-[#d2d2d7] disabled:text-white"
           isLoading={isAdding}
           data-testid="add-product-button"
         >
           {!selectedVariant || !isValidVariant
-            ? (product.options?.length ?? 0) > 1
+            ? visibleOptions.length > 1
               ? t.product.chooseOptions
               : t.product.chooseOption
             : !inStock

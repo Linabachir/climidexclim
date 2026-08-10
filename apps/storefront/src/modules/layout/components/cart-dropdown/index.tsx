@@ -18,6 +18,7 @@ import LocalizedClientLink from "@modules/common/components/localized-client-lin
 import Thumbnail from "@modules/products/components/thumbnail"
 import { usePathname } from "next/navigation"
 import { Fragment, useEffect, useRef, useState } from "react"
+import { getClimaireCartImage } from "@lib/util/climaire-cart-image"
 
 const CartDropdown = ({
   cart: cartState,
@@ -136,8 +137,8 @@ const CartDropdown = ({
                           className="w-24"
                         >
                           <Thumbnail
-                            thumbnail={item.thumbnail}
-                            images={item.variant?.product?.images}
+                            thumbnail={getClimaireCartImage(item)}
+                            images={[]}
                             size="square"
                           />
                         </LocalizedClientLink>
@@ -150,7 +151,7 @@ const CartDropdown = ({
                                     href={`/products/${item.product_handle}`}
                                     data-testid="product-link"
                                   >
-                                    {item.title}
+                                    Climaire
                                   </LocalizedClientLink>
                                 </h3>
                                 <LineItemOptions

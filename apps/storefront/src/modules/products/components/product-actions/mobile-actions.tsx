@@ -37,6 +37,16 @@ const MobileActions: React.FC<MobileActionsProps> = ({
 }) => {
   const { t } = useI18n()
   const { state, open, close } = useToggleState()
+  const visibleOptions = useMemo(
+    () =>
+      (product.options || []).filter(
+        (option) => option.title !== "Electrical outlet"
+      ),
+    [product.options]
+  )
+  const visibleOptionValues = visibleOptions
+    .map((option) => options[option.id])
+    .filter(Boolean)
 
   const price = getProductPrice({
     product: product,
@@ -72,7 +82,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
           leaveTo="opacity-0"
         >
           <div
-            className="bg-brand-ivory flex flex-col gap-3 w-full border-t border-brand-line shadow-[0_-6px_20px_rgba(0,0,0,0.05)] px-4 pt-3 pb-4"
+            className="bg-white flex flex-col gap-3 w-full border-t border-[#e5e5e7] shadow-[0_-6px_20px_rgba(0,0,0,0.05)] px-4 pt-3 pb-4"
             data-testid="mobile-actions"
           >
             <div className="flex items-center justify-between gap-3">
@@ -108,7 +118,7 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                 >
                   <span className="truncate">
                     {variant
-                      ? Object.values(options).join(" / ")
+                      ? visibleOptionValues.join(" / ")
                       : t.product.chooseOptions}
                   </span>
                   <ChevronDown />
@@ -170,10 +180,10 @@ const MobileActions: React.FC<MobileActionsProps> = ({
                       <X />
                     </button>
                   </div>
-                  <div className="bg-brand-ivory px-6 py-10 rounded-t-2xl">
+                  <div className="bg-white px-6 py-10 rounded-t-2xl">
                     {(product.variants?.length ?? 0) > 1 && (
                       <div className="flex flex-col gap-y-6">
-                        {(product.options || []).map((option) => {
+                        {visibleOptions.map((option) => {
                           return (
                             <div key={option.id}>
                               <OptionSelect

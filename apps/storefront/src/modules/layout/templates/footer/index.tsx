@@ -11,7 +11,7 @@ export default async function Footer() {
   const { t } = await getI18n()
 
   return (
-    <footer className="border-t border-brand-line w-full bg-brand-cream-deep">
+    <footer className="border-t border-[#e5e5e7] w-full bg-white">
       <div className="content-container flex flex-col w-full">
         <div className="flex flex-col gap-y-10 xsmall:flex-row items-start justify-between py-24 small:py-32">
           <div className="flex flex-col gap-y-3 max-w-xs">

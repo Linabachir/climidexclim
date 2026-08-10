@@ -14,119 +14,89 @@ type ImageGalleryProps = {
   images: HttpTypes.StoreProductImage[]
 }
 
-// Ordre d'affichage préféré : les packshots sur fond blanc d'abord,
-// les scènes lifestyle (bureau, salon) à la fin. Repérage par nom de fichier.
-const ORDER = [
-  "purificateur_d_air_moderne_et_", // packshot de face, fond blanc
-  "1638e318", // packshot de trois-quarts, fond blanc
-  "purificateur_d_air_moderne_en_d", // détail écran LED, fond blanc
-  "bc132e79", // détail haut, fond blanc
-  "29321f16", // scène bureau (lifestyle)
-  "ambiance", // scène salon (lifestyle)
-]
-const rank = (url?: string) => {
-  const u = (url ?? "").toLowerCase()
-  const i = ORDER.findIndex((t) => u.includes(t))
-  return i === -1 ? 50 : i
+type GalleryMedia = {
+  id: string
+  url: string
+  alt: string
 }
 
-const ImageGallery = ({ images: rawImages }: ImageGalleryProps) => {
+const PRODUCT_MEDIA: GalleryMedia[] = [
+  { id: "gold-front", url: "/product/climaire-gold-front.webp", alt: "Climaire blanc et champagne, vue de face" },
+  { id: "gold-display", url: "/product/climaire-gold-display.webp", alt: "Écran et filtre du Climaire blanc et champagne" },
+  { id: "gold-filter", url: "/product/climaire-gold-filter.webp", alt: "Filtre doré du Climaire en détail" },
+  { id: "gold-arc", url: "/product/climaire-gold-arc.webp", alt: "Finition champagne de l'anneau du Climaire" },
+  { id: "blue-front", url: "/product/climaire-blue-front.webp", alt: "Climaire blanc et bleu, vue de face" },
+  { id: "blue-display", url: "/product/climaire-blue-display.webp", alt: "Écran du Climaire blanc et bleu" },
+  { id: "blue-filter", url: "/product/climaire-blue-filter.webp", alt: "Filtre bleu du Climaire en détail" },
+  { id: "anthracite-front", url: "/product/climaire-anthracite-front.webp", alt: "Climaire anthracite et doré, vue de face" },
+  { id: "anthracite-angle", url: "/product/climaire-anthracite-angle.webp", alt: "Climaire anthracite et doré, vue de trois-quarts" },
+  { id: "anthracite-filter", url: "/product/climaire-anthracite-filter.webp", alt: "Filtre du Climaire anthracite en détail" },
+]
+
+const DEFAULT_COLOR_KEY = "climaire-gold"
+
+const ImageGallery = (_props: ImageGalleryProps) => {
   const { t } = useI18n()
   const { color } = useSelectedColor()
-  const images = [...rawImages].sort((a, b) => rank(a.url) - rank(b.url))
+  const activeColorKey = imageKeyForColor(color) ?? DEFAULT_COLOR_KEY
+  const media = PRODUCT_MEDIA.filter((item) =>
+    item.url.includes(activeColorKey)
+  )
   const [active, setActive] = useState(0)
 
-  // Quand un coloris est choisi, on bascule sur sa photo (si elle existe).
   useEffect(() => {
-    const key = imageKeyForColor(color)
-    if (!key) return
-    const idx = images.findIndex((img) => (img.url ?? "").includes(key))
-    if (idx >= 0) setActive(idx)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [color])
+    setActive(0)
+  }, [activeColorKey])
 
-  const current = images[active] ?? images[0]
+  const current = media[active] ?? media[0]
+  const go = (direction: number) =>
+    setActive((index) => (index + direction + media.length) % media.length)
 
-  const go = (dir: number) =>
-    setActive((i) => (i + dir + images.length) % images.length)
-
-  if (!images?.length) {
+  if (!media.length) {
     return (
-      <div className="aspect-[4/5] w-full rounded-large bg-brand-paper border border-brand-line" />
+      <div className="aspect-[4/5] w-full bg-white border border-[#e5e5e7]" />
     )
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      {/* Image principale */}
-      <div className="group relative w-full max-w-[440px] mx-auto aspect-[4/5] overflow-hidden rounded-lg bg-white border border-brand-line">
-        {current?.url && (
-          <Image
-            key={current.id}
-            src={current.url}
-            priority
-            className="object-contain p-3"
-            alt="Climaire, ventilateur sans pales — vue du produit"
-            fill
-            sizes="(max-width: 1024px) 100vw, 440px"
-          />
-        )}
+    <div className="flex w-full flex-col gap-4">
+      <div className="group relative aspect-square w-full overflow-hidden bg-white border border-[#e5e5e7]">
+        <Image
+          key={current.id}
+          src={current.url}
+          priority
+          className="scale-[1.08] object-contain p-5 small:p-8"
+          alt={current.alt}
+          fill
+          sizes="(max-width: 1024px) 100vw, 55vw"
+        />
 
-        {images.length > 1 && (
+        {media.length > 1 && (
           <>
-            <button
-              type="button"
-              onClick={() => go(-1)}
-              aria-label={t.product.galleryPrev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/85 text-brand-ink shadow-sm transition hover:bg-white"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M15 6l-6 6 6 6" />
-              </svg>
+            <button type="button" onClick={() => go(-1)} aria-label={t.product.galleryPrev} className="absolute left-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/85 text-brand-ink shadow-sm transition hover:bg-white">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M15 6l-6 6 6 6" /></svg>
             </button>
-            <button
-              type="button"
-              onClick={() => go(1)}
-              aria-label={t.product.galleryNext}
-              className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/85 text-brand-ink shadow-sm transition hover:bg-white"
-            >
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M9 6l6 6-6 6" />
-              </svg>
+            <button type="button" onClick={() => go(1)} aria-label={t.product.galleryNext} className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/85 text-brand-ink shadow-sm transition hover:bg-white">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden><path d="M9 6l6 6-6 6" /></svg>
             </button>
-
-            {/* compteur */}
             <div className="absolute bottom-3 right-3 rounded-full bg-brand-ink/70 px-2.5 py-1 text-[11px] font-medium text-white">
-              {active + 1} / {images.length}
+              {active + 1} / {media.length}
             </div>
           </>
         )}
       </div>
 
-      {/* Miniatures : petite rangée horizontale scrollable */}
-      {images.length > 1 && (
-        <div className="flex gap-2.5 overflow-x-auto pb-1">
-          {images.map((image, i) => (
+      {media.length > 1 && (
+        <div className="flex gap-2 overflow-x-auto pb-1">
+          {media.map((item, index) => (
             <button
-              key={image.id}
+              key={item.id}
               type="button"
-              onClick={() => setActive(i)}
-              aria-label={`Voir le visuel ${i + 1}`}
-              className={`relative shrink-0 w-[72px] h-[72px] overflow-hidden rounded-md bg-white border transition-colors ${
-                active === i
-                  ? "border-brand-navy"
-                  : "border-brand-line hover:border-brand-mute"
-              }`}
+              onClick={() => setActive(index)}
+              aria-label={`Voir le visuel ${index + 1}`}
+              className={`relative h-[72px] w-[72px] shrink-0 overflow-hidden bg-white border transition-colors ${active === index ? "border-brand-ink" : "border-[#e5e5e7] hover:border-brand-mute"}`}
             >
-              {image.url && (
-                <Image
-                  src={image.url}
-                  className="object-cover"
-                  alt={`Climaire, ventilateur sans pales — miniature ${i + 1}`}
-                  fill
-                  sizes="72px"
-                />
-              )}
+              <Image src={item.url} className="object-cover" alt={item.alt} fill sizes="72px" />
             </button>
           ))}
         </div>

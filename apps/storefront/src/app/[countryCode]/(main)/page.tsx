@@ -2,15 +2,9 @@ import { Metadata } from "next"
 import { HttpTypes } from "@medusajs/types"
 
 import { getI18n } from "@lib/i18n/server"
-import Hero from "@modules/home/components/hero"
-import HomeStats from "@modules/home/components/home-stats"
-import HomePrinciples from "@modules/home/components/home-principles"
-import HomeLifestyle from "@modules/home/components/home-lifestyle"
-import HomeTech from "@modules/home/components/home-tech"
-import HomeCta from "@modules/home/components/home-cta"
+import HomeExperience from "@modules/home/components/home-experience"
 import { listProducts } from "@lib/data/products"
 import { getRegion } from "@lib/data/regions"
-import { getProductPrice } from "@lib/util/get-product-price"
 import { graph, organizationJsonLd, websiteJsonLd } from "@lib/seo/jsonld"
 
 // Handle du produit phare. La boutique est mono-produit pour l'instant ;
@@ -60,10 +54,6 @@ export default async function Home(props: {
   const productHref = product
     ? `/products/${product.handle}`
     : "/store"
-  const price = product
-    ? getProductPrice({ product }).cheapestPrice?.calculated_price
-    : null
-
   // Données structurées Organisation + Site : aide Google à comprendre la
   // marque CLIMIDEX (entité, logo). Schémas centralisés dans lib/seo.
   const orgJsonLd = graph(organizationJsonLd(), websiteJsonLd())
@@ -74,12 +64,7 @@ export default async function Home(props: {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
-      <Hero product={product} />
-      <HomeStats />
-      <HomePrinciples />
-      <HomeLifestyle />
-      <HomeTech productHref={productHref} />
-      <HomeCta productHref={productHref} price={price} />
+      <HomeExperience productHref={productHref} />
     </>
   )
 }

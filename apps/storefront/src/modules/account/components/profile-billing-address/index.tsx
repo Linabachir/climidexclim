@@ -93,7 +93,7 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
 
   return (
     <form action={formAction} onReset={() => clearState()} className="w-full">
-      <input type="hidden" name="addressId" value={billingAddress?.id} />
+      <input type="hidden" name="addressId" value={billingAddress?.id ?? ""} />
       <AccountInfo
         label={t.account.billingAddress}
         currentInfo={currentInfo}
@@ -103,7 +103,7 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
         data-testid="account-billing-address-editor"
       >
         <div className="grid grid-cols-1 gap-y-2">
-          <div className="grid grid-cols-2 gap-x-2">
+          <div className="grid grid-cols-1 gap-2 xsmall:grid-cols-2">
             <Input
               label={t.account.firstName}
               name="first_name"
@@ -128,7 +128,7 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
           <Input
             label={t.account.phone}
             name="phone"
-            type="phone"
+            type="tel"
             autoComplete="phone"
             required
             defaultValue={billingAddress?.phone ?? customer?.phone ?? ""}
@@ -147,7 +147,7 @@ const ProfileBillingAddress: React.FC<MyInformationProps> = ({
             defaultValue={billingAddress?.address_2 || undefined}
             data-testid="billing-address-2-input"
           />
-          <div className="grid grid-cols-[144px_1fr] gap-x-2">
+          <div className="grid grid-cols-1 gap-2 xsmall:grid-cols-[144px_1fr]">
             <Input
               label={t.account.postalCode}
               name="postal_code"

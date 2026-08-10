@@ -65,29 +65,31 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
   }
 
   return (
-    <>
+    <main className="bg-white [font-family:-apple-system,BlinkMacSystemFont,'SF_Pro_Text','Helvetica_Neue',Arial,sans-serif]">
       <div
         id="acheter"
-        className="content-container py-10 small:py-16 scroll-mt-24"
+        className="content-container py-7 small:py-12 scroll-mt-24"
         data-testid="product-container"
       >
-        <nav className="flex items-center gap-x-2 mb-8 text-[13px] text-brand-mute">
+        <nav className="flex items-center gap-x-2 mb-6 text-[13px] text-brand-mute">
           <LocalizedClientLink href="/" className="hover:text-brand-ink">
-            Maison
+            La Maison
           </LocalizedClientLink>
           <span className="text-brand-line">/</span>
-          <span className="text-brand-ink">{product.title}</span>
+          <span className="text-brand-ink">
+            Climaire — ventilateur purificateur
+          </span>
         </nav>
 
         <SelectedColorProvider>
-        <div className="grid grid-cols-1 small:grid-cols-2 gap-10 small:gap-16 items-start">
+        <div className="grid grid-cols-1 small:grid-cols-[1.08fr_0.92fr] gap-10 small:gap-12 large:gap-16 items-start">
           {/* Colonne galerie photos */}
           <div className="w-full">
             <ImageGallery images={images} />
           </div>
 
           {/* Colonne achat (collante au défilement) */}
-          <div className="flex flex-col gap-y-8 small:sticky small:top-28 w-full">
+          <div className="flex w-full flex-col gap-y-10 small:sticky small:top-28">
             <ProductInfo product={product} />
             <ProductOnboardingCta />
             <Suspense
@@ -101,14 +103,38 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             >
               <ProductActionsWrapper id={product.id} region={region} />
             </Suspense>
-            {product.description && (
-              <p
-                className="text-[15px] leading-7 text-brand-ink-secondary whitespace-pre-line border-t border-brand-line pt-6"
-                data-testid="product-description"
-              >
-                {product.description}
+            <section
+              className="border-t border-brand-line pt-7"
+              data-testid="product-description"
+            >
+              <h2 className="text-2xl font-semibold tracking-[-0.025em] text-brand-ink">
+                Chaud, froid et air purifié.
+              </h2>
+              <p className="mt-3 text-[15px] leading-7 text-brand-ink-secondary">
+                Un seul appareil pour toute l’année : il rafraîchit l’air en
+                été, diffuse une chaleur douce en hiver et contribue à purifier
+                l’air de votre intérieur au quotidien.
               </p>
-            )}
+              <ul className="mt-6 grid grid-cols-1 border-y border-brand-line xsmall:grid-cols-3">
+                {[
+                  ["01", "Rafraîchit"],
+                  ["02", "Chauffe"],
+                  ["03", "Purifie"],
+                ].map(([number, label], index) => (
+                  <li
+                    key={label}
+                    className={`flex items-baseline gap-3 py-4 text-base font-medium text-brand-ink xsmall:px-4 ${
+                      index > 0 ? "border-t border-brand-line xsmall:border-l xsmall:border-t-0" : ""
+                    }`}
+                  >
+                    <span className="text-[11px] font-normal tracking-[0.12em] text-brand-mute" aria-hidden>
+                      {number}
+                    </span>
+                    {label}
+                  </li>
+                ))}
+              </ul>
+            </section>
             <TrustList />
             <ProductTabs product={product} />
           </div>
@@ -130,7 +156,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
         le backend contient encore des produits de démonstration Medusa.
         À réactiver (RelatedProducts) une fois de vrais produits ajoutés.
       */}
-    </>
+    </main>
   )
 }
 

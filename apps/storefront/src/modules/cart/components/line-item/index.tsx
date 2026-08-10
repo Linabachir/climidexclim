@@ -12,6 +12,7 @@ import LineItemUnitPrice from "@modules/common/components/line-item-unit-price"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import Image from "next/image"
 import ErrorMessage from "@modules/checkout/components/error-message"
+import { getClimaireCartImage } from "@lib/util/climaire-cart-image"
 
 type CartLineItemProps = {
   item: HttpTypes.StoreCartLineItem
@@ -64,9 +65,9 @@ const CartLineItem = ({ item, currencyCode }: CartLineItemProps) => {
         href={`/products/${item.product_handle}`}
         className="relative w-24 h-24 shrink-0 overflow-hidden rounded-md border border-brand-line bg-white"
       >
-        {pickThumb(item) && (
+        {getClimaireCartImage(item) && (
           <Image
-            src={pickThumb(item) as string}
+            src={getClimaireCartImage(item) as string}
             alt={item.product_title ?? "Produit"}
             fill
             sizes="96px"
@@ -83,7 +84,7 @@ const CartLineItem = ({ item, currencyCode }: CartLineItemProps) => {
               className="font-medium text-brand-ink transition-colors hover:text-brand-navy"
               data-testid="product-title"
             >
-              {item.product_title}
+              Climaire
             </LocalizedClientLink>
             <div className="text-[13px] text-brand-mute">
               <LineItemOptions
@@ -137,15 +138,23 @@ const CartLineItem = ({ item, currencyCode }: CartLineItemProps) => {
             </button>
           </div>
 
-          <button
-            type="button"
-            onClick={remove}
-            className="inline-flex items-center gap-1.5 text-[13px] text-brand-mute transition-colors hover:text-brand-critical"
-            data-testid="product-delete-button"
-          >
-            <Trash className="h-4 w-4" />
-            {t.cart.remove}
-          </button>
+          <div className="flex items-center gap-4">
+            <LocalizedClientLink
+              href={`/products/${item.product_handle}`}
+              className="text-[13px] font-medium text-brand-ink underline decoration-brand-line-strong underline-offset-4 transition-colors hover:decoration-brand-ink"
+            >
+              {t.cart.edit}
+            </LocalizedClientLink>
+            <button
+              type="button"
+              onClick={remove}
+              className="inline-flex items-center gap-1.5 text-[13px] text-brand-mute transition-colors hover:text-brand-critical"
+              data-testid="product-delete-button"
+            >
+              <Trash className="h-4 w-4" />
+              {t.cart.remove}
+            </button>
+          </div>
         </div>
 
         <ErrorMessage error={error} data-testid="product-error-message" />

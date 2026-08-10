@@ -33,6 +33,8 @@ export const useSelectedColor = () => useContext(ColorContext)
 // de sa photo. L'argenté ventilation+chauffage réutilise la photo argentée.
 const COLOR_IMAGE: Record<string, string> = {
   "Bright gold cold wind": "climaire-gold",
+  // Les deux variantes argentées utilisent les mêmes médias : seule la
+  // présence du chauffage les différencie.
   "Silver cold wind": "climaire-silver",
   "Silver cooling and heating": "climaire-silver",
   "White blue cold wind": "climaire-blue",

@@ -6,17 +6,17 @@ const ProductSpecs = async () => {
   const { t } = await getI18n()
 
   return (
-    <section className="bg-brand-cream-deep border-t border-brand-line">
+    <section className="bg-white border-t border-[#e5e5e7]">
       <div className="content-container py-20 small:py-28 grid grid-cols-1 small:grid-cols-2 gap-12 small:gap-20">
         <div>
           <span className="text-[14px] font-medium text-brand-navy">
             {t.product.specsEyebrow}
           </span>
-          <h2 className="font-serif font-medium text-3xl small:text-4xl leading-tight text-brand-ink mt-4 max-w-[14ch]">
+          <h2 className="font-sans font-semibold text-3xl small:text-4xl leading-tight tracking-[-0.025em] text-brand-ink mt-4 max-w-[14ch]">
             {t.product.specsTitle}
           </h2>
         </div>
-        <div className="bg-brand-surface border border-brand-line rounded-lg px-7">
+        <div className="bg-white border border-[#e5e5e7] rounded-lg px-7">
           <dl className="divide-y divide-brand-line">
             {t.landing.specs.map((spec) => (
               <div

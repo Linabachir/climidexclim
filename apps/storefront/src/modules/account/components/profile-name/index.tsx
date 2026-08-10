@@ -51,13 +51,16 @@ const ProfileName: React.FC<MyInformationProps> = ({ customer }) => {
     <form action={formAction} className="w-full overflow-visible">
       <AccountInfo
         label={t.account.name}
-        currentInfo={`${customer.first_name} ${customer.last_name}`}
+        currentInfo={
+          [customer.first_name, customer.last_name].filter(Boolean).join(" ") ||
+          t.account.notProvided
+        }
         isSuccess={successState}
         isError={!!state?.error}
         clearState={clearState}
         data-testid="account-name-editor"
       >
-        <div className="grid grid-cols-2 gap-x-4">
+        <div className="grid grid-cols-1 gap-3 xsmall:grid-cols-2">
           <Input
             label={t.account.firstName}
             name="first_name"
