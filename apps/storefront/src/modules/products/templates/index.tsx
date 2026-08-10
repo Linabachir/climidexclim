@@ -147,27 +147,27 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
             </div>
           </article>
 
-          <div className="mt-6 grid gap-6 min-[768px]:grid-cols-2">
-            <article className="flex min-h-[520px] flex-col overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] small:rounded-[40px]">
-              <div className="px-7 pt-10 small:px-12 small:pt-14">
+          <div className="mt-6 grid gap-5 min-[768px]:grid-cols-2">
+            <article className="flex min-h-[420px] flex-col overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] small:min-h-[450px] small:rounded-[32px]">
+              <div className="px-7 pt-8 small:px-10 small:pt-10">
                 <p className="text-sm font-medium text-[#6e6e73]">Confort toute saison</p>
-                <h3 className="mt-3 max-w-[12ch] text-[clamp(2.2rem,4vw,4rem)] font-semibold leading-[1.02] tracking-[-0.045em]">
+                <h3 className="mt-3 max-w-[12ch] text-[clamp(2rem,3.2vw,3.25rem)] font-semibold leading-[1.04] tracking-[-0.04em]">
                   Du frais à la chaleur.
                 </h3>
               </div>
-              <div className="relative mt-auto aspect-[4/3]">
+              <div className="relative mx-5 mb-5 mt-8 aspect-[16/10] overflow-hidden rounded-[22px] small:mx-7 small:mb-7 small:rounded-[26px]">
                 <Image src="/product/climaire-gold-arc.webp" alt="Finition de l'anneau du Climaire" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
               </div>
             </article>
 
-            <article className="flex min-h-[520px] flex-col overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] small:rounded-[40px]">
-              <div className="px-7 pt-10 small:px-12 small:pt-14">
+            <article className="flex min-h-[420px] flex-col overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] small:min-h-[450px] small:rounded-[32px]">
+              <div className="px-7 pt-8 small:px-10 small:pt-10">
                 <p className="text-sm font-medium text-[#6e6e73]">Air intérieur</p>
-                <h3 className="mt-3 max-w-[12ch] text-[clamp(2.2rem,4vw,4rem)] font-semibold leading-[1.02] tracking-[-0.045em]">
+                <h3 className="mt-3 max-w-[12ch] text-[clamp(2rem,3.2vw,3.25rem)] font-semibold leading-[1.04] tracking-[-0.04em]">
                   Respirez un air plus pur.
                 </h3>
               </div>
-              <div className="relative mt-auto aspect-[4/3]">
+              <div className="relative mx-5 mb-5 mt-8 aspect-[16/10] overflow-hidden rounded-[22px] small:mx-7 small:mb-7 small:rounded-[26px]">
                 <Image src="/product/climaire-gold-filter.webp" alt="Système de filtration du Climaire" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
               </div>
             </article>
