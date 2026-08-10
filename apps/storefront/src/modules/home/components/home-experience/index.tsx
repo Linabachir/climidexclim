@@ -71,7 +71,7 @@ const HomeExperience = async ({ productHref }: Props) => {
             <LocalizedClientLink href={productHref} className="inline-flex min-h-12 items-center justify-center rounded-full bg-[#1d1d1f] px-4 text-center text-sm font-medium text-white transition-colors hover:bg-black small:min-w-[220px] small:px-8 small:text-base large:min-w-[260px]">
               {text.discover}
             </LocalizedClientLink>
-            <a href="#film-climidex" className="inline-flex min-h-12 items-center justify-center gap-2 border border-brand-ink/30 px-3 py-3 text-center text-sm font-medium transition hover:border-brand-ink small:px-5 large:px-7">
+            <a href="#film-climidex" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-[#f5f5f7] px-4 py-3 text-center text-sm font-medium text-[#1d1d1f] transition-colors hover:bg-[#e8e8ed] small:px-6 large:px-8">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
                 <circle cx="8" cy="8" r="6.25" stroke="currentColor" strokeWidth="1.25" />
                 <path d="m6.75 5.6 3.7 2.4-3.7 2.4V5.6Z" fill="currentColor" />

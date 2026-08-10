@@ -66,6 +66,38 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
 
   return (
     <main className="bg-white [font-family:-apple-system,BlinkMacSystemFont,'SF_Pro_Text','Helvetica_Neue',Arial,sans-serif]">
+      <section className="relative min-h-[calc(100svh-72px)] overflow-hidden bg-[#e8e8e8] text-white">
+        <video
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          src="/home/climidex-film.mp4"
+          poster="/home/climidex-film-poster.webp"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Le Climaire en situation"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-black/10" />
+        <div className="content-container relative flex min-h-[calc(100svh-72px)] flex-col justify-end pb-10 small:pb-14">
+          <h1 className="max-w-[9ch] text-[clamp(3.5rem,7vw,7.5rem)] font-semibold leading-[0.9] tracking-[-0.055em]">
+            Climaire
+          </h1>
+          <p className="mt-5 max-w-lg text-base leading-7 text-white/90 small:text-xl">
+            Chaud, froid et air purifié. Un seul appareil pour toute l’année.
+          </p>
+          <a
+            href="#acheter"
+            className="mt-8 inline-flex w-fit items-center gap-3 text-sm font-medium text-white transition-opacity hover:opacity-70"
+          >
+            Découvrir le produit
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden>
+              <path d="M8 2.5v10M4.5 9l3.5 3.5L11.5 9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
       <div
         id="acheter"
         className="content-container py-7 small:py-12 scroll-mt-24"
