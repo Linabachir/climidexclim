@@ -65,7 +65,11 @@ const ImageGallery = (_props: ImageGalleryProps) => {
           key={current.id}
           src={current.url}
           priority
-          className="scale-[1.08] object-contain p-5 mix-blend-multiply small:p-8"
+          className={`scale-[1.08] object-contain p-5 mix-blend-multiply small:p-8 ${
+            current.url.includes("climaire-blue")
+              ? "[mask-image:radial-gradient(ellipse_76%_86%_at_center,black_68%,transparent_100%)]"
+              : ""
+          }`}
           alt={current.alt}
           fill
           sizes="(max-width: 1024px) 100vw, 55vw"
@@ -96,7 +100,17 @@ const ImageGallery = (_props: ImageGalleryProps) => {
               aria-label={`Voir le visuel ${index + 1}`}
               className={`relative h-[72px] w-[72px] shrink-0 overflow-hidden bg-white border transition-colors ${active === index ? "border-brand-ink" : "border-[#e5e5e7] hover:border-brand-mute"}`}
             >
-              <Image src={item.url} className="object-cover mix-blend-multiply" alt={item.alt} fill sizes="72px" />
+              <Image
+                src={item.url}
+                className={`object-cover mix-blend-multiply ${
+                  item.url.includes("climaire-blue")
+                    ? "[mask-image:radial-gradient(ellipse_76%_86%_at_center,black_68%,transparent_100%)]"
+                    : ""
+                }`}
+                alt={item.alt}
+                fill
+                sizes="72px"
+              />
             </button>
           ))}
         </div>

@@ -140,7 +140,11 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                     alt={alt}
                     fill
                     sizes="33vw"
-                    className="object-contain object-bottom mix-blend-multiply"
+                    className={`object-contain object-bottom mix-blend-multiply ${
+                      src.includes("climaire-blue")
+                        ? "[mask-image:radial-gradient(ellipse_72%_82%_at_center,black_62%,transparent_100%)]"
+                        : ""
+                    }`}
                   />
                 </div>
               ))}

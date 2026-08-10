@@ -41,14 +41,17 @@ const ProductStory = async ({}: Props) => {
     {
       name: isFrench ? "Ivoire Impérial" : "Imperial Ivory",
       image: "/product/climaire-gold-front.webp",
+      softenEdges: false,
     },
     {
       name: isFrench ? "Noir Élysée" : "Élysée Black",
       image: "/product/climaire-anthracite-front.webp",
+      softenEdges: false,
     },
     {
       name: isFrench ? "Bleu Bourbon" : "Bourbon Blue",
       image: "/product/climaire-blue-front.webp",
+      softenEdges: true,
     },
   ]
 
@@ -166,7 +169,11 @@ const ProductStory = async ({}: Props) => {
                     alt={`Climaire ${finish.name}`}
                     fill
                     sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-contain object-bottom p-1 mix-blend-multiply transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.035] small:p-5"
+                    className={`object-contain object-bottom p-1 mix-blend-multiply transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.035] small:p-5 ${
+                      finish.softenEdges
+                        ? "[mask-image:radial-gradient(ellipse_72%_82%_at_center,black_62%,transparent_100%)]"
+                        : ""
+                    }`}
                   />
                 </div>
                 <h3 className="pb-5 text-center text-sm font-semibold tracking-[-0.02em] text-[#1d1d1f] transition-transform duration-500 group-hover:-translate-y-1 small:pb-8 small:text-xl">
