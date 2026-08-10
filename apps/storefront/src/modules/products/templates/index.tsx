@@ -1,4 +1,5 @@
 import React, { Suspense } from "react"
+import Image from "next/image"
 
 import ImageGallery from "@modules/products/components/image-gallery"
 import ProductActions from "@modules/products/components/product-actions"
@@ -95,6 +96,76 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
               <path d="M8 2.5v10M4.5 9l3.5 3.5L11.5 9" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
+        </div>
+      </section>
+
+      <section id="decouvrir" className="bg-[#000] pb-24 text-white small:pb-36">
+        <div className="sticky top-0 z-30 border-b border-white/10 bg-black/80 backdrop-blur-xl">
+          <div className="content-container flex h-16 items-center justify-between">
+            <span className="text-lg font-semibold tracking-[-0.02em]">Climaire</span>
+            <div className="flex items-center gap-5 text-sm">
+              <a href="#points-forts" className="text-white/70 transition-colors hover:text-white">
+                Découvrir
+              </a>
+              <a href="#acheter" className="rounded-full bg-white px-5 py-2 font-medium text-black transition-opacity hover:opacity-85">
+                Acheter
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div id="points-forts" className="content-container scroll-mt-20 pt-20 small:pt-28">
+          <h2 className="text-[clamp(3rem,6vw,6rem)] font-semibold leading-none tracking-[-0.05em]">
+            Points forts.
+          </h2>
+
+          <article className="mt-12 overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] small:mt-16 small:rounded-[40px]">
+            <div className="px-6 pb-4 pt-10 text-center small:px-12 small:pt-16">
+              <h3 className="mx-auto max-w-[18ch] text-[clamp(2rem,4vw,4.5rem)] font-semibold leading-[1.02] tracking-[-0.045em]">
+                Trois finitions. Un même confort.
+              </h3>
+              <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#6e6e73] small:text-lg">
+                Ivoire, Noir ou Bleu. Le Climaire trouve naturellement sa place dans votre intérieur.
+              </p>
+            </div>
+            <div className="grid grid-cols-3 items-end gap-1 px-2 pt-5 small:gap-6 small:px-[8vw] small:pt-10">
+              {[
+                ["/product/climaire-gold-front.webp", "Climaire Ivoire"],
+                ["/product/climaire-anthracite-front.webp", "Climaire Noir"],
+                ["/product/climaire-blue-front.webp", "Climaire Bleu"],
+              ].map(([src, alt]) => (
+                <div key={src} className="relative aspect-[3/5] overflow-hidden">
+                  <Image src={src} alt={alt} fill sizes="33vw" className="object-contain object-bottom" />
+                </div>
+              ))}
+            </div>
+          </article>
+
+          <div className="mt-6 grid gap-6 min-[768px]:grid-cols-2">
+            <article className="flex min-h-[520px] flex-col overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] small:rounded-[40px]">
+              <div className="px-7 pt-10 small:px-12 small:pt-14">
+                <p className="text-sm font-medium text-[#6e6e73]">Confort toute saison</p>
+                <h3 className="mt-3 max-w-[12ch] text-[clamp(2.2rem,4vw,4rem)] font-semibold leading-[1.02] tracking-[-0.045em]">
+                  Du frais à la chaleur.
+                </h3>
+              </div>
+              <div className="relative mt-auto aspect-[4/3]">
+                <Image src="/product/climaire-gold-arc.webp" alt="Finition de l'anneau du Climaire" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+              </div>
+            </article>
+
+            <article className="flex min-h-[520px] flex-col overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] small:rounded-[40px]">
+              <div className="px-7 pt-10 small:px-12 small:pt-14">
+                <p className="text-sm font-medium text-[#6e6e73]">Air intérieur</p>
+                <h3 className="mt-3 max-w-[12ch] text-[clamp(2.2rem,4vw,4rem)] font-semibold leading-[1.02] tracking-[-0.045em]">
+                  Respirez un air plus pur.
+                </h3>
+              </div>
+              <div className="relative mt-auto aspect-[4/3]">
+                <Image src="/product/climaire-gold-filter.webp" alt="Système de filtration du Climaire" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" />
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
