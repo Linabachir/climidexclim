@@ -10,13 +10,13 @@ const LegalPage = ({
   eyebrow?: string
 }) => {
   return (
-    <div className="bg-brand-ivory">
+    <div className="bg-white">
       <div className="content-container py-20 small:py-28">
         <div className="mx-auto max-w-2xl">
           <p className="font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-brand-mute">
             {eyebrow}
           </p>
-          <h1 className="mt-4 font-serif text-4xl small:text-5xl leading-[1.05] tracking-[-0.015em] text-brand-ink">
+          <h1 className="mt-4 font-serif text-4xl leading-[1.05] tracking-[-0.015em] text-brand-ink small:text-5xl">
             {title}
           </h1>
           <div className="mt-8 h-px w-full bg-brand-line" />

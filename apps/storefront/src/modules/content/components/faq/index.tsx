@@ -17,7 +17,7 @@ const Faq = ({
   const [open, setOpen] = useState<number | null>(0)
 
   return (
-    <div className="bg-brand-ivory">
+    <div className="bg-white">
       <div className="content-container py-20 small:py-28">
         <div className="mx-auto max-w-3xl">
           <p className="font-sans text-[12px] font-medium uppercase tracking-[0.18em] text-brand-mute">

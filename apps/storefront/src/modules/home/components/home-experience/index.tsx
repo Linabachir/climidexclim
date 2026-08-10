@@ -53,6 +53,25 @@ const finishes = [
   { image: "/product/climaire-anthracite-angle.webp", hoverImage: "/product/climaire-anthracite-front.webp", background: "bg-[#d9dadd]", compact: true },
 ]
 
+const BenefitIcon = ({ index }: { index: number }) => {
+  const common = {
+    width: 26,
+    height: 26,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 1.65,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+    "aria-hidden": true,
+  }
+
+  if (index === 0) return <svg {...common}><path d="M12 3v18M5.6 6.6l12.8 10.8M5.6 17.4 18.4 6.6M8.7 4.9 12 7l3.3-2.1M8.7 19.1 12 17l3.3 2.1" /></svg>
+  if (index === 1) return <svg {...common}><path d="M12 21c5-3.1 7.5-7.3 7.5-13.8C14.2 7.3 10.3 9.6 9 14.4" /><path d="M4.5 18.5c2.4-4.2 6-6.7 11-7.5M5 10.5l.8 1.7 1.7.8-1.7.8L5 15.5l-.8-1.7-1.7-.8 1.7-.8L5 10.5Z" /></svg>
+  if (index === 2) return <svg {...common}><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+  return <svg {...common}><path d="M4 8h9.5a2.5 2.5 0 1 0-2.2-3.7M3 12h15a3 3 0 1 1-2.6 4.5M4 16h6" /></svg>
+}
+
 const HomeExperience = async ({ productHref }: Props) => {
   const { locale } = await getI18n()
   const text = copy[locale]
@@ -91,10 +110,13 @@ const HomeExperience = async ({ productHref }: Props) => {
             <h2 className="whitespace-pre-line text-[clamp(2.7rem,5vw,5.5rem)] font-semibold leading-[0.96] tracking-[-0.04em]">{text.seasons}</h2>
             <p className="mt-7 max-w-md leading-7 text-brand-ink-secondary">{text.seasonsBody}</p>
           </div>
-          <div className="grid grid-cols-1 border-t border-brand-line xsmall:grid-cols-2">
+          <div className="grid grid-cols-1 gap-x-12 gap-y-10 xsmall:grid-cols-2">
             {text.benefits.map(([title, body], index) => (
-              <div key={title} className={`py-7 xsmall:px-7 ${index % 2 ? "xsmall:border-l xsmall:border-brand-line" : ""} ${index > 1 ? "border-t border-brand-line" : ""}`}>
-                <span className="text-2xl font-semibold">{title}</span>
+              <div key={title} className="py-2">
+                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-[#f5f5f7] text-[#1d1d1f]">
+                  <BenefitIcon index={index} />
+                </span>
+                <span className="mt-5 block text-2xl font-semibold">{title}</span>
                 <p className="mt-3 max-w-xs text-sm leading-6 text-brand-mute">{body}</p>
               </div>
             ))}
@@ -141,10 +163,10 @@ const HomeExperience = async ({ productHref }: Props) => {
         </div>
       </section>
 
-      <section className="border-y border-brand-line bg-[#f4f5f6]">
-        <dl className="content-container grid grid-cols-2 large:grid-cols-4">
+      <section className="bg-white py-10 small:py-14">
+        <dl className="content-container grid grid-cols-2 gap-3 large:grid-cols-4 large:gap-4">
           {text.specs.map(([label, value], index) => (
-            <div key={label} className={`py-9 ${index % 2 ? "border-l border-brand-line pl-6" : "pr-6"} large:border-l large:border-brand-line large:px-8 first:large:border-l-0`}>
+            <div key={label} className="rounded-[24px] bg-[#f5f5f7] px-5 py-7 small:px-7 small:py-8">
               <dt className="text-xs uppercase tracking-[0.14em] text-brand-mute">{label}</dt>
               <dd className="mt-3 text-2xl font-semibold">{value}</dd>
             </div>
