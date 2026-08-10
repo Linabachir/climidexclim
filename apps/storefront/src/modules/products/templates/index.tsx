@@ -180,7 +180,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           </LocalizedClientLink>
           <span className="text-brand-line">/</span>
           <span className="text-brand-ink">
-            Climaire — ventilateur purificateur
+            Climaire ventilateur purificateur
           </span>
         </nav>
 
