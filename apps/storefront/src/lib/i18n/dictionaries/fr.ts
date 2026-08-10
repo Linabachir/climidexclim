@@ -222,7 +222,7 @@ Nos engagements
 • Un service client qui répond en français, sous 48 h ouvrées, à contact@climidex.com.
 
 Qui sommes-nous ?
-CLIMIDEX est l'enseigne de Melvin Sokambi, entrepreneur individuel immatriculé en France (SIREN 889 863 361). Une petite structure, volontairement : vous écrivez, un humain vous répond.
+CLIMIDEX est porté par Lina Bachir et Melvin Sokambi. L’entreprise individuelle est immatriculée en France (SIREN 889 863 361). Une petite structure, volontairement : vous écrivez, un humain vous répond.
 
 Une question avant de commander ? Écrivez-nous, nous serons ravis d'aider : contact@climidex.com.`,
     legalTitle: "Mentions légales",
@@ -231,10 +231,10 @@ Une question avant de commander ? Écrivez-nous, nous serons ravis d'aider : con
     privacyTitle: "Politique de confidentialité",
     contactTitle: "Contact",
     legalBody: `Éditeur du site
-Le site climidex.com (ci-après « le Site ») est édité sous l'enseigne CLIMIDEX par Melvin Sokambi, entrepreneur individuel.
+Le site climidex.com (ci-après « le Site ») est édité sous l'enseigne CLIMIDEX par Lina Bachir et Melvin Sokambi.
 SIREN : 889 863 361. SIRET (siège) : 889 863 361 00024.
 Siège : 62 rue d'Amsterdam, 75009 Paris, France
-Directeur de la publication : Melvin Sokambi.
+Directeurs de la publication : Lina Bachir et Melvin Sokambi.
 Contact : contact@climidex.com
 
 Hébergement
@@ -251,7 +251,7 @@ Pour signaler un contenu ou poser une question relative au Site : contact@climid
     termsBody: `Version en vigueur au 5 juillet 2026.
 
 1. Objet et champ d'application
-Les présentes conditions générales de vente (« CGV ») régissent les ventes de produits conclues sur le site climidex.com entre CLIMIDEX, enseigne de Melvin Sokambi, entrepreneur individuel, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris (« le Vendeur »), et tout consommateur (« le Client »). Toute commande implique l'acceptation sans réserve des présentes CGV.
+Les présentes conditions générales de vente (« CGV ») régissent les ventes de produits conclues sur le site climidex.com entre CLIMIDEX, porté par Lina Bachir et exploité sous l’entreprise individuelle de Melvin Sokambi, SIREN 889 863 361, 62 rue d'Amsterdam, 75009 Paris (« le Vendeur »), et tout consommateur (« le Client »). Toute commande implique l'acceptation sans réserve des présentes CGV.
 
 2. Produits
 Les produits proposés (notamment le ventilateur sans pales Climaire) sont décrits avec la plus grande exactitude possible. Les photographies et visuels 3D n'ont pas de valeur contractuelle.
