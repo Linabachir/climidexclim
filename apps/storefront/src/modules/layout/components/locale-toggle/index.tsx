@@ -1,12 +1,17 @@
 "use client"
 
-import { Fragment, useTransition } from "react"
+import { useTransition } from "react"
 import { useRouter } from "next/navigation"
 
 import { updateLocale } from "@lib/data/locale-actions"
 import { useI18n } from "@lib/i18n/context"
 import { locales, type Locale } from "@lib/i18n/config"
 import { clx } from "@modules/common/components/ui"
+
+const localeDetails: Record<Locale, { flag: string; label: string }> = {
+  fr: { flag: "\u{1F1EB}\u{1F1F7}", label: "Francais" },
+  en: { flag: "\u{1F1EC}\u{1F1E7}", label: "English" },
+}
 
 // Bascule FR / EN. Écrit dans le cookie `_medusa_locale` (via updateLocale)
 // puis rafraîchit la page pour recharger les textes dans la bonne langue.
@@ -25,28 +30,28 @@ const LocaleToggle = () => {
 
   return (
     <div
-      className="flex items-center gap-x-1.5 text-xs uppercase tracking-widest"
+      className="flex items-center gap-x-2"
       aria-label="Langue"
     >
-      {locales.map((l, i) => (
-        <Fragment key={l}>
-          {i > 0 && <span className="text-brand-line">/</span>}
-          <button
-            type="button"
-            onClick={() => switchTo(l)}
-            disabled={isPending}
-            aria-pressed={l === locale}
-            className={clx(
-              "transition-colors disabled:opacity-60",
-              l === locale
-                ? "text-brand-ink font-medium"
-                : "text-brand-mute hover:text-brand-ink"
-            )}
-            data-testid={`locale-${l}`}
-          >
-            {l}
-          </button>
-        </Fragment>
+      {locales.map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => switchTo(l)}
+          disabled={isPending}
+          aria-label={localeDetails[l].label}
+          title={localeDetails[l].label}
+          aria-pressed={l === locale}
+          className={clx(
+            "flex h-8 w-8 items-center justify-center rounded-full text-[19px] leading-none transition-all disabled:opacity-60",
+            l === locale
+              ? "bg-brand-ink/[0.08] ring-1 ring-brand-ink/20"
+              : "opacity-55 grayscale hover:opacity-100 hover:grayscale-0"
+          )}
+          data-testid={`locale-${l}`}
+        >
+          <span aria-hidden="true">{localeDetails[l].flag}</span>
+        </button>
       ))}
     </div>
   )
