@@ -114,27 +114,27 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
           </div>
         </div>
 
-        <div id="points-forts" className="content-container scroll-mt-20 pt-20 small:pt-28">
-          <h2 className="text-[clamp(3rem,6vw,6rem)] font-semibold leading-none tracking-[-0.05em]">
+        <div id="points-forts" className="content-container scroll-mt-20 pt-14 small:pt-20">
+          <h2 className="text-[clamp(2.5rem,4.5vw,4.5rem)] font-semibold leading-none tracking-[-0.045em]">
             Points forts.
           </h2>
 
-          <article className="mt-12 overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] small:mt-16 small:rounded-[40px]">
-            <div className="px-6 pb-4 pt-10 text-center small:px-12 small:pt-16">
-              <h3 className="mx-auto max-w-[18ch] text-[clamp(2rem,4vw,4.5rem)] font-semibold leading-[1.02] tracking-[-0.045em]">
+          <article className="mt-9 overflow-hidden rounded-[28px] bg-[#f5f5f7] text-[#1d1d1f] small:mt-12 small:rounded-[34px]">
+            <div className="px-6 pb-2 pt-8 text-center small:px-12 small:pt-10">
+              <h3 className="mx-auto max-w-[18ch] text-[clamp(1.9rem,3.2vw,3.35rem)] font-semibold leading-[1.03] tracking-[-0.04em]">
                 Trois finitions. Un même confort.
               </h3>
-              <p className="mx-auto mt-5 max-w-xl text-base leading-7 text-[#6e6e73] small:text-lg">
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-[#6e6e73] small:text-base">
                 Ivoire Impérial, Noir Élysée ou Bleu Bourbon. Le Climaire trouve naturellement sa place dans votre intérieur.
               </p>
             </div>
-            <div className="grid grid-cols-3 items-end gap-1 px-2 pt-5 small:gap-6 small:px-[8vw] small:pt-10">
+            <div className="grid grid-cols-3 items-end gap-1 px-2 pt-3 small:gap-5 small:px-[10vw] small:pt-5">
               {[
                 ["/product/climaire-gold-front.webp", "Climaire Ivoire"],
                 ["/product/climaire-anthracite-front.webp", "Climaire Noir"],
                 ["/product/climaire-blue-front.webp", "Climaire Bleu"],
               ].map(([src, alt]) => (
-                <div key={src} className="relative aspect-[3/5] overflow-hidden">
+                <div key={src} className="relative h-[250px] overflow-hidden small:h-[390px]">
                   <Image
                     src={src}
                     alt={alt}
