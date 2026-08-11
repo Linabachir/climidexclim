@@ -226,7 +226,7 @@ const ProductStory = async ({}: Props) => {
               ? "Des couleurs conçues pour trouver naturellement leur place chez vous."
               : "Colours designed to find their place naturally in your home."}
           </p>
-          <div className="mt-12 grid grid-cols-3 overflow-hidden rounded-[28px] bg-[#f5f5f7] px-2 small:mt-14 small:rounded-[40px] small:px-8">
+          <div className="mt-12 grid grid-cols-3 overflow-hidden bg-white px-2 small:mt-14 small:px-8">
             {finishes.map((finish) => (
               <article
                 key={finish.name}
@@ -238,11 +238,7 @@ const ProductStory = async ({}: Props) => {
                     alt={`Climaire ${finish.name}`}
                     fill
                     sizes="(max-width: 640px) 100vw, 33vw"
-                    className={`object-contain object-bottom p-1 mix-blend-multiply transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.035] small:p-5 ${
-                      finish.softenEdges
-                        ? "[mask-image:radial-gradient(ellipse_72%_82%_at_center,black_62%,transparent_100%)]"
-                        : ""
-                    }`}
+                    className="object-contain object-bottom p-1 mix-blend-multiply [mask-image:radial-gradient(ellipse_70%_82%_at_center,black_55%,transparent_90%)] transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.035] small:p-5"
                   />
                 </div>
                 <h3 className="pb-5 text-center text-sm font-semibold tracking-[-0.02em] text-[#1d1d1f] transition-transform duration-500 group-hover:-translate-y-1 small:pb-8 small:text-xl">
