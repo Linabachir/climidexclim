@@ -247,7 +247,7 @@ const ProductStory = async ({}: Props) => {
         </div>
       </section>
 
-      <section className="bg-white py-16 small:py-24">
+      <section className="bg-white pb-8 pt-16 small:pb-10 small:pt-24">
         <div className="content-container">
           <h2 className="max-w-[13ch] text-[clamp(2.6rem,5vw,5rem)] font-semibold leading-[0.97] tracking-[-0.055em] text-[#1d1d1f]">
             {isFrench ? "Trois finitions. Une même exigence." : "Three finishes. The same standard."}
@@ -286,23 +286,28 @@ const ProductStory = async ({}: Props) => {
       </section>
 
       {isFrench && (
-        <section className="bg-white pb-20 small:pb-28">
-          <div className="content-container grid gap-16 border-t border-[#d2d2d7] pt-16 large:grid-cols-2 large:gap-24 small:pt-20">
+        <section className="bg-white pb-16 small:pb-24">
+          <div className="content-container max-w-5xl divide-y divide-[#d2d2d7] border-y border-[#d2d2d7]">
             {finishStories.map((story) => (
-              <article key={story.name} className="max-w-[42rem]">
-                <p className="text-sm font-medium text-[#6e6e73]">{story.subtitle}</p>
-                <h2 className="mt-3 text-[clamp(2.4rem,4vw,4.25rem)] font-semibold leading-none tracking-[-0.05em] text-[#1d1d1f]">
-                  {story.name}
-                </h2>
-                <div className="mt-8 space-y-5 text-base leading-7 text-[#515154] small:text-lg small:leading-8">
+              <details key={story.name} className="group py-7 small:py-9">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 marker:hidden">
+                  <span>
+                    <span className="block text-sm font-medium text-[#6e6e73]">{story.subtitle}</span>
+                    <span className="mt-2 block text-[clamp(1.8rem,3vw,2.8rem)] font-semibold leading-none tracking-[-0.04em] text-[#1d1d1f]">
+                      {story.name}
+                    </span>
+                  </span>
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1d1d1f] text-xl font-normal text-white transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
+                </summary>
+                <div className="max-w-[48rem] space-y-5 pt-8 text-base leading-7 text-[#515154] small:text-lg small:leading-8">
                   {story.paragraphs.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}
+                  <p className="pt-2 text-xl font-semibold tracking-[-0.02em] text-[#1d1d1f]">
+                    {story.closing}
+                  </p>
                 </div>
-                <p className="mt-8 text-xl font-semibold tracking-[-0.02em] text-[#1d1d1f]">
-                  {story.closing}
-                </p>
-              </article>
+              </details>
             ))}
           </div>
         </section>
