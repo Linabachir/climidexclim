@@ -315,7 +315,7 @@ const ProductStory = async ({}: Props) => {
       )}
 
       {isFrench && (
-        <section className="bg-white py-20 small:py-28">
+        <section id="spec-surface" className="scroll-mt-24 bg-white py-20 small:py-28">
           <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
             <div>
               <p className="text-sm font-medium text-[#6e6e73]">Confort toute saison</p>
@@ -358,7 +358,7 @@ const ProductStory = async ({}: Props) => {
       )}
 
       {isFrench && (
-        <section className="bg-white py-20 small:py-28">
+        <section id="spec-speeds" className="scroll-mt-24 bg-white py-20 small:py-28">
           <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
             <div>
               <p className="text-sm font-medium text-[#6e6e73]">Une ventilation adaptée à chaque instant.</p>
@@ -377,7 +377,7 @@ const ProductStory = async ({}: Props) => {
       )}
 
       {isFrench && (
-        <section className="bg-white py-20 small:py-28">
+        <section id="spec-noise" className="scroll-mt-24 bg-white py-20 small:py-28">
           <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
             <div>
               <p className="text-sm font-medium text-[#6e6e73]">Une présence sonore maîtrisée.</p>
@@ -398,7 +398,7 @@ const ProductStory = async ({}: Props) => {
       )}
 
       {isFrench && (
-        <section className="bg-white py-20 small:py-28">
+        <section id="spec-timer" className="scroll-mt-24 bg-white py-20 small:py-28">
           <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
             <div>
               <p className="text-sm font-medium text-[#6e6e73]">Programmez votre confort.</p>

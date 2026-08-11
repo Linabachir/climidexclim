@@ -53,6 +53,8 @@ const finishes = [
   { image: "/product/climaire-anthracite-angle.webp", hoverImage: "/product/climaire-anthracite-front.webp", background: "bg-[#d9dadd]", compact: true },
 ]
 
+const specAnchors = ["spec-speeds", "spec-noise", "spec-surface", "spec-timer"]
+
 const BenefitIcon = ({ index }: { index: number }) => {
   const common = {
     width: 26,
@@ -166,10 +168,18 @@ const HomeExperience = async ({ productHref }: Props) => {
       <section className="bg-white py-10 small:py-14">
         <dl className="content-container grid grid-cols-2 gap-3 large:grid-cols-4 large:gap-4">
           {text.specs.map(([label, value], index) => (
-            <div key={label} className="rounded-[24px] bg-[#f5f5f7] px-5 py-7 small:px-7 small:py-8">
+            <LocalizedClientLink
+              key={label}
+              href={`${productHref}#${specAnchors[index]}`}
+              className="group rounded-[24px] bg-[#f5f5f7] px-5 py-7 transition duration-300 hover:-translate-y-1 hover:bg-[#ebebef] small:px-7 small:py-8"
+              aria-label={`${label} : ${value}`}
+            >
               <dt className="text-xs uppercase tracking-[0.14em] text-brand-mute">{label}</dt>
-              <dd className="mt-3 text-2xl font-semibold">{value}</dd>
-            </div>
+              <dd className="mt-3 flex items-center justify-between gap-3 text-2xl font-semibold">
+                {value}
+                <span className="text-lg text-[#86868b] transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
+              </dd>
+            </LocalizedClientLink>
           ))}
         </dl>
       </section>
