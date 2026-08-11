@@ -55,6 +55,106 @@ const ProductStory = async ({}: Props) => {
     },
   ]
 
+  const finishStories = isFrench
+    ? [
+        {
+          name: "Bleu Bourbon",
+          subtitle: "Fraîcheur et modernité",
+          paragraphs: [
+            "Bleu Bourbon est la finition d’Impérial pensée pour apporter une présence plus contemporaine à l’objet. Nous avons choisi un bleu profond, élégant et structuré, capable de créer un contraste subtil avec la silhouette claire d’Impérial.",
+            "Cette teinte évoque immédiatement la fraîcheur, tout en conservant une dimension sophistiquée. Elle souligne les lignes de l’appareil et met en valeur son architecture minimaliste, sans jamais surcharger son design.",
+            "Bleu Bourbon trouve naturellement sa place dans les intérieurs modernes, contemporains et épurés. Il s’accorde avec le blanc, le gris, le béton, le verre, le métal, le marbre ou encore les bois plus foncés.",
+            "Dans un salon, il devient un véritable élément de décoration. Dans une chambre, il apporte une sensation visuelle de fraîcheur et de calme. Dans un bureau, il renforce son caractère technologique.",
+            "Cette finition a été pensée pour que la ventilation puisse s’intégrer à l’intérieur plutôt que de simplement y être ajoutée. Impérial associe ainsi technologie de ventilation, design industriel et confort thermique dans un objet conçu pour rester visible.",
+            "Un ventilateur design peut être fonctionnel sans perdre son caractère. Un appareil technologique peut être performant tout en conservant une esthétique minimaliste.",
+          ],
+          closing: "Bleu Bourbon. La fraîcheur, avec du caractère.",
+        },
+        {
+          name: "Noir Élysée",
+          subtitle: "Puissance et sobriété",
+          paragraphs: [
+            "Noir Élysée est la finition d’Impérial pensée pour celles et ceux qui recherchent une esthétique plus profonde, plus graphique et résolument contemporaine.",
+            "Nous avons choisi un noir intense pour souligner l’architecture de l’objet et révéler ses lignes avec davantage de caractère. Associé à des détails métalliques subtils, il crée un contraste précis entre sobriété, technologie et élégance.",
+            "Le noir permet à Impérial de s’intégrer naturellement dans les intérieurs modernes, minimalistes et architecturaux. Il dialogue avec le marbre, le bois foncé, le béton, le verre, le métal ou les matières naturelles.",
+            "Dans un salon, Noir Élysée devient une présence forte sans surcharger l’espace. Dans une chambre, sa silhouette sombre apporte une esthétique plus feutrée et sophistiquée. Dans un bureau, il affirme immédiatement son caractère technologique.",
+            "Cette finition a été pensée pour mettre en valeur la forme d’Impérial plutôt que de la dissimuler. Ses lignes épurées et son architecture minimaliste transforment ainsi un appareil de ventilation en véritable objet de design intérieur.",
+            "Parce qu’un ventilateur design peut être puissant dans son expression tout en restant discret dans son utilisation.",
+          ],
+          closing: "Noir Élysée. La puissance, avec sobriété.",
+        },
+      ]
+    : []
+
+  const comfortChapters = isFrench
+    ? [
+        {
+          title: "Chaque détail a une fonction.",
+          paragraphs: [
+            "La conception du Climaire repose sur une idée simple : ne rien ajouter qui ne soit nécessaire.",
+            "Chaque ligne, chaque proportion et chaque élément ont été étudiés pour créer une expérience cohérente. Son architecture sans pales permet de s’éloigner du ventilateur traditionnel pour créer une silhouette plus épurée, plus contemporaine et plus facilement intégrable dans un intérieur.",
+            "L’interface reste volontairement claire. Les informations essentielles sont accessibles rapidement et les réglages sont pensés pour être compris sans apprentissage. La technologie est présente, mais elle ne cherche jamais à prendre le dessus. Elle travaille en arrière-plan.",
+          ],
+        },
+        {
+          title: "Une ventilation précise, pensée pour votre quotidien.",
+          paragraphs: [
+            "Le confort thermique ne dépend pas uniquement de la puissance d’un appareil. Il dépend également de la manière dont l’air est diffusé et de la capacité à adapter le flux à chaque situation.",
+            "Le Climaire propose 8 niveaux de vitesse, permettant de moduler progressivement la ventilation : un flux léger pour accompagner un moment calme, un niveau intermédiaire pour travailler ou lire, et une ventilation plus soutenue lorsque la température augmente.",
+            "Cette possibilité de réglage permet d’adapter l’utilisation de l’appareil à différents environnements et à différentes préférences. Vous choisissez l’intensité. Le Climaire s’adapte.",
+          ],
+        },
+        {
+          title: "Une architecture sans pales.",
+          paragraphs: [
+            "L’absence de pales visibles transforme immédiatement la perception du produit. Elle libère la silhouette et permet de créer une forme plus minimaliste.",
+            "Cette conception répond également à une volonté plus large : repenser la relation entre technologie de ventilation et espace intérieur. Un ventilateur n’a plus besoin d’être un objet que l’on dissimule lorsque l’on ne l’utilise pas.",
+            "Le Climaire a été conçu pour rester visible, s’intégrer à une pièce, accompagner son mobilier et appartenir à son environnement. La technologie devient alors une partie du design.",
+          ],
+        },
+        {
+          title: "Le confort commence par la simplicité.",
+          paragraphs: [
+            "Un produit peut intégrer une technologie complexe tout en restant simple à utiliser. C’est précisément cette expérience que nous recherchons.",
+            "Les commandes du Climaire sont pensées pour aller directement à l’essentiel : modifier la vitesse, ajuster le fonctionnement et consulter les informations essentielles. Tout a été pensé pour réduire les manipulations inutiles.",
+            "Parce qu’un bon appareil électronique ne devrait pas vous demander de réfléchir à son fonctionnement. Il devrait simplement fonctionner avec vous.",
+          ],
+        },
+        {
+          title: "Un objet technologique pensé pour votre intérieur.",
+          paragraphs: [
+            "Nous avons volontairement travaillé sur une silhouette capable de dépasser les codes traditionnels de l’électroménager.",
+            "Le Climaire se situe à la rencontre du design industriel, de la technologie électronique, de l’ingénierie de ventilation, du confort thermique et de l’architecture intérieure.",
+            "Cette approche crée un appareil qui ne se contente pas de remplir une fonction. Dans un salon, une chambre, un bureau, une suite ou un espace professionnel, son design minimaliste lui permet de rester présent sans devenir envahissant.",
+          ],
+        },
+        {
+          title: "Une conception premium, pensée différemment.",
+          paragraphs: [
+            "Les appareils de ventilation dotés d’une architecture sans pales, d’un design travaillé et de technologies avancées se positionnent généralement sur un segment de prix élevé. Certaines références comparables du marché français atteignent aujourd’hui 429 €.",
+            "Chez Climidex, nous avons voulu remettre cette équation à plat : proposer une expérience exigeante sans rendre la technologie inaccessible.",
+            "Nous ne cherchons pas à multiplier artificiellement les fonctionnalités pour justifier un prix. Nous préférons concentrer nos efforts sur ce qui compte réellement : la qualité de l’expérience, la simplicité, le confort et le design.",
+          ],
+        },
+        {
+          title: "La valeur est dans l’expérience.",
+          paragraphs: [
+            "Un appareil peut être beau, technologique et puissant. Le véritable défi consiste à réunir ces qualités sans que l’une compromette les autres.",
+            "Le Climaire a été conçu dans cette logique. Son architecture donne une place importante au design, son système de ventilation est pensé autour du contrôle du flux d’air, ses réglages permettent d’adapter son utilisation et son interface privilégie la simplicité.",
+            "Tout converge vers une même chose : votre confort.",
+          ],
+        },
+        {
+          title: "Une autre approche de l’équipement intérieur.",
+          paragraphs: [
+            "Les appareils électroniques et électroménagers ne sont plus seulement évalués sur leur fonction. Ils sont également choisis pour leur esthétique, leur ergonomie, leur intégration dans la maison et l’expérience qu’ils proposent.",
+            "Le Climaire appartient à cette nouvelle génération : un appareil de ventilation qui ne ressemble pas nécessairement à un ventilateur traditionnel, un objet technologique qui ne cherche pas à montrer toute sa technologie et un équipement conçu pour rester naturellement présent dans votre espace.",
+            "La technologie s’intègre. Le design demeure.",
+          ],
+        },
+      ]
+    : []
+
   return (
     <div id="product-story" className="w-full overflow-hidden bg-white scroll-mt-20">
       <section className="bg-black text-white">
@@ -184,6 +284,194 @@ const ProductStory = async ({}: Props) => {
           </div>
         </div>
       </section>
+
+      {isFrench && (
+        <section className="bg-white pb-20 small:pb-28">
+          <div className="content-container grid gap-16 border-t border-[#d2d2d7] pt-16 large:grid-cols-2 large:gap-24 small:pt-20">
+            {finishStories.map((story) => (
+              <article key={story.name} className="max-w-[42rem]">
+                <p className="text-sm font-medium text-[#6e6e73]">{story.subtitle}</p>
+                <h2 className="mt-3 text-[clamp(2.4rem,4vw,4.25rem)] font-semibold leading-none tracking-[-0.05em] text-[#1d1d1f]">
+                  {story.name}
+                </h2>
+                <div className="mt-8 space-y-5 text-base leading-7 text-[#515154] small:text-lg small:leading-8">
+                  {story.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+                <p className="mt-8 text-xl font-semibold tracking-[-0.02em] text-[#1d1d1f]">
+                  {story.closing}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {isFrench && (
+        <section className="bg-[#f5f5f7] py-20 text-[#1d1d1f] small:py-28">
+          <div className="content-container">
+            <div className="max-w-[56rem]">
+              <p className="text-sm font-medium text-[#6e6e73]">Une nouvelle vision de la ventilation intérieure.</p>
+              <h2 className="mt-4 text-[clamp(3rem,6vw,6rem)] font-semibold leading-[0.94] tracking-[-0.055em]">
+                Le confort, sans compromis.
+              </h2>
+              <div className="mt-9 space-y-5 text-lg leading-8 text-[#515154] small:text-xl small:leading-9">
+                <p>Le confort ne devrait jamais être une question de compromis. C’est cette conviction qui a guidé la conception du Climaire.</p>
+                <p>Nous avons voulu créer un appareil capable de réunir une ventilation maîtrisée, une utilisation intuitive, une conception soignée et un design suffisamment élégant pour trouver naturellement sa place dans un intérieur.</p>
+                <p>Parce qu’un ventilateur accompagne nos journées de travail, nos moments de repos, nos nuits et nos espaces de vie, il ne devrait pas être pensé comme un simple appareil électroménager. Il devrait être pensé comme un véritable objet.</p>
+              </div>
+            </div>
+
+            <div className="mt-14 divide-y divide-[#d2d2d7] border-y border-[#d2d2d7] small:mt-20">
+              {comfortChapters.map((chapter, index) => (
+                <details key={chapter.title} className="group py-7 small:py-9" open={index === 0}>
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold tracking-[-0.025em] marker:hidden small:text-2xl">
+                    <span>{chapter.title}</span>
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#1d1d1f] text-xl font-normal text-white transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
+                  </summary>
+                  <div className="max-w-[54rem] space-y-4 pt-6 text-base leading-7 text-[#515154] small:text-lg small:leading-8">
+                    {chapter.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                </details>
+              ))}
+            </div>
+
+            <div className="mt-16 max-w-[56rem] small:mt-24">
+              <h3 className="text-[clamp(2.5rem,5vw,5rem)] font-semibold leading-[0.96] tracking-[-0.05em]">
+                Le confort, sans compromis.
+              </h3>
+              <p className="mt-7 text-lg leading-8 text-[#515154] small:text-xl small:leading-9">
+                8 niveaux de ventilation. Une architecture sans pales. Une conception minimaliste. Une interface intuitive. Un format pensé pour l’intérieur. Une approche centrée sur le confort.
+              </p>
+              <p className="mt-5 text-lg leading-8 text-[#515154] small:text-xl small:leading-9">
+                Le Climaire rassemble ces éléments autour d’une même philosophie : faire mieux avec moins. Moins de complexité et de superflu. Plus de contrôle, de simplicité et d’attention portée au design.
+              </p>
+              <p className="mt-8 text-2xl font-semibold tracking-[-0.03em]">Climaire. Le confort, sans compromis.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isFrench && (
+        <section className="bg-white py-20 small:py-28">
+          <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
+            <div>
+              <p className="text-sm font-medium text-[#6e6e73]">Confort toute saison</p>
+              <h2 className="mt-4 max-w-[10ch] text-[clamp(3rem,5.5vw,5.5rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-[#1d1d1f]">
+                Du frais à la chaleur.
+              </h2>
+            </div>
+            <div className="space-y-5 text-lg leading-8 text-[#515154] small:text-xl small:leading-9">
+              <p>Le Climaire accompagne votre confort au fil des saisons. Pensé comme un véritable appareil de confort thermique, il s’intègre naturellement dans votre quotidien.</p>
+              <p>Profitez d’une ventilation adaptée lorsque les températures augmentent. Et lorsque l’air devient plus frais, adaptez simplement votre environnement à vos besoins.</p>
+              <p>Son architecture minimaliste associe technologie, simplicité et design intérieur. Chaque détail est pensé pour offrir une expérience intuitive et agréable.</p>
+              <p>Sa silhouette contemporaine transforme la ventilation en véritable objet de design. Une approche qui réunit performance, confort et élégance dans un même appareil.</p>
+              <p>Pour la chambre, le salon, le bureau ou les espaces de vie, le Climaire accompagne votre intérieur sans en perturber l’harmonie.</p>
+              <p className="pt-3 font-semibold text-[#1d1d1f]">Une technologie pensée pour votre quotidien. Un confort conçu pour toutes les saisons.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isFrench && (
+        <section className="bg-[#f5f5f7] py-20 small:py-28">
+          <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
+            <div>
+              <p className="text-sm font-medium text-[#6e6e73]">Air intérieur</p>
+              <h2 className="mt-4 max-w-[11ch] text-[clamp(3rem,5.5vw,5.5rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-[#1d1d1f]">
+                Respirez un air plus agréable.
+              </h2>
+            </div>
+            <div className="space-y-5 text-lg leading-8 text-[#515154] small:text-xl small:leading-9">
+              <p>Le confort commence par l’air qui vous entoure. Le Climaire intègre un système de filtration conçu pour accompagner la qualité de l’air intérieur au quotidien.</p>
+              <p>L’air est filtré avant d’être redistribué dans votre espace de vie. Une approche pensée pour associer ventilation et filtration dans un même appareil.</p>
+              <p>Parce qu’un intérieur confortable ne dépend pas uniquement de sa température. Il dépend aussi de la sensation de fraîcheur et de la qualité de l’environnement.</p>
+              <p>Le Climaire accompagne ainsi vos moments de repos, de travail et de détente. Sa technologie s’intègre dans une conception minimaliste pensée pour l’usage quotidien.</p>
+              <p>Une solution de ventilation intérieure conçue pour les chambres, les bureaux et les espaces de vie. Moins d’éléments superflus. Plus de simplicité.</p>
+              <p>Une expérience pensée autour du confort thermique et de la qualité de l’air intérieur, dans un appareil où technologie et design avancent ensemble.</p>
+              <p className="pt-3 font-semibold text-[#1d1d1f]">Le Climaire. Une autre façon de penser l’air intérieur.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isFrench && (
+        <section className="bg-white py-20 small:py-28">
+          <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
+            <div>
+              <p className="text-sm font-medium text-[#6e6e73]">Une ventilation adaptée à chaque instant.</p>
+              <h2 className="mt-4 text-[clamp(3rem,5.5vw,5.5rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-[#1d1d1f]">
+                8 niveaux de vitesse.
+              </h2>
+            </div>
+            <div className="space-y-5 text-lg leading-8 text-[#515154] small:text-xl small:leading-9">
+              <p>Le confort n’est jamais exactement le même d’un moment à l’autre. C’est pourquoi le Climaire permet d’ajuster progressivement l’intensité du flux d’air selon vos besoins.</p>
+              <p>Une ventilation légère pour accompagner un moment de repos. Un niveau intermédiaire pour travailler, lire ou regarder un film. Une puissance plus soutenue lorsque la température augmente.</p>
+              <p>Plutôt que de fonctionner avec un réglage unique, le Climaire vous permet de contrôler précisément votre expérience de ventilation et d’adapter la circulation de l’air à votre environnement.</p>
+              <p className="pt-3 font-semibold text-[#1d1d1f]">8 niveaux. Une ventilation pensée pour s’adapter à vous.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isFrench && (
+        <section className="bg-[#f5f5f7] py-20 small:py-28">
+          <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
+            <div>
+              <p className="text-sm font-medium text-[#6e6e73]">Une présence sonore maîtrisée.</p>
+              <h2 className="mt-4 text-[clamp(3rem,5.5vw,5.5rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-[#1d1d1f]">
+                35–39 dB.
+              </h2>
+            </div>
+            <div className="space-y-5 text-lg leading-8 text-[#515154] small:text-xl small:leading-9">
+              <p>Le confort ne se mesure pas uniquement à la sensation de fraîcheur. Il se ressent également dans l’environnement sonore.</p>
+              <p>Avec un niveau sonore annoncé compris entre 35 et 39 dB, le Climaire a été pensé pour accompagner les moments où le calme compte.</p>
+              <p>Dans une chambre. Dans un bureau. Pendant une session de travail. Lors d’un moment de lecture. Ou simplement lorsque vous souhaitez profiter d’un intérieur plus agréable sans ajouter une présence sonore excessive.</p>
+              <p>Cette conception permet d’envisager le Climaire comme un ventilateur pensé pour les espaces de vie, et pas uniquement comme un appareil destiné aux périodes de forte chaleur.</p>
+              <p>Parce qu’un appareil utilisé quotidiennement doit savoir rester discret.</p>
+              <p className="pt-3 font-semibold text-[#1d1d1f]">Une ventilation que l’on ressent. Un bruit que l’on maîtrise.</p>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {isFrench && (
+        <section className="bg-white py-20 small:py-28">
+          <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
+            <div>
+              <p className="text-sm font-medium text-[#6e6e73]">Programmez votre confort.</p>
+              <h2 className="mt-4 max-w-[9ch] text-[clamp(3rem,5.5vw,5.5rem)] font-semibold leading-[0.94] tracking-[-0.055em] text-[#1d1d1f]">
+                Minuterie 1–8 heures.
+              </h2>
+            </div>
+            <div className="text-lg leading-8 text-[#515154] small:text-xl small:leading-9">
+              <p>Le confort ne devrait pas nécessiter votre attention en permanence.</p>
+              <p className="mt-5">Le Climaire intègre une minuterie réglable de 1 à 8 heures, permettant de programmer la durée de fonctionnement de l’appareil selon votre utilisation.</p>
+
+              <div className="mt-10 divide-y divide-[#d2d2d7] border-y border-[#d2d2d7]">
+                <div className="py-6">
+                  <p className="font-semibold text-[#1d1d1f]">Pendant votre sommeil</p>
+                  <p className="mt-2 text-base leading-7 small:text-lg">Réglez simplement la durée pendant laquelle vous souhaitez profiter de la ventilation.</p>
+                </div>
+                <div className="py-6">
+                  <p className="font-semibold text-[#1d1d1f]">Pendant une session de travail</p>
+                  <p className="mt-2 text-base leading-7 small:text-lg">Programmez le Climaire pour qu’il vous accompagne durant les prochaines heures.</p>
+                </div>
+                <div className="py-6">
+                  <p className="font-semibold text-[#1d1d1f]">Pour rafraîchir une pièce</p>
+                  <p className="mt-2 text-base leading-7 small:text-lg">Définissez simplement une période de fonctionnement adaptée à votre espace.</p>
+                </div>
+              </div>
+
+              <p className="mt-9">Cette fonction apporte davantage de contrôle et évite de devoir penser à arrêter manuellement l’appareil. Une fonctionnalité discrète, mais essentielle dans l’expérience quotidienne.</p>
+              <p className="mt-6 font-semibold text-[#1d1d1f]">De 1 à 8 heures. Votre confort, programmé selon votre rythme.</p>
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="border-t border-[#d2d2d7] bg-white py-14 small:py-20">
         <div className="content-container flex flex-col justify-between gap-5 small:flex-row small:items-end">
