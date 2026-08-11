@@ -255,21 +255,21 @@ const ProductStory = async ({}: Props) => {
       </section>
 
       {isFrench && (
-        <section className="bg-[#f5f5f7] py-20 text-[#1d1d1f] small:py-28">
+        <section className="bg-white py-14 text-[#1d1d1f] small:py-20">
           <div className="content-container">
-            <div className="max-w-[56rem]">
+            <div className="max-w-[48rem]">
               <p className="text-sm font-medium text-[#6e6e73]">Une nouvelle vision de la ventilation intérieure.</p>
-              <h2 className="mt-4 text-[clamp(3rem,6vw,6rem)] font-semibold leading-[0.94] tracking-[-0.055em]">
+              <h2 className="mt-3 text-[clamp(2.4rem,4.5vw,4.25rem)] font-semibold leading-[0.98] tracking-[-0.045em]">
                 Le confort, sans compromis.
               </h2>
-              <div className="mt-9 space-y-5 text-lg leading-8 text-[#515154] small:text-xl small:leading-9">
+              <div className="mt-7 space-y-4 text-base leading-7 text-[#515154] [&>p:nth-child(3)]:hidden small:text-lg small:leading-8">
                 <p>Le confort ne devrait jamais être une question de compromis. C’est cette conviction qui a guidé la conception du Climaire.</p>
                 <p>Nous avons voulu créer un appareil capable de réunir une ventilation maîtrisée, une utilisation intuitive, une conception soignée et un design suffisamment élégant pour trouver naturellement sa place dans un intérieur.</p>
                 <p>Parce qu’un ventilateur accompagne nos journées de travail, nos moments de repos, nos nuits et nos espaces de vie, il ne devrait pas être pensé comme un simple appareil électroménager. Il devrait être pensé comme un véritable objet.</p>
               </div>
             </div>
 
-            <div className="mt-14 divide-y divide-[#d2d2d7] border-y border-[#d2d2d7] small:mt-20">
+            <div className="hidden">
               {comfortChapters.map((chapter, index) => (
                 <details key={chapter.title} className="group py-7 small:py-9" open={index === 0}>
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-xl font-semibold tracking-[-0.025em] marker:hidden small:text-2xl">
@@ -285,7 +285,7 @@ const ProductStory = async ({}: Props) => {
               ))}
             </div>
 
-            <div className="mt-16 max-w-[56rem] small:mt-24">
+            <div className="hidden">
               <h3 className="text-[clamp(2.5rem,5vw,5rem)] font-semibold leading-[0.96] tracking-[-0.05em]">
                 Le confort, sans compromis.
               </h3>
@@ -323,7 +323,7 @@ const ProductStory = async ({}: Props) => {
       )}
 
       {isFrench && (
-        <section className="bg-[#f5f5f7] py-20 small:py-28">
+        <section className="bg-white py-20 small:py-28">
           <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
             <div>
               <p className="text-sm font-medium text-[#6e6e73]">Air intérieur</p>
@@ -364,7 +364,7 @@ const ProductStory = async ({}: Props) => {
       )}
 
       {isFrench && (
-        <section className="bg-[#f5f5f7] py-20 small:py-28">
+        <section className="bg-white py-20 small:py-28">
           <div className="content-container grid gap-12 large:grid-cols-[0.72fr_1.28fr] large:gap-24">
             <div>
               <p className="text-sm font-medium text-[#6e6e73]">Une présence sonore maîtrisée.</p>
