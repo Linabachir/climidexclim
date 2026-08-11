@@ -57,7 +57,11 @@ const OptionSelect: React.FC<OptionSelectProps> = ({
         {filteredOptions.map((v) => {
           return (
             <button
-              onClick={() => updateOption(option.id, v)}
+              type="button"
+              onClick={(event) => {
+                event.preventDefault()
+                updateOption(option.id, v)
+              }}
               onMouseEnter={() => title === "Color" && previewOption?.(v)}
               onMouseLeave={() => title === "Color" && endPreview?.()}
               onFocus={() => title === "Color" && previewOption?.(v)}
