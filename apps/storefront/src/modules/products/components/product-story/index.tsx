@@ -55,37 +55,6 @@ const ProductStory = async ({}: Props) => {
     },
   ]
 
-  const finishStories = isFrench
-    ? [
-        {
-          name: "Bleu Bourbon",
-          subtitle: "Fraîcheur et modernité",
-          paragraphs: [
-            "Bleu Bourbon est la finition d’Impérial pensée pour apporter une présence plus contemporaine à l’objet. Nous avons choisi un bleu profond, élégant et structuré, capable de créer un contraste subtil avec la silhouette claire d’Impérial.",
-            "Cette teinte évoque immédiatement la fraîcheur, tout en conservant une dimension sophistiquée. Elle souligne les lignes de l’appareil et met en valeur son architecture minimaliste, sans jamais surcharger son design.",
-            "Bleu Bourbon trouve naturellement sa place dans les intérieurs modernes, contemporains et épurés. Il s’accorde avec le blanc, le gris, le béton, le verre, le métal, le marbre ou encore les bois plus foncés.",
-            "Dans un salon, il devient un véritable élément de décoration. Dans une chambre, il apporte une sensation visuelle de fraîcheur et de calme. Dans un bureau, il renforce son caractère technologique.",
-            "Cette finition a été pensée pour que la ventilation puisse s’intégrer à l’intérieur plutôt que de simplement y être ajoutée. Impérial associe ainsi technologie de ventilation, design industriel et confort thermique dans un objet conçu pour rester visible.",
-            "Un ventilateur design peut être fonctionnel sans perdre son caractère. Un appareil technologique peut être performant tout en conservant une esthétique minimaliste.",
-          ],
-          closing: "Bleu Bourbon. La fraîcheur, avec du caractère.",
-        },
-        {
-          name: "Noir Élysée",
-          subtitle: "Puissance et sobriété",
-          paragraphs: [
-            "Noir Élysée est la finition d’Impérial pensée pour celles et ceux qui recherchent une esthétique plus profonde, plus graphique et résolument contemporaine.",
-            "Nous avons choisi un noir intense pour souligner l’architecture de l’objet et révéler ses lignes avec davantage de caractère. Associé à des détails métalliques subtils, il crée un contraste précis entre sobriété, technologie et élégance.",
-            "Le noir permet à Impérial de s’intégrer naturellement dans les intérieurs modernes, minimalistes et architecturaux. Il dialogue avec le marbre, le bois foncé, le béton, le verre, le métal ou les matières naturelles.",
-            "Dans un salon, Noir Élysée devient une présence forte sans surcharger l’espace. Dans une chambre, sa silhouette sombre apporte une esthétique plus feutrée et sophistiquée. Dans un bureau, il affirme immédiatement son caractère technologique.",
-            "Cette finition a été pensée pour mettre en valeur la forme d’Impérial plutôt que de la dissimuler. Ses lignes épurées et son architecture minimaliste transforment ainsi un appareil de ventilation en véritable objet de design intérieur.",
-            "Parce qu’un ventilateur design peut être puissant dans son expression tout en restant discret dans son utilisation.",
-          ],
-          closing: "Noir Élysée. La puissance, avec sobriété.",
-        },
-      ]
-    : []
-
   const comfortChapters = isFrench
     ? [
         {
@@ -284,34 +253,6 @@ const ProductStory = async ({}: Props) => {
           </div>
         </div>
       </section>
-
-      {isFrench && (
-        <section className="bg-white pb-16 small:pb-24">
-          <div className="content-container max-w-5xl divide-y divide-[#d2d2d7] border-y border-[#d2d2d7]">
-            {finishStories.map((story) => (
-              <details key={story.name} className="group py-7 small:py-9">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 marker:hidden">
-                  <span>
-                    <span className="block text-sm font-medium text-[#6e6e73]">{story.subtitle}</span>
-                    <span className="mt-2 block text-[clamp(1.8rem,3vw,2.8rem)] font-semibold leading-none tracking-[-0.04em] text-[#1d1d1f]">
-                      {story.name}
-                    </span>
-                  </span>
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#1d1d1f] text-xl font-normal text-white transition-transform duration-300 group-open:rotate-45" aria-hidden="true">+</span>
-                </summary>
-                <div className="max-w-[48rem] space-y-5 pt-8 text-base leading-7 text-[#515154] small:text-lg small:leading-8">
-                  {story.paragraphs.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
-                  <p className="pt-2 text-xl font-semibold tracking-[-0.02em] text-[#1d1d1f]">
-                    {story.closing}
-                  </p>
-                </div>
-              </details>
-            ))}
-          </div>
-        </section>
-      )}
 
       {isFrench && (
         <section className="bg-[#f5f5f7] py-20 text-[#1d1d1f] small:py-28">
