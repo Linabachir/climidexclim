@@ -226,7 +226,10 @@ const ProductStory = async ({}: Props) => {
               ? "Des couleurs conçues pour trouver naturellement leur place chez vous."
               : "Colours designed to find their place naturally in your home."}
           </p>
-          <div className="mt-12 grid grid-cols-3 overflow-hidden bg-white px-2 small:mt-14 small:px-8">
+          <div
+            className="mt-12 grid grid-cols-3 overflow-hidden bg-white px-2 small:mt-14 small:px-8"
+            style={{ backgroundColor: "#ffffff", borderRadius: 0 }}
+          >
             {finishes.map((finish) => (
               <article
                 key={finish.name}
@@ -245,6 +248,14 @@ const ProductStory = async ({}: Props) => {
                       WebkitMaskImage:
                         "radial-gradient(ellipse 68% 80% at center, black 48%, transparent 88%)",
                     }}
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      background:
+                        "radial-gradient(ellipse 64% 80% at center, transparent 58%, #ffffff 94%)",
+                    }}
+                    aria-hidden="true"
                   />
                 </div>
                 <h3 className="pb-5 text-center text-sm font-semibold tracking-[-0.02em] text-[#1d1d1f] transition-transform duration-500 group-hover:-translate-y-1 small:pb-8 small:text-xl">
