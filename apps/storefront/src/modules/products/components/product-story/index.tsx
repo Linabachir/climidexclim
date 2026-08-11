@@ -151,7 +151,7 @@ const ProductStory = async ({}: Props) => {
       </section>
 
       <section className="bg-white py-16 small:py-24">
-        <div className="content-container">
+        <div className="content-container bg-white">
           <h2 className="max-w-[13ch] text-[clamp(2.6rem,5vw,5rem)] font-semibold leading-[0.97] tracking-[-0.055em] text-[#1d1d1f]">
             {isFrench ? "Le confort, dans chaque détail." : "Comfort, in every detail."}
           </h2>
@@ -217,7 +217,7 @@ const ProductStory = async ({}: Props) => {
       </section>
 
       <section className="bg-white pb-8 pt-16 small:pb-10 small:pt-24">
-        <div className="content-container">
+        <div className="content-container bg-white">
           <h2 className="max-w-[13ch] text-[clamp(2.6rem,5vw,5rem)] font-semibold leading-[0.97] tracking-[-0.055em] text-[#1d1d1f]">
             {isFrench ? "Trois finitions. Une même exigence." : "Three finishes. The same standard."}
           </h2>
@@ -230,15 +230,21 @@ const ProductStory = async ({}: Props) => {
             {finishes.map((finish) => (
               <article
                 key={finish.name}
-                className="group relative flex h-[320px] min-w-0 flex-col justify-end small:h-[500px]"
+                className="group relative flex h-[320px] min-w-0 flex-col justify-end bg-white small:h-[500px]"
               >
-                <div className="relative flex-1 overflow-hidden">
+                <div className="relative flex-1 overflow-hidden bg-white">
                   <Image
                     src={finish.image}
                     alt={`Climaire ${finish.name}`}
                     fill
                     sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-contain object-bottom p-1 mix-blend-multiply [mask-image:radial-gradient(ellipse_70%_82%_at_center,black_55%,transparent_90%)] transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.035] small:p-5"
+                    className="object-contain object-bottom p-1 mix-blend-multiply transition-transform duration-700 ease-out group-hover:-translate-y-3 group-hover:scale-[1.035] small:p-5"
+                    style={{
+                      maskImage:
+                        "radial-gradient(ellipse 68% 80% at center, black 48%, transparent 88%)",
+                      WebkitMaskImage:
+                        "radial-gradient(ellipse 68% 80% at center, black 48%, transparent 88%)",
+                    }}
                   />
                 </div>
                 <h3 className="pb-5 text-center text-sm font-semibold tracking-[-0.02em] text-[#1d1d1f] transition-transform duration-500 group-hover:-translate-y-1 small:pb-8 small:text-xl">
