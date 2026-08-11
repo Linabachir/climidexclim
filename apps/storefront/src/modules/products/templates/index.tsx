@@ -134,17 +134,27 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
                 ["/product/climaire-anthracite-front.webp", "Climaire Noir"],
                 ["/product/climaire-blue-front.webp", "Climaire Bleu"],
               ].map(([src, alt]) => (
-                <div key={src} className="relative h-[250px] overflow-hidden small:h-[390px]">
+                <div key={src} className="relative h-[250px] overflow-hidden bg-[#f5f5f7] small:h-[390px]">
                   <Image
                     src={src}
                     alt={alt}
                     fill
                     sizes="33vw"
-                    className={`object-contain object-bottom mix-blend-multiply ${
-                      src.includes("climaire-blue")
-                        ? "[mask-image:radial-gradient(ellipse_72%_82%_at_center,black_62%,transparent_100%)]"
-                        : ""
-                    }`}
+                    className="object-contain object-bottom mix-blend-multiply"
+                    style={{
+                      maskImage:
+                        "radial-gradient(ellipse 72% 84% at center, black 50%, transparent 92%)",
+                      WebkitMaskImage:
+                        "radial-gradient(ellipse 72% 84% at center, black 50%, transparent 92%)",
+                    }}
+                  />
+                  <div
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      background:
+                        "radial-gradient(ellipse 68% 84% at center, transparent 58%, #f5f5f7 95%)",
+                    }}
+                    aria-hidden="true"
                   />
                 </div>
               ))}
