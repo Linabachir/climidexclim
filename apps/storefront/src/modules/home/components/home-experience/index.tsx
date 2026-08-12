@@ -102,7 +102,7 @@ const HomeExperience = async ({ productHref }: Props) => {
           </div>
         </div>
         <div id="film-climidex" className="relative aspect-[16/10] overflow-hidden bg-black scroll-mt-20 min-[768px]:aspect-auto min-[768px]:min-h-0">
-          <video className="absolute inset-0 h-full w-full object-cover" src="/home/climidex-film.mp4" poster="/home/climidex-film-poster.webp" autoPlay muted loop playsInline preload="metadata" aria-label={text.watch} />
+          <video className="absolute inset-0 h-full w-full scale-[1.14] object-cover object-[44%_center]" src="/home/climidex-film.mp4" poster="/home/climidex-film-poster.webp" autoPlay muted loop playsInline preload="metadata" aria-label={text.watch} />
         </div>
       </section>
 

@@ -69,7 +69,7 @@ const ProductTemplate: React.FC<ProductTemplateProps> = ({
     <main className="bg-white [font-family:-apple-system,BlinkMacSystemFont,'SF_Pro_Text','Helvetica_Neue',Arial,sans-serif]">
       <section className="relative min-h-[calc(100svh-72px)] overflow-hidden bg-[#e8e8e8] text-white">
         <video
-          className="absolute inset-0 h-full w-full object-cover object-center"
+          className="absolute inset-0 h-full w-full scale-[1.14] object-cover object-[44%_center]"
           src="/home/climidex-film.mp4"
           poster="/home/climidex-film-poster.webp"
           autoPlay
