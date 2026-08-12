@@ -48,10 +48,23 @@ const Payment = ({
   const setPaymentMethod = async (method: string) => {
     setError(null)
     setSelectedPaymentMethod(method)
-    if (isStripeLike(method)) {
-      await initiatePaymentSession(cart, {
-        provider_id: method,
-      })
+    setCardComplete(false)
+
+    try {
+      if (isStripeLike(method)) {
+        await initiatePaymentSession(cart, {
+          provider_id: method,
+        })
+
+        // PaymentWrapper is rendered on the server from the cart's payment
+        // sessions. Refresh it after creating the Stripe session so Elements
+        // receives the new client secret instead of leaving the card skeleton
+        // visible forever.
+        router.refresh()
+      }
+    } catch (err) {
+      setSelectedPaymentMethod(activeSession?.provider_id ?? "")
+      setError(err instanceof Error ? err.message : String(err))
     }
   }
 

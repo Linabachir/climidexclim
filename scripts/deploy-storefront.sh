@@ -8,6 +8,17 @@ export NEXT_PUBLIC_MEDUSA_BACKEND_URL="https://api.climidex.com"
 export NEXT_PUBLIC_DEFAULT_REGION="fr"
 export NEXT_PUBLIC_BASE_URL="https://climidex.com"
 
+# Les valeurs propres à la production restent sur le serveur et hors de Git.
+# `set -a` les exporte pour que Next.js puisse les figer dans le bundle client.
+if [ ! -f .env.production.local ]; then
+  echo "Missing apps/storefront/.env.production.local" >&2
+  exit 1
+fi
+set -a
+. ./.env.production.local
+set +a
+: "${NEXT_PUBLIC_STRIPE_KEY:?Missing NEXT_PUBLIC_STRIPE_KEY in .env.production.local}"
+
 # Safari et certains caches intermédiaires peuvent conserver un ancien HTML
 # pendant quelques minutes. Next.js supprimant normalement les anciens chunks
 # lors du build, cet HTML se retrouverait alors sans CSS. On conserve les
