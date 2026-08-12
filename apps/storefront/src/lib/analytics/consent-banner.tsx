@@ -55,8 +55,8 @@ export default function ConsentBanner() {
   return (
     <>
     {visible && <div role="dialog" aria-live="polite" aria-label="Consentement aux cookies" className="fixed inset-0 z-50 flex items-end bg-black/20 p-4 backdrop-blur-[2px] small:p-6">
-      <div className="mx-auto flex w-full max-w-4xl flex-col gap-5 rounded-[28px] bg-white p-6 shadow-2xl small:flex-row small:items-center small:p-7">
-        <p className="flex-1 text-[13px] leading-relaxed text-brand-ink-secondary">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-7 rounded-[32px] bg-white p-7 shadow-2xl small:flex-row small:items-center small:p-10">
+        <p className="flex-1 text-[15px] leading-7 text-brand-ink-secondary small:text-base">
           Nous utilisons des cookies de mesure d'audience (Google Analytics)
           pour comprendre l'usage du site et l'améliorer. Vous pouvez accepter
           ou refuser.{" "}
@@ -72,14 +72,14 @@ export default function ConsentBanner() {
           <button
             type="button"
             onClick={() => decide(false)}
-            className="min-h-12 rounded-full bg-[#f5f5f7] px-6 text-sm font-medium text-brand-ink transition-colors hover:bg-[#e8e8ed]"
+            className="min-h-14 flex-1 rounded-full bg-[#f5f5f7] px-8 text-base font-medium text-brand-ink transition-colors hover:bg-[#e8e8ed] small:flex-none"
           >
             Refuser
           </button>
           <button
             type="button"
             onClick={() => decide(true)}
-            className="min-h-12 rounded-full bg-[#1d1d1f] px-6 text-sm font-medium text-white transition-colors hover:bg-black"
+            className="min-h-14 flex-1 rounded-full bg-[#1d1d1f] px-8 text-base font-medium text-white transition-colors hover:bg-black small:flex-none"
           >
             Accepter
           </button>
@@ -87,15 +87,15 @@ export default function ConsentBanner() {
       </div>
     </div>}
     {accountVisible && <div role="dialog" aria-modal="true" aria-label="Créer un compte" className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-5 backdrop-blur-sm">
-      <div className="relative w-full max-w-md rounded-[32px] bg-white px-7 py-9 text-center shadow-2xl small:px-10">
-        <button type="button" onClick={() => setAccountVisible(false)} aria-label="Fermer" className="absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full bg-[#f5f5f7] text-xl text-[#1d1d1f] hover:bg-[#e8e8ed]">×</button>
-        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#f5f5f7] text-[#1d1d1f]">
+      <div className="relative w-full max-w-xl rounded-[36px] bg-white px-8 py-12 text-center shadow-2xl small:px-14 small:py-14">
+        <button type="button" onClick={() => setAccountVisible(false)} aria-label="Fermer" className="absolute right-6 top-6 flex h-11 w-11 items-center justify-center rounded-full bg-[#f5f5f7] text-2xl text-[#1d1d1f] hover:bg-[#e8e8ed]">×</button>
+        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-[#f5f5f7] text-[#1d1d1f]">
           <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden><circle cx="12" cy="8" r="4"/><path d="M4.5 21c.8-4.1 3.3-6 7.5-6s6.7 1.9 7.5 6"/></svg>
         </div>
-        <h2 className="mt-5 text-3xl font-semibold tracking-[-0.03em]">Créez votre compte</h2>
-        <p className="mx-auto mt-3 max-w-sm text-sm leading-6 text-brand-ink-secondary">Suivez vos commandes et retrouvez facilement vos informations.</p>
-        <a href={`/${countryCode}/account`} className="mt-7 flex min-h-12 w-full items-center justify-center rounded-full bg-[#1d1d1f] px-6 text-sm font-medium text-white hover:bg-black">Créer mon compte</a>
-        <button type="button" onClick={() => setAccountVisible(false)} className="mt-4 text-sm text-brand-ink-secondary hover:text-brand-ink">Plus tard</button>
+        <h2 className="mt-7 text-4xl font-semibold tracking-[-0.03em] small:text-[42px]">Créez votre compte</h2>
+        <p className="mx-auto mt-4 max-w-md text-base leading-7 text-brand-ink-secondary">Suivez vos commandes et retrouvez facilement vos informations.</p>
+        <a href={`/${countryCode}/account`} className="mt-8 flex min-h-14 w-full items-center justify-center rounded-full bg-[#1d1d1f] px-8 text-base font-medium text-white hover:bg-black">Créer mon compte</a>
+        <button type="button" onClick={() => setAccountVisible(false)} className="mt-5 text-base text-brand-ink-secondary hover:text-brand-ink">Plus tard</button>
       </div>
     </div>}
     </>
