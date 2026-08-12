@@ -50,7 +50,7 @@ const copy = {
 const finishes = [
   { image: "/product/climaire-gold-front.webp", hoverImage: "/product/climaire-gold-display.webp", background: "bg-[#e9e4de]" },
   { image: "/product/climaire-blue-front.webp", hoverImage: "/product/climaire-blue-display.webp", background: "bg-[#dfe7ee]" },
-  { image: "/product/climaire-anthracite-angle.webp", hoverImage: "/product/climaire-anthracite-front.webp", background: "bg-[#d9dadd]", compact: true },
+  { image: "/product/climaire-anthracite-angle.webp", hoverImage: "/product/climaire-anthracite-front.webp", background: "bg-[#d9dadd]", compact: true, fade: "#d9dadd" },
 ]
 
 const specAnchors = ["spec-speeds", "spec-noise", "spec-surface", "spec-timer"]
@@ -140,8 +140,28 @@ const HomeExperience = async ({ productHref }: Props) => {
             {finishes.map((finish, index) => (
               <article key={text.finishes[index]} className="group min-w-0">
                 <div className={`relative aspect-square overflow-hidden ${finish.background}`}>
-                  <Image src={finish.image} alt={text.finishes[index]} fill sizes="(max-width: 768px) 100vw, 33vw" className={`mix-blend-multiply transition-opacity duration-300 motion-reduce:transition-none group-hover:opacity-0 ${finish.compact ? "object-contain p-9" : "object-cover"}`} />
-                  <Image src={finish.hoverImage} alt={`${text.finishes[index]}, autre vue`} fill sizes="(max-width: 768px) 100vw, 33vw" className={`opacity-0 mix-blend-multiply transition-opacity duration-300 motion-reduce:transition-none group-hover:opacity-100 ${finish.compact ? "object-contain p-9" : "object-cover"}`} />
+                  <Image
+                    src={finish.image}
+                    alt={text.finishes[index]}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className={`mix-blend-multiply transition-opacity duration-300 motion-reduce:transition-none group-hover:opacity-0 ${finish.compact ? "object-contain p-9" : "object-cover"}`}
+                    style={finish.fade ? { WebkitMaskImage: "radial-gradient(ellipse 68% 76% at center, #000 52%, transparent 94%)", maskImage: "radial-gradient(ellipse 68% 76% at center, #000 52%, transparent 94%)" } : undefined}
+                  />
+                  <Image
+                    src={finish.hoverImage}
+                    alt={`${text.finishes[index]}, autre vue`}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className={`opacity-0 mix-blend-multiply transition-opacity duration-300 motion-reduce:transition-none group-hover:opacity-100 ${finish.compact ? "object-contain p-9" : "object-cover"}`}
+                    style={finish.fade ? { WebkitMaskImage: "radial-gradient(ellipse 68% 76% at center, #000 52%, transparent 94%)", maskImage: "radial-gradient(ellipse 68% 76% at center, #000 52%, transparent 94%)" } : undefined}
+                  />
+                  {finish.fade && (
+                    <div
+                      className="pointer-events-none absolute inset-0"
+                      style={{ background: `radial-gradient(ellipse 68% 76% at center, transparent 56%, ${finish.fade} 95%)` }}
+                    />
+                  )}
                 </div>
                 <div className="border-b border-brand-line py-6">
                   <h3 className="text-2xl font-semibold tracking-[-0.025em]">
