@@ -17,8 +17,9 @@ export default async function Nav() {
   ])
 
   const links = [
-    { href: "/products/climaire-ventilateur-sans-pales", label: "Le Climaire" },
     { href: "/", label: "La Maison" },
+    { href: "/products/climaire-ventilateur-sans-pales", label: "Le Climaire" },
+    { href: "/journal", label: "Journal" },
   ]
 
   return (

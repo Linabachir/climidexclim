@@ -43,6 +43,14 @@ export default async function Footer() {
                     {t.footer.cart}
                   </LocalizedClientLink>
                 </li>
+                <li>
+                  <LocalizedClientLink
+                    href="/journal"
+                    className="hover:text-brand-ink"
+                  >
+                    Journal
+                  </LocalizedClientLink>
+                </li>
               </ul>
             </div>
 

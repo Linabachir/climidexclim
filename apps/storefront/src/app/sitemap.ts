@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next"
+import { getAllArticles, getArticlePath } from "@lib/journal/content"
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || "https://climidex.com"
 const BACKEND = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || ""
@@ -21,6 +22,7 @@ const STATIC_PATHS = [
   "/content/retours",
   "/content/confidentialite",
   "/content/contact",
+  "/journal",
 ]
 
 // Handle de secours si l'API backend est injoignable au moment du rendu :
@@ -91,9 +93,22 @@ function entry(
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date()
   const products = await getProductPaths()
+  const journal = getAllArticles().flatMap((article) => [
+    {
+      path: getArticlePath(article),
+      lastModified: article.updatedAt,
+    },
+    ...(article.type === "hub"
+      ? []
+      : [{ path: `/journal/${article.silo}`, lastModified: article.updatedAt }]),
+  ])
+  const uniqueJournal = Array.from(
+    new Map(journal.map((item) => [item.path, item])).values()
+  )
 
   return [
     ...STATIC_PATHS.map((path) => entry(path, now)),
+    ...uniqueJournal.map((item) => entry(item.path, item.lastModified)),
     ...products.map((p) => entry(p.path, p.lastModified ?? now)),
   ]
 }
