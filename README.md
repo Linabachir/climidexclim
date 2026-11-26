@@ -1,3 +1,63 @@
+# Climaire — AI-Assisted E-commerce Platform
+
+Climaire is an e-commerce platform I built from scratch to explore how AI coding agents can help an entrepreneur turn a business idea into a functional digital product.
+
+As an engineering student specialising in AI, I wanted to go beyond academic machine learning projects and experiment with AI-assisted software development, from product design to deployment.
+
+## Tech Stack
+
+| Category | Technologies |
+|----------|-------------|
+| AI-assisted development | Claude Code, Cursor |
+| Backend | Medusa.js, Node.js |
+| Database | Supabase, PostgreSQL |
+| Payments | Stripe |
+| Deployment | Vercel |
+| Integration | REST APIs, JSON |
+| Version control | Git, GitHub |
+
+## Key Features
+
+- Product catalogue and product variants
+- Shopping cart and customer journey
+- E-commerce backend integration
+- Database management
+- Stripe payment integration
+- Responsive user interface
+
+## AI-Assisted Development
+
+I used Claude Code and Cursor throughout the development process to:
+
+- Translate business requirements into technical features.
+- Build and refine application components.
+- Integrate external APIs and services.
+- Identify and resolve technical issues.
+- Iterate on the product architecture and user experience.
+
+Rather than relying on AI-generated code without understanding it, I used coding agents as development partners, reviewing their outputs and adapting them to the needs of the product.
+
+## Project Objectives
+
+This project combines three areas I am particularly interested in:
+
+- Artificial intelligence and software engineering.
+- Entrepreneurship and product development.
+- Business process automation.
+
+Building Climaire allowed me to explore the capabilities and limitations of AI coding agents while gaining experience in developing and deploying an e-commerce application.
+
+## Author
+
+**Lina Bachir**
+
+Final-year engineering student at ENSEA, specialising in Artificial Intelligence at National Central University, Taiwan.
+
+Interested in AI agents, business operations, automation and entrepreneurship.
+
+[LinkedIn](https://www.linkedin.com/in/lina-bachir/)
+
+
 <p align="center">
   <a href="https://www.medusajs.com">
   <picture>
